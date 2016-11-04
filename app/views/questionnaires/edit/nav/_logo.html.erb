@@ -1,0 +1,12 @@
+<button type="button" class="avatar-preview avatar-preview-128">
+  <%# if f.object.logo.present? %>
+    <%#= image_tag f.object.logo.url %>
+  <%# else %>
+    <%= image_tag("http://static1.squarespace.com/static/54fe5d59e4b038fd96c9a7c5/550a1fa1e4b0fca40dc6f6b1/550a1fa1e4b03c7ec206969d/1426726818023/Placeholder+Logo.png")%>
+  <%# end %>
+  <span class="update">
+    <i class="font-icon font-icon-picture-double"></i>
+    Update photo
+  </span>
+  <%= f.file_field :logo %>
+</button>

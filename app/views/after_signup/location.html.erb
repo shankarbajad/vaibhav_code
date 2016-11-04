@@ -1,0 +1,125 @@
+<style type="text/css">
+
+ body {background: url(http://vestedworld.com/app/uploads/2016/03/3-1024x529.jpg); background-size: cover;}
+ 
+</style>
+
+<!-- <div class="overlay"></div> -->
+<div style="position: relative; z-index: 9999;">
+  <%= render 'after_signup/top_nav' %>
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 col-centered">
+      <section class="box-typical no-border">
+
+    <%= form_for(@user, url: wizard_path, method: :put, :html =>{ :class => "", style: ""}) do |f| %>
+      
+      <div class="bgcolor-primary  p-y-lg">
+        <h3 class="text-center m-t">Where are you located?</h3>
+        <h6 class="text-center text-white">We'd like to customize your experience.</h6>
+      </div>
+
+      <hr class="m-a-0"/>
+      <br/>
+      <br/>
+      <div class="row">
+        <div class="col-sm-10 col-sm-offset-1">
+          
+          <div class="form-group">
+            <div class="checkbox-detailed block no-margin">
+              <%= f.radio_button :location, "Central America" , :id => "central-america", :checked => true %>
+              <label for="central-america" class="width-100 location_btn">
+              <span class="checkbox-detailed-tbl">
+                <span class="checkbox-detailed-cell">
+                  <span class="checkbox-detailed-title">
+                    <h4 class="no-margin">Central America</h4>
+                  </span>
+                </span>
+              </span>
+              </label>
+            </div>
+
+
+            <div class="checkbox-detailed block no-margin">
+              <%= f.radio_button :location, "North America", :id => "north-america", :checked => true %>
+              <label for="north-america" class="width-100 location_btn">
+              <span class="checkbox-detailed-tbl">
+                <span class="checkbox-detailed-cell">
+                  <span class="checkbox-detailed-title">
+                    <h4 class="no-margin">North America</h4>
+                  </span>
+                </span>
+              </span>
+              </label>
+            </div>
+
+             <div class="checkbox-detailed block no-margin">
+              <%= f.radio_button :location, "South & East Asia Pacific", :id => "south-and-east-asia-pacific", :checked => true %>
+              <label for="south-and-east-asia-pacific" class="width-100 location_btn">
+              <span class="checkbox-detailed-tbl">
+                <span class="checkbox-detailed-cell">
+                  <span class="checkbox-detailed-title">
+                    <h4 class="no-margin">South & East Asia Pacific</h>
+                  </span>
+                </span>
+              </span>
+              </label>
+            </div>
+
+
+            <div class="checkbox-detailed block no-margin">
+              <%= f.radio_button :location, "Eastern Europe", :id => "eastern-europe", :checked => true %>
+              <label for="eastern-europe" class="width-100 location_btn">
+              <span class="checkbox-detailed-tbl">
+                <span class="checkbox-detailed-cell">
+                  <span class="checkbox-detailed-title">
+                    <h4 class="no-margin">Eastern Europe</h4>
+                  </span>
+                </span>
+              </span>
+              </label>
+            </div>
+
+
+            <div class="checkbox-detailed block no-margin">
+              <%= f.radio_button :location, "Asia Pacific", :id => "asia-pacific", :checked => true %>
+              <label for="asia-pacific " class="width-100 location_btn">
+              <span class="checkbox-detailed-tbl ">
+                <span class="checkbox-detailed-cell">
+                  <span class="checkbox-detailed-title">
+                    <h4 class="no-margin">Asia Pacific</h4>
+                  </span>
+                </span>
+              </span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br/>
+      <hr class="m-a-0"/>
+      <div class="bgcolor-grey p-a-lg">
+        <div class="row">
+          <div class="col-md-8 col-md-offset-2">
+            <%= f.submit "Save and Next", class: "btn btn-rounded btn-primary btn-block" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+      </section>
+    </div>
+  </div>
+</div>
+<br/>
+<br/>
+<br/>
+  
+
+
+<script>
+  $(function(){
+    $("button.location_btn").click(function(){
+      $(this).parent().find("input[type='radio']").click()
+    })
+  })
+</script>
+

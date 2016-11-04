@@ -1,0 +1,139 @@
+<div class="nested-fields">
+
+  <div class="row form-group">
+    <div class="col-md-6">
+      <%= term.label :description %>
+      <%= term.text_field :description, :class => 'form-control' %>
+    </div>
+
+    <div class="col-md-6">
+      <%= term.label :security %>
+      <%= term.select :security, options_for_select(TermSheet::SECURITY_DATA), :class => 'form-control' %>
+    </div>
+  </div>
+
+  <div class="row form-group">
+    <div class="col-md-6">
+      <%= term.label :automatic_conversion %>
+      <%= term.select :automatic_conversion, options_for_select(TermSheet::AUTOMIATIC_CONVERSION), :class => 'form-control' %>
+    </div>
+
+    <div class="col-md-6">
+      <%= term.label :interest_rate %>
+      <%= term.text_field :interest_rate, :class => 'form-control' %>
+    </div>
+  </div>
+
+  <div class="row form-group">
+    <div class="col-md-6">
+      <%= term.label :interest_payments %>
+      <%= term.text_field :interest_payments, :class => 'form-control' %>
+    </div>
+
+    <div class="col-md-6">
+      <%= term.label :maturity_date %>
+      <%= term.text_field :maturity_date, :class => 'form-control datetimepicker4' %>
+    </div>
+  </div>
+
+  <div class="row form-group">
+    <div class="col-md-6">
+      <%= term.label :conversion_discount %>
+      <%= term.text_field :conversion_discount, :class => 'form-control' %>
+    </div>
+
+    <div class="col-md-6">
+      <%= term.label :conversion_cap %>
+      <%= term.text_field :conversion_cap, :class => 'form-control' %>
+    </div>
+  </div>
+
+  <div class="row form-group">
+    <div class="col-md-6">
+      <%= term.label :optional_conversion %>
+      <%= term.text_field :optional_conversion, :class => 'form-control' %>
+    </div>
+
+    <div class="col-md-6">
+      <%= term.label :redemption_option %>
+      <%= term.text_field :redemption_option, :class => 'form-control' %>
+    </div>
+  </div>
+
+
+  <div class="row form-group">
+    <div class="col-md-6">
+      <%= term.label :min_investment_for_vestedAngels %>
+      <%= term.text_field :min_investment_for_vestedAngels, :class => 'form-control' %>
+    </div>
+
+    <div class="col-md-6">
+      <%= term.label :min_Raise_through_vestedAngels %>
+      <%= term.text_field :min_Raise_through_vestedAngels, :class => 'form-control' %>
+    </div>
+  </div>
+
+
+  <div class="row form-group">
+    <div class="col-md-6">
+      <%= term.label :max_raise_through_vestedAngels %>
+      <%= term.text_field :max_raise_through_vestedAngels, :class => 'form-control' %>
+    </div>
+
+    <div class="col-md-6">
+      <%= term.label :maximum_fund_investors %>
+      <%= term.text_field :maximum_fund_investors, :class => 'form-control' %>
+    </div>
+  </div>
+
+
+  <div class="row form-group">
+    <div class="col-md-6">
+      <%= term.label :management_fee %>
+      <%= term.text_field :management_fee, :class => 'form-control' %>
+    </div>
+
+    <div class="col-md-6">
+      <%= term.label :maximum_fund_investors %>
+      <%= term.text_field :maximum_fund_investors, :class => 'form-control' %>
+    </div>
+  </div>
+
+
+  <div class="row form-group">
+    <div class="col-md-6">
+      <%= term.label :carried_interest %>
+      <%= term.text_field :carried_interest, :class => 'form-control' %>
+    </div>
+
+    <div class="col-md-6">
+      <%= term.label :administrative_cost %>
+      <%= term.text_field :administrative_cost, :class => 'form-control' %>
+    </div>
+  </div>
+
+
+  <div class="row form-group">
+    <div class="col-md-6">
+      <%= term.label :target_closing_date %>
+      <%= term.text_field :target_closing_date, :class => 'form-control datetimepicker4' %>
+    </div>
+
+     <div class="col-md-6">
+      <%= term.label :other %>
+      <%= term.text_field :other, :class => 'form-control' %>
+    </div>
+  </div>
+
+</div>
+
+
+<script type="text/javascript">
+  $(function() {
+    $('.datetimepicker4').datetimepicker({
+      format : "DD-MM-YYYY"
+    });
+  });
+
+
+</script>

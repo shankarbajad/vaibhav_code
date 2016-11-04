@@ -1,0 +1,46 @@
+<section>
+  <h6>MEDIA</h6>
+  
+  <section id="nav-documents">
+    <h5>Documents</h5>
+    <p class="text-muted">
+      <% if @investment.investment_documents %>
+        <% @investment.investment_documents.each do |investment_document| %>
+          <%= link_to investment_document.document.file.filename, investment_document.document.url  if investment_document.present? %>
+          <br/>
+        <% end %>
+      <% else %>  
+        [add here]
+      <% end %>  
+    </p>
+  </section>
+
+  <section id="nav-media">
+    <h5>Photos</h5>
+    <p class="text-muted">
+      <div class="row  bgcolor-light-grey">
+        <% @investment.investment_photos.each do |investment_photo| %>
+          <div class="col-sm-3">
+            <%= link_to investment_photo.investment_image.url, :target => "_blank" do  %>
+              <%= image_tag investment_photo.investment_image.url, class: "img-rounded", width: "140px" %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </p>
+
+    <h5>Videos</h5>
+    <p class="text-muted">
+      <% if @investment.investment_videos %>
+        <% @investment.investment_videos.each do |investment_video| %>
+          <% if investment_video.link.include?("youtube")%>
+            <iframe width="250" height="250" src='<%= "https://www.youtube.com/embed/#{investment_video.link.split("=").last}" %>'></iframe>
+          <% end %>  
+          <br/>
+        <% end %>
+      <% else %>  
+        [add here]
+      <% end %>  
+    </p>
+  </section>    
+</section>

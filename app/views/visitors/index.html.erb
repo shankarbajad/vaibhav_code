@@ -1,0 +1,26 @@
+<style type="text/css">
+.whatever{ 
+background: url(<%= image_url("public-bg.jpg")%>) no-repeat center center fixed; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+</style>
+<div class="container-row">
+  <div class="row">
+    <div class="col-md-12">
+      
+      <!-- Top Nav -->
+      <%= render 'visitors/top_nav' %>
+
+      <!-- Masthead hero -->
+      <%= render 'visitors/hero_header' %>
+
+      <!-- Featured -->
+      <%#= render 'visitors/featured_investments' %>
+
+    </div>
+  </div>
+</div>
+

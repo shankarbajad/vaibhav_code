@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>VestedWorld</title>    
+    <link rel='shortcut icon' href='../assets/favicon.ico' type='image/x-icon'/ >
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Rails Devise Roles" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Rails Devise Roles" %>">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700|Montserrat:400,700" rel="stylesheet">
+    
+    <%= stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css'%>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => false %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+    <%= javascript_include_tag 'https://www.gstatic.com/charts/loader.js' %>
+    <%= csrf_meta_tags %>
+    <script src="https://select2.github.io/dist/js/select2.full.js"></script>
+  </head>
+
+  <body class="with-side-menu-compact" body data-spy="scroll" data-target=".scrollspy">
+    <%= render 'layouts/header' %>
+    <%#= render 'layouts/side_menu_compact' %>
+    <%= render 'layouts/messages' %>
+    <div class="page-content bgcolor-white p-x-0">  
+      <div class="container-row">
+        <%= yield %>
+      </div>
+    </div>
+
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-58380009-2', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+  </body>
+</html>
+
+
+
+        
+
+            

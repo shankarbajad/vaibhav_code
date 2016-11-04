@@ -1,0 +1,76 @@
+<header class="page-content-header m-b-0 bg-primary" style="background: #0022cc !important;">
+  <div class="container" style="margin-left:100px;">
+    <div class="tbl">
+      <div class="tbl-row">
+        <div class="tbl-cell">
+          <form class="navbar-form navbar-left">
+            <div class="col-md-9">
+              <div class="typeahead__container">
+                <div class="typeahead__field">
+                  <span class="typeahead__query">
+                    <input class="js-typeahead-input"
+                     name="q"
+                     type="search"
+                     autofocus
+                     autocomplete="off"
+                     placeholder="Find Someone"
+                    >
+                  </span>
+                  <span class="typeahead__button">
+                    <button class="btn btn-primary btn-transparent btn-rounded pull-right user-search" type="submit" style="display:none">
+                      Search Companies<span class="m-l fa fa-search"></span>
+                    </button>
+                  </span>
+                </div>               
+              </div>
+            </div>
+            <div class="col-md-3">
+              <select id="typeahead_industry" name="typeahead_industry">
+                <option value="All Industries">All Industries</option>
+                <%@industries.each do |industry|%>                
+                  <option value="<%=industry[0]%>"><%=industry[1]%></option>
+                <%end%>
+              </select>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script type="text/javascript">
+  $(document).ready(function() {    
+    $(".typeahead__dropdown li").click(function(){
+      var location = $(this).text()
+      $.ajax({
+        type: "GET",
+        url: "/users",
+        data: { region: location }
+      });
+    });
+  });
+
+  
+    $(document).on("change", "#typeahead_industry" ,function(){      
+      var industry = this.value
+      $.ajax({
+        type: "GET",
+        url: "/users",
+        data: { industry: industry }
+      });
+    });
+  
+</script> 
+
+<style type="text/css">
+  #typeahead_industry {
+    background: transparent none repeat scroll 0 0;
+    border: 1px solid;
+    border-radius: 5px;
+    color: #fff;
+    margin-top: 16px;
+    padding: 10px;
+  }
+</style>
+

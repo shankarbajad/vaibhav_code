@@ -1,0 +1,16 @@
+  <table width="100%">
+    <tr class="nested-fields">
+    	<td>File Name</td>
+      <td><%= f.file_field :company_image %></td>
+      <td>
+        <%= link_to f.object.company_image.url, :target => "_blank" do %>
+      		<%= image_tag(f.object.company_image.present? ? f.object.company_image.url : "file-img.png", style: "height: 50px; width: auto;") %>
+      	<% end %>
+      </td>
+      <td>
+        <%= link_to_remove_association f, class: "btn btn-sm btn-danger" do %>
+          Delete
+        <% end %>
+      </td>
+    </tr>
+  </table>

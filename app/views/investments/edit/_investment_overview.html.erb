@@ -1,0 +1,18 @@
+<section>
+  <h6>Investment Overview</h6>
+  <!-- Term Sheet -->
+  <div id="nav-terms">
+    <h5 class="bold m-b-0">Term Sheet</h5>
+    <p class="text-muted">Please complete a term sheet.</u></b></p>
+    <div id="term_sheet">
+      <div class="row">
+        <div class="col-sm-12"> 
+          <%= f.fields_for :term_sheet do |term| %>
+            <%= render 'investments/term_sheet', term:term %>
+          <% end %>                
+        </div>
+      </div>        
+    </div>
+  </div>
+</section>
+

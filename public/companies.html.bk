@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Vested World</title>
+
+    <link href="img/favicon.144x144.png" rel="apple-touch-icon" type="image/png" sizes="144x144">
+    <link href="img/favicon.114x114.png" rel="apple-touch-icon" type="image/png" sizes="114x114">
+    <link href="img/favicon.72x72.png" rel="apple-touch-icon" type="image/png" sizes="72x72">
+    <link href="img/favicon.57x57.png" rel="apple-touch-icon" type="image/png">
+    <link href="img/favicon.png" rel="icon" type="image/png">
+    <link href="img/favicon.ico" rel="shortcut icon">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rails Devise Roles</title>
+    <meta name="description" content="Rails Devise Roles">
+    <link rel="stylesheet" media="all" href="/assets/application-851ce994e053ba906d4ee9e28d2c042bb5f9c8f7e57fb319aaa795f82c2d982d.css" data-turbolinks-track="true" />
+    <script src="/assets/application-720c8b0daa2cedea75b80c6e4ca0fef690ffca6922608df6de8c653988c83952.js" data-turbolinks-track="true"></script>
+    <meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="7V7dPteW2D52Kst0zLWJZOgZaNVQt8xddy6oKpgmIgFy14nWR4LzsDFPAfMkd7OJ/iENvh+YezwNxKFoF+78NQ==" />
+    
+  </head>
+
+  <body class="with-side-menu-compact browse">
+    <header class="site-header">
+    <div class="container-fluid">
+        <a href="/" class="site-logo">
+            <img style="width: 50px;" class="hidden-md-down" src="/assets/blue-mark-cf7a0e07c524293352f855c5a477a87ce3fd07462a12eedba4dc1893d7e11580.png" alt="Blue mark" />
+            <img style="width: 150px; margin-left: -15px;" class="hidden-md-down" src="/assets/blue-type-b9529ba65167e705e9b1682d284b1187b7c2addb5580e12f92ff4e3f1945df30.png" alt="Blue type" />
+
+            <img style="width: 50px;" class="hidden-lg-up" src="/assets/blue-mark-cf7a0e07c524293352f855c5a477a87ce3fd07462a12eedba4dc1893d7e11580.png" alt="Blue mark" />
+            <img style="width: 150px; margin-left: -15px;" class="hidden-lg-up" src="/assets/blue-type-b9529ba65167e705e9b1682d284b1187b7c2addb5580e12f92ff4e3f1945df30.png" alt="Blue type" />
+        </a>
+        <button class="hamburger hamburger--htla">
+            <span>toggle menu</span>
+        </button>
+        <div class="site-header-content">
+            <div class="site-header-content-in">
+            <a href="/faq">FAQ</a>&nbsp;&nbsp;&nbsp;
+            <a href="/privacy_policy">Privacy Policy</a>
+                <div class="site-header-shown">
+
+                    <div class="dropdown user-menu">
+                        <button class="dropdown-toggle" id="dd-user-menu" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img src="/assets/avatar-1-128-9f54c052547b0f61da90ba3bc1aee0f81a907b8c4ed86f1622951613501742cb.png" alt="Avatar 1 128" />
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dd-user-menu">
+                            
+                            <a class="dropdown-item" href="/users/edit">
+	<span class="font-icon glyphicon glyphicon-cog"></span>Edit Account
+</a><a class="dropdown-item" rel="nofollow" data-method="delete" href="/users/sign_out">
+	<span class="font-icon glyphicon glyphicon-user"></span>Logout
+</a>
+  <a class="dropdown-item" href="/companies/new">
+    <span class="font-icon glyphicon glyphicon-plus"></span>Create a Company
+</a>
+  <a class="dropdown-item" href="/investments/new">
+    <span class="font-icon glyphicon glyphicon-plus"></span>Create a Investment
+</a>
+
+ <div class="dropdown-divider"></div>
+
+<a class="dropdown-item" href="/companies">
+	<span class="font-icon glyphicon glyphicon-th"></span>Companies
+</a>
+<a class="dropdown-item" href="/investments">
+	<span class="font-icon glyphicon glyphicon-signal"></span>Investments
+</a>
+<a class="dropdown-item" href="/users">
+	<span class="font-icon glyphicon glyphicon-comment"></span>Community
+</a>
+
+
+                        </div>
+                    </div>
+
+                    <button type="button" class="burger-right">
+                        <i class="font-icon-menu-addl"></i>
+                    </button>
+                </div><!--.site-header-shown-->
+
+                <div class="mobile-menu-right-overlay"></div>
+            </div><!--site-header-content-in-->
+        </div><!--.site-header-content-->
+    </div><!--.container-fluid-->
+</header><!--.site-header-->
+
+    <div class="mobile-menu-left-overlay"></div>
+<div class="mobile-menu-left-overlay"></div>
+<nav class="side-menu side-menu-compact">
+ <!--  <div class="side-menu-avatar">
+    <div class="avatar-preview avatar-preview-64">
+        <img src="/assets/avatar-1-128-9f54c052547b0f61da90ba3bc1aee0f81a907b8c4ed86f1622951613501742cb.png" alt="Avatar 1 128" />
+    </div>
+  </div> -->
+  <ul class="side-menu-list">
+
+      <!-- user settings -->
+      <!-- <li class="">
+        <a href="/users/edit">
+          <i class="fa fa-cogs"></i>
+          <span class="lbl">Settings</span>
+</a>      </li>
+ -->
+      <!-- browse view pages -->
+      
+      <li class="">
+        <a href="/users">
+          <i class="fa fa-globe"></i>
+          <span class="lbl">Community</span>
+</a>      </li>
+
+      <li class="">
+        <a href="/investments">
+          <i class="fa fa-bank"></i>
+          <span class="lbl">Investments</span>
+</a>      </li>
+
+      <li class="">
+        <a href="/companies">
+          <i class="fa fa-building"></i>
+          <span class="lbl">Companies</span>
+</a>      </li>
+
+      <!-- LOG OUT -->
+
+      <li class="coral">
+        <a rel="nofollow" data-method="delete" href="/users/sign_out">
+          <i class="fa fa-circle-o-notch"></i>
+          <span class="lbl">Logout</span>
+</a>      </li>
+
+
+    <!-- IF NOT SIGNED IN -->
+
+  </ul>
+    
+</nav>
+<!--.side-menu-->
+
+
+
+
+    <!-- <li></li> -->
+
+
+  
+    <div class="page-content bgcolor-white">  
+      <div class="container-row">
+        
+
+
+        <div class="container p-y-lg mobile-center">
+  <!-- <div class="row hero">
+    <div class="col-sm-8 col-lg-6 ">
+      <h1 class="cover-heading">Our Ecosystem</h1>
+        <p class="lead">
+        Earn competitive retuns while driving meaningful impact in the last economic frontiers. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+      </p>
+      </div>
+    </div>
+  </div> -->
+</div>
+
+
+
+<div class="container-row bgcolor-light-grey">
+  <header class="page-content-header m-b-0 bg-primary" style="background: #0022cc !important;">
+  <div class="container">
+    <div class="tbl">
+      <div class="tbl-row">
+        <div class="tbl-cell">
+          <form class="navbar-form navbar-left">
+            <div class="typeahead__container">
+              <div class="typeahead__field">
+                <span class="typeahead__query">
+                  <input class="js-typeahead-input"
+                   name="q"
+                   type="search"
+                   autofocus
+                   autocomplete="off"
+                   placeholder="Find a Company"
+                  >
+                  <input type="hidden" name="region" class="select-region">
+                </span>
+                <span class="typeahead__button">
+                  <button class="btn btn-primary btn-transparent btn-rounded pull-right company-search" type="submit">
+                    Search Companies<span class="m-l fa fa-search"></span>
+                  </button>
+                </span>
+              </div>
+            </div>
+          </form>
+        </div><!-- 
+        <div class="col-xl-12">
+          <div class="tbl info-tbl">
+            <div class="tbl-row">
+              <div class="tbl-cell">
+                <a class="btn btn-primary btn-transparent btn-rounded pull-right" href="http://vestedworld.com/entrepreneur-questionnaire/">
+                  Apply for Funding <i class="fa fa-long-arrow-right m-l"></i>
+</a>                <p class="title"></p>
+                <p></p>
+              </div>
+            </div>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</header>
+
+  <div class="container">
+  	<br/><br/>
+    <div class="row">
+  
+
+<script>
+
+  var data = {
+      "sub_saharan_africa": ["ABC", "dsfsdfsdf", "sdf", "sdfsdfsd", "sdfsdfsddfsd"],
+      "south_asia": ["xxxxxxxxxxx"],
+  };
+
+  typeof $.typeahead === 'function' && $.typeahead({
+    input: ".js-typeahead-input",
+    minLength: 1,
+    maxItem: 15,
+    order: "asc",
+    hint: true,
+    group: {
+      template: "{{group}} beers!"
+    },
+    maxItemPerGroup: 5,
+    backdrop: {
+      "background-color": "#fff"
+    },
+    href: "/companies?q={{display}}?filter="+$('input.select-region').val(),
+    dropdownFilter: "All Regions",
+    emptyTemplate: 'No result for "{{query}}"',
+    source: {
+      "Sub-Saharan Africa": {
+        data: data.sub_saharan_africa
+      },
+      "South Asia": {
+        data: data.south_asia
+      },
+    },
+    callback: {
+      onClickAfter: function (node, a, item, event) {
+
+        // href key gets added inside item from options.href configuration
+        //alert(item.href);
+
+      }
+    },
+    debug: false
+  });
+
+</script>
+</div>
+  </div>
+</div>
+
+
+      </div>
+    </div>
+  </body>
+</html>

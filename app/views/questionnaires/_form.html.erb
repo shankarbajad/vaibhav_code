@@ -1,0 +1,562 @@
+<%= form_for [@company, @questionnaire] do |f| %>
+  <div class="form-group">
+    <label for="exampleInputName2">What's your first name?*</label>
+    <%= f.text_field :first_name ,class: 'form-control'%>
+  </div><br>
+  <div class="form-group">
+    <label for="exampleInputName2">What's your family name?*</label>
+    <%= f.text_field :family_name ,class: 'form-control'%>
+  </div><br>
+  <div class="form-group">
+    <label for="exampleInputEmail2">And what's your email address?*</label>
+    <%= f.email_field :email ,class: 'form-control'%>
+  </div><br>
+  <div class="form-group">
+    <label for="exampleInputEmail2">Confirm Email*</label>
+    <%= f.email_field :email_confirmation, value: f.object.email ,class: 'form-control'%>
+  </div><br>
+  <div class="form-check">
+    <label>Are you a founder or co-founder?*</label>
+      <%= f.radio_button :founder, 'Yes', :checked => true %>Yes<br>
+      <%= f.radio_button :founder, 'No' %>No <br>
+  </div><br>
+
+  <div class="form-group">
+    <label> COMPANY OVERVIEW<hr>
+      What's the name of your company?*
+    </label>
+    <%= f.text_field :company_name, value: f.object.company_name ? f.object.company_name : @company.try(:name), class: 'form-control'%>
+  </div><br>
+
+  <div class="form-group">
+    <label>Please provide a link to your company's website.*</label>
+    <%= f.url_field :company_website, value: f.object.company_website ? f.object.company_website : @company.try(:company_website), class: "form-control", placeholder: "http://" %>
+  </div><br>
+
+  <div class="form-group">
+    <label>What year was your company founded?*</label>
+    <%= f.text_field :year_founded, value: f.object.year_founded ? f.object.year_founded : @company.try(:founded), class: "form-control" %>
+  </div><br>
+
+  <div class="form-group">
+    <label>Please give us your elevator pitch*<br>
+    Aim for 50 words or less</label>
+    <%= f.text_area :elevator_pitch ,class: "form-control", row: "10", onkeyup: "countChar(this)"%>
+    <label>0 of <span class="count-word">400</span> max characters</label>
+  </div><br>
+
+  <div class="form-group">
+    <label>What’s new, interesting or different about what your company will do?*</label>
+    <%= f.text_area :interesting_why, class: "form-control", row: "10" %>
+  </div><br>
+
+  <div class="form-group">
+    <label>What was your motivation for starting this company?*</label>
+    <%= f.text_area :motivation, class: "form-control", row: "10" %>
+  </div><br>
+
+  <div class="form-check">
+    <label>How far along is your product or service?*</label>
+    <%= f.radio_button :product_stage, 'Idea', :checked => true %> Idea <br>
+    <%= f.radio_button :product_stage, 'Prototype' %> Protoype <br>
+    <%= f.radio_button :product_stage, 'In market' %> In market <br>
+    <%= f.radio_button :product_stage, 'Growth stage' %> Growth stage <br>
+  </div><br>
+
+  <div class="form-check">
+    <label>How far along is your company financially?*</label>
+    <%= f.radio_button :financial_stage, 'Idea',:checked => true %> Pre-revenue <br>
+    <%= f.radio_button :financial_stage, 'Post-revenue (but not cash-flow positive)' %> Post-revenue (but not cash-flow positive) <br>
+    <%= f.radio_button :financial_stage, 'Cash-flow positive (but with negative earnings)' %> Cash-flow positive (but with negative earnings)<br>
+    <%= f.radio_button :financial_stage, 'Profitable' %> Profitable <br>
+  </div><br>
+
+  <div class="form-group">
+    <label>What is your current monthly "burn rate" (i.e., your average monthly total cash outlay, excluding major one-time, non-recurring investments)?*<br>
+    Please use U.S.$ when possible</label>
+    <%= f.text_field :burn_rate, class: "form-control"%>
+  </div><br>
+
+  <div class="form-group">
+    <label>What was your last month's revenue?*<br>
+    Please use U.S.$ when possible</label>
+     <%= f.text_field :revenue, class: "form-control"%>
+  </div><br>
+  <%= f.hidden_field :company_id, value: params[:company_id]%>
+
+  <div class="form-group">
+    <label>What do you expect this month's revenue to be?*<br>
+    Please use U.S.$ when possible</label>
+    <%= f.text_field :current_month_revenue, class: "form-control"%>
+  </div><br>
+
+  <div class="form-check">
+    <label>Please estimate your current EBITDA (earnings before interest, tax, depreciation & amortization) margin*</label>
+    <%= f.radio_button :ebitda_estimate, '0 - 10%', :checked => true %> 0 - 10%<br>
+    <%= f.radio_button :ebitda_estimate, '10 - 20%' %> 10 - 20%<br>
+    <%= f.radio_button :ebitda_estimate, '20 - 30%' %> 20 - 30%<br>
+    <%= f.radio_button :ebitda_estimate, '30 - 40%' %> 30 - 40%<br>
+    <%= f.radio_button :ebitda_estimate, '40 - 50%' %> 40 - 50%<br>
+    <%= f.radio_button :ebitda_estimate, '50 - 60%' %> 50 - 60%<br>
+    <%= f.radio_button :ebitda_estimate, '>60%' %> >60%<br>
+  </div><br>
+
+  <div class="form-group">
+    <label>What are the three greatest risks to the success of your business?*</label>
+     <%= f.text_area :risks_overview, class: "form-control", row: "10" %>
+  </div><br>
+
+  <div class="form-group">
+    <label>What is your “core competency”—The thing you need to do better than everything and everyone else in order to succeed?*</label>
+    <%= f.text_area :core_competency, class: "form-control" , row: "10" %>
+  </div><br>
+
+  <div class="form-group">
+    <label>What is the greatest challenge to your business arising from your location in an emerging market?*<br>
+    For example, infrastructure, “last-mile” distribution, human-capital challenges, etc.</label>
+      <%= f.text_area :greatest_challenge, class: "form-control", row: "10" %>
+  </div><br>
+
+  <div class="form-group">
+    <label>How does this challenge provide an opportunity?*</label>
+    <%= f.text_area :opportunity, class: "form-control",row: "10" %>
+  </div><br>
+
+  <div class="form-group">
+    <label>What single item of cost are you most focused on controlling?*</label>
+    <%= f.text_area :critical_cost, class: "form-control", row: "10" %>
+  </div><br>
+
+  <div class="form-group">
+    <label>What is the worst case scenario for your business and how will you avoid this scenario?*</label>
+    <%= f.text_area :worst_case_scenario, class: "form-control", row: "10" %>
+  </div><br>
+
+  <div class="form-check">
+    <label>Broadly speaking, is your company business-to-business ("B2B") or business-to-consumer ("B2C")?*</label>
+    <%= f.radio_button :company_business_type, 'B2B',:checked => true %> B2B<br>
+    <%= f.radio_button :company_business_type, 'B2C' %> B2C<br>
+    <%= f.radio_button :company_business_type, 'Other' %> Other<br>
+  </div><br>
+
+  <div class="form-group">
+    <label>Who are your customers?*<br>
+    Please describe in as much detail as you can (for example, any of the following that apply:<br>
+    age range, location, gender, profession, industry, purchasing behavior, etc.)</label>
+    <%= f.text_area :customers_overview, class: "form-control", row: "10" %>
+  </div><br>
+
+  <div class="form-group">
+    <label>In what country or countries are your customers primarily located?*</label>
+    <%= f.text_area :customer_location, class: "form-control" , row: "10" %>
+  </div><br>
+
+  <div class="form-group">
+    <label for="comment">In lieu of your product or service, what are your customers using or buying right now?*</label>
+    <%= f.text_area :product_service, class: "form-control" , row: "10" %>
+  </div><br>
+
+  <div class="form-group">
+    <label for="comment">Why will your customers buy from YOU?*</label>
+    <%= f.text_area :customer_motivation, class: "form-control", row: "10" %>
+  </div><br>
+
+  <div class="form-check">
+    <label>Which characteristic do you think primarily drives your customers’ purchasing decision?*</label>
+    <%= f.radio_button :customer_drivers, 'Price', :checked => true %> Price <br>
+    <%= f.radio_button :customer_drivers, 'Quality' %> Quality <br>
+    <%= f.radio_button :customer_drivers, 'Brand' %> Brand <br>
+    <%= f.radio_button :customer_drivers, 'Network effect' %> Network effect <br>
+    <%= f.radio_button :customer_drivers, 'Tradition' %> Tradition <br>
+    <%= f.radio_button :customer_drivers, 'Other' %> Other <br>
+  </div><br>
+
+  <div class="form-group">
+    <label>How will you get your product or service into the hands of your customers (i.e., distribution channel)?*<br>Please provide details on how this works</label>
+    <%= f.text_field :distribution_channel, class: "form-control"%>
+  </div><br>
+
+  <div class="form-check">
+    <label>Right now, who has more power: your company, or your distributors?*</label>
+    <%= f.radio_button :distribution_power, 'Us',:checked => true%> Us <br>
+    <%= f.radio_button :distribution_power, 'Our distributions'%> Our distributions <br>
+  </div><br>
+
+  <div class="form-check">
+    <label>Right now, who has more power: your company, or your suppliers?*</label>
+    <%= f.radio_button :supply_power ,'Us',:checked => true %> Us <br>
+    <%= f.radio_button :supply_power ,'Our suppliers' %> Our suppliers <br>
+  </div><br>
+
+  <div class="form-group">
+    <label for="comment">Please describe your pricing strategy*</label>
+    <%= f.text_area :pricing_strategy, class: "form-control", row: "10" %>
+  </div><br>
+
+  <div class="form-group">
+    <label for="comment">Early-stage companies often evolve on their way to becoming later-stage companies. How might your company's product or service be used differently than expected? What other industry might be interested in your product or service?*</label>
+    <%= f.text_area :company_evolution, class: "form-control",  row: "10" %>
+  </div><br>
+
+  <div class="form-group">
+    <label for="comment">
+      YOUR MANAGEMENT TEAM
+      <hr>
+      How did you meet your co-founder, and/or your first key management hire(s)?*
+    </label>
+    <%= f.text_area :cofounder_story, class: "form-control",  row: "10" %>
+  </div><br>
+
+  <div class="form-group">
+    <label for="comment">What skills do you have that your co-founder(s) or first key management hire(s) does not have?*</label>
+    <%= f.text_area :skills_mix_1, class: "form-control", row: "10" %>
+  </div><br>
+
+  <div class="form-group">
+    <label for="comment">What skills does your co-founder(s) or first key management hire(s) have that you do not have?*</label>
+    <%= f.text_area :skills_mix_2, class: "form-control",  row: "10" %>
+  </div><br>
+
+  <div class="form-check">
+    <label>What is the current status of your management team?*</label>
+    <%= f.radio_button :management_team_status,'We will hire someone for a key role(s) once we’ve raised funding',:checked => true  %>We will hire someone for a key role(s) once we’ve raised funding<br>
+    <%= f.radio_button :management_team_status, 'It’s just me' %>It’s just me<br>
+    <%= f.radio_button :management_team_status, 'We have all of the key roles filled' %>We have all of the key roles filled<br>
+    <%= f.radio_button :management_team_status, 'It’s just me and my cofounder(s)' %>It’s just me and my cofounder(s)<br>
+  </div><br>
+  
+  <div class="form-checkbox">    
+    <label>Which of the following key roles are filled in your management team?*<br>
+    Please pick all that apply</label>
+    <%= f.radio_button :management_team_filled_roles,'Product Development',:checked => true %> Product Development<br>
+    <%= f.radio_button :management_team_filled_roles, 'Sales and Marketing' %> Sales and Marketing<br>
+    <%= f.radio_button :management_team_filled_roles, 'Finance' %> Finance<br>
+    <%= f.radio_button :management_team_filled_roles, 'Operations' %> Operations<br>
+    <%= f.radio_button :management_team_filled_roles, 'Business Development' %> Business Development<br>
+    <%= f.radio_button :management_team_filled_roles, 'Technology Lead' %> Technology Lead<br>
+    <%= f.radio_button :management_team_filled_roles, 'Supply Chain' %> Supply Chain
+  </div><br>
+
+  <div class="form-group">
+    <label for="exampleInputName2">What country is the management team based in?*</label>
+    <%= f.text_field :management_city_location, class: "form-control" %>
+  </div><br>
+
+  <div class="form-group">
+    <label>How is your past experience relevant to the problem your company is solving?*</label>
+    <%= f.radio_button :past_experience_relevancy,'I can’t believe no one else spotted this opportunity; we are getting up to speed as fast as we can!',:checked => true %> I can’t believe no one else spotted this opportunity; we are getting up to speed as fast as we can!<br>
+    <%= f.radio_button :past_experience_relevancy,'We are recognized industry experts'%> We are recognized industry experts<br>
+    <%= f.radio_button :past_experience_relevancy,'It’s a new industry but we’ve seen the same problem before in a different context'%> It’s a new industry but we’ve seen the same problem before in a different context<br>
+    <%= f.radio_button :past_experience_relevancy,'It’s a new industry but the problem aligns with our strengths as a management team'%> It’s a new industry but the problem aligns with our strengths as a management team 
+  </div><br>
+
+  <div class="form-check">
+    <label>How much time is your management team spending on the idea?*</label>
+    <%= f.radio_button :management_spending, 'We’re testing the waters on an idea',:checked => true%> We’re testing the waters on an idea<br> 
+    <%= f.radio_button :management_spending, 'The co-founders are full time, but everyone else is part time'%> The co-founders are full time, but everyone else is part time<br>
+    <%= f.radio_button :management_spending, 'The entire management team is full time'%> The entire management team is full time<br>
+    <%= f.radio_button :management_spending, 'We’re only working on this in our spare time until it makes sense to quit our day jobs'%> We’re only working on this in our spare time until it makes sense to quit our day jobs
+  </div><br>
+
+  <div class="form-check">
+    <label>How many full-time employees have you hired?*</label>
+    <%= f.radio_button :full_time_employees, 'None',:checked => true%> None<br>
+    <%= f.radio_button :full_time_employees, '1 - 5'%> 1 - 5<br>
+    <%= f.radio_button :full_time_employees, '5 - 10'%> 5 - 10<br>
+    <%= f.radio_button :full_time_employees, '>10'%> >10 
+  </div><br>
+
+  <div class="form-check">
+    <label>How much experience does your management team have working at early-stage companies?*</label>
+    <%= f.radio_button :early_stage_experience, 'We’ve just graduated from school',:checked => true%> We’ve just graduated from school<br>
+    <%= f.radio_button :early_stage_experience,'Each of us has worked at a startup before'%> Each of us has worked at a startup before<br>
+    <%= f.radio_button :early_stage_experience, 'We mainly have experience in larger companies'%> We mainly have experience in larger companies<br>
+    <%= f.radio_button :early_stage_experience,'We’ve successfully built multiple companies'%> We’ve successfully built multiple companies<br>
+    <%= f.radio_button :early_stage_experience, 'One of us has some experience at a startup'%> One of us has some experience at a startup<br>
+  </div><br>
+
+  <div class="form-check">
+    <label>What is the management team’s relationship to the country you operate in?*</label>
+    <%= f.radio_button :management_team_relationship, 'We’re transplants but have lived here for some time',:checked => true %> We’re transplants but have lived here for some time<br>
+    <%= f.radio_button :management_team_relationship,'We’re from here' %> We’re from here<br>
+    <%= f.radio_button :management_team_relationship,'We’re from the region' %> We’re from the region<br>
+    <%= f.radio_button :management_team_relationship, 'We came to the area specifically to launch our business' %> We came to the area specifically to launch our business<br>
+  </div><br>
+
+  <div class="form-check">
+    <label>How much has the management team invested into the company?*</label>
+    <%= f.radio_button :management_team_invest,'We’ve had early successes, in incubators, accelerators or with grants and other sources of funding, so we didn’t need to invest our own capital in the business', :checked => true %> We’ve had early successes, in incubators, accelerators or with grants and other sources of funding, so we didn’t need to invest our own capital in the business<br>
+    <%= f.radio_button :management_team_invest,'We didn’t have much to contribute financially, but our network (including friends and family) has helped us get started'%> We didn’t have much to contribute financially, but our network (including friends and family) has helped us get started<br>
+    <%= f.radio_button :management_team_invest,'We haven’t needed much capital yet'%> We haven’t needed much capital yet<br>
+    <%= f.radio_button :management_team_invest,'The sacrifice has been considerable—we gave up great jobs and put everything we had into the business'%> The sacrifice has been considerable—we gave up great jobs and put everything we had into the business<br> 
+  </div><br>
+
+  <div class="form-group">
+    <label for="exampleInputName2">How much per month does the management team earn in salary and other benefits?*<br>
+    Please enter in U.S. $ equivalent</label>
+    <%= f.number_field :management_earnings, class: "form-control"%>
+  </div><br>
+
+  <div class="form-group">
+    <label for="comment">If you weren't working on this business, what would you be doing?*</label>
+    <%= f.text_area :not_working_with_business, class: "form-control", row: "10"%>
+  </div><br>
+  
+  <div class="form-group">
+    <label for="comment">WORK & MANAGEMENT STYLE<hr>What are you most passionate about?*</label>
+    <%= f.text_area :management_passionate, class: "form-control", row: "10"%>
+  </div><br>
+
+  <div class="form-checkbox">    
+
+    <label>Of the following attributes, which are your key strengths?*<br>Please pick three</label>
+    
+    <%= check_box_tag "questionnaire[key_strengths][]", "Leadership ability", checked("key_strengths", "Leadership ability")%> Leadership ability<br>
+    <%= check_box_tag "questionnaire[key_strengths][]", "Technical competency", checked("key_strengths", "Technical competency")%> Technical competency<br>
+    <%= check_box_tag "questionnaire[key_strengths][]", "Flexibility", checked("key_strengths", "Flexibility")%> Flexibility<br>
+    <%= check_box_tag "questionnaire[key_strengths][]", "Long-term vision", checked("key_strengths", "Long-term vision")%> Long-term vision<br>
+    <%= check_box_tag "questionnaire[key_strengths][]", "Salesmanship", checked("key_strengths", "Salesmanship")%> Salesmanship<br>
+    <%= check_box_tag "questionnaire[key_strengths][]", "Execution", checked("key_strengths", "Execution")%> Execution<br>
+    <%= check_box_tag "questionnaire[key_strengths][]", "Pragmatism", checked("key_strengths", "Pragmatism")%> Pragmatism<br>
+    <%= check_box_tag "questionnaire[key_strengths][]", "Optimism", checked("key_strengths", "Optimism")%> Optimism<br>
+  </div><br>
+
+  <div class="form-checkbox">
+    <label>Of the following attributes, which are areas where you have the most room for improvement?*<br>
+    Please pick three.</label>
+    <%= check_box_tag "questionnaire[improvement_strength][]", "Leadership ability", checked("improvement_strength", "Leadership ability")%> Leadership ability<br>
+    <%= check_box_tag "questionnaire[improvement_strength][]", "Technical competency", checked("improvement_strength", "Technical competency")%> Technical competency<br>
+    <%= check_box_tag "questionnaire[improvement_strength][]", "Flexibility", checked("improvement_strength", "Flexibility")%> Flexibility<br>
+    <%= check_box_tag "questionnaire[improvement_strength][]", "Long-term vision", checked("improvement_strength", "Long-term vision")%> Long-term vision<br>
+    <%= check_box_tag "questionnaire[improvement_strength][]", "Salesmanship", checked("improvement_strength", "Salesmanship")%> Salesmanship<br>
+    <%= check_box_tag "questionnaire[improvement_strength][]", "Execution", checked("improvement_strength", "Execution")%> Execution<br>
+    <%= check_box_tag "questionnaire[improvement_strength][]", "Pragmatism", checked("improvement_strength", "Pragmatism")%> Pragmatism<br>
+    <%= check_box_tag "questionnaire[improvement_strength][]", "Optimism", checked("improvement_strength", "Optimism")%> Optimism<br>
+  </div><br>
+
+  <div class="form-check">
+    <label>TARGET MARKET<hr>Which industry does your company belong to?*</label>
+    <%= f.radio_button :company_industry, 'Consumer Products' %> Consumer Products<br>
+    <%= f.radio_button :company_industry, 'Agribusiness' %>  Agribusiness<br>
+    <%= f.radio_button :company_industry, 'Manufacturing' %> Manufacturing<br>
+    <%= f.radio_button :company_industry, 'Media' %> Media<br>
+    <%= f.radio_button :company_industry, 'Business & Consumer Services' %> Business & Consumer Services<br>
+    <%= f.radio_button :company_industry, 'Technology' %> Technology<br>
+    <%= f.radio_button :company_industry, 'Financial Services' %> Financial Services<br>
+    <%= f.radio_button :company_industry, 'Healthcare' %> Healthcare<br>
+    <%= f.radio_button :company_industry, 'Energy' %> Energy 
+  </div><br>
+
+  <div class="form-group">
+    <label for="country">What country or countries do you primarily operate in?*</label>    
+    <%= f.text_area :primarily_operate_country, class: "form-control", row: "10"%>
+  </div><br>
+
+  <div class="form-check">
+    <label>What is the current market acceptance of your product or service?*</label>    
+    
+    <%= f.radio_button :market_acceptance, 'We have a concept under development' %>  We have a concept under development<br>
+    <%= f.radio_button :market_acceptance, 'We’ve gone mainstream and command a meaningful portion of our target market' %>  We’ve gone mainstream and command a meaningful portion of our target market<br>
+    <%= f.radio_button :market_acceptance, 'We’re breaking into some of the bigger channels, but we’re not mainstream yet' %>  We’re breaking into some of the bigger channels, but we’re not mainstream yet<br>
+    <%= f.radio_button :market_acceptance, 'We have a beta product that’s being used by friends and family' %>  We have a beta product that’s being used by friends and family<br>
+    <%= f.radio_button :market_acceptance, 'We’re focused on early adopters right now' %>  We’re focused on early adopters right now 
+  </div><br>
+
+   <div class="form-check">
+    <label>How do your target customers feel about experimentation and switching to different products or services?*</label>
+    <%= f.radio_button :customers_experiment, 'It’s an important purchase, so they take their time and think hard about it' %> It’s an important purchase, so they take their time and think hard about it<br>
+    <%= f.radio_button :customers_experiment, 'My customers are constantly switching and have very little allegiance to a specific provider' %> My customers are constantly switching and have very little allegiance to a specific provider<br>
+    <%= f.radio_button :customers_experiment, 'They only make the purchasing decision once in a while, but will switch relatively easily if the value proposition is right' %> They only make the purchasing decision once in a while, but will switch relatively easily if the value proposition is right<br>
+    <%= f.radio_button :customers_experiment, 'It cost a lot to switch from one product to another, so they don’t switch that readily (or often)' %> It cost a lot to switch from one product to another, so they don’t switch that readily (or often)<br>
+    <%= f.radio_button :customers_experiment, 'They make the purchase decision often, and constantly try new things (but always come back to what they like best' %> They make the purchase decision often, and constantly try new things (but always come back to what they like best)
+  </div><br>
+
+  <div class="form-check">  
+    <label>What is the current size of your target market?*<br>Please use U.S.$ equivalent</label>
+    <%= f.radio_button :market_size, '0 - $200 million' %> 0 - $200 million<br>
+    <%= f.radio_button :market_size, '$200 - $400 million' %> $200 - $400 million<br>
+    <%= f.radio_button :market_size, '$400 - $600 million' %> $400 - $600 million<br>
+    <%= f.radio_button :market_size, '$600 - $800 million' %> $600 - $800 million<br>
+    <%= f.radio_button :market_size, '$800 - $1,000 million' %> $800 - $1,000 million<br>
+    <%= f.radio_button :market_size, '> $1.0 Billion' %> > $1.0 Billion<br>
+    <%= f.radio_button :market_size, ' Other' %>  Other<br>
+  </div>
+
+  <div class="form-check">    
+    <label>What will the size of your target market be in 5 years?*<br>Please use U.S.$ equivalent</label>
+    <%= f.radio_button :market_size_in_5_year, '0 - $200 million' %> 0 - $200 million<br>
+    <%= f.radio_button :market_size_in_5_year, '$200 - $400 million' %> $200 - $400 million<br>
+    <%= f.radio_button :market_size_in_5_year, '$400 - $600 million' %> $400 - $600 million<br>
+    <%= f.radio_button :market_size_in_5_year, '$600 - $800 million' %> $600 - $800 million<br>
+    <%= f.radio_button :market_size_in_5_year, '$800 - $1,000 million' %> $800 - $1,000 million<br>
+    <%= f.radio_button :market_size_in_5_year, '> $1.0 Billion' %> > $1.0 Billion<br>
+    <%= f.radio_button :market_size_in_5_year, 'Other' %>  Other<br>
+  </div>
+  <div class="form-check">
+    <label>How did you determine these numbers?*</label>   
+    
+    <%= f.radio_button :determine_numbers, 'Our own research' %> Our own research<br>
+    <%= f.radio_button :determine_numbers, 'Research we paid an outside consultant to conduct' %> Research we paid an outside consultant to conduct<br>
+    <%= f.radio_button :determine_numbers, 'Freely available from a outside consultant' %> Freely available from a outside consultant<br>
+    <%= f.radio_button :determine_numbers, 'It`s a best guess' %> It's a best guess<br>
+  </div><br>
+  
+  <div class="form-group">  
+    <label for="country">How much of your target market do your business projections indicate you will capture within five years?*
+    <br>Please round to the nearest %</label>
+    <%= f.text_area :business_projection_within_5_years, class: "form-control", row: "10"%>
+  </div><br>
+
+  <div class="form-group">
+    <label> How quickly will your customer base grow this year (increase over last year)?*<br>
+      Please round to the nearest 10%</label>
+    <%= f.text_field :customer_base_grow, class: "form-control"%>
+  </div><br>
+  
+  <div class="form-check">
+    <label>What best describes your competitive positioning?*</label>
+    <%= f.radio_button :competitive_position, 'There are big, international companies in the market, but they are doing it all wrong' %> There are big, international companies in the market, but they are doing it all wrong<br>
+    <%= f.radio_button :competitive_position, 'There are big, domestic companies in the market, but they are doing it all wrong' %> There are big, domestic companies in the market, but they are doing it all wrong<br>
+    <%= f.radio_button :competitive_position, 'There is some regional competition, but we’re the only ones doing it here' %> There is some regional competition, but we’re the only ones doing it here<br>
+    <%= f.radio_button :competitive_position, 'We will be the first, and only, ones in the market (for now)' %> We will be the first, and only, ones in the market (for now)
+  </div><br>
+
+  <div class="form-check">
+    <label>How many substitutes are there for your product or service in the market?*</label>
+    <%= f.radio_button :product_substitutes, 'Few—it’s a completely new market' %> Few—it’s a completely new market<br>
+    <%= f.radio_button :product_substitutes, 'Many, but we’ve cracked the code and we can sell our ours for much less than the competition and still make a profit' %> Many, but we’ve cracked the code and we can sell our ours for much less than the competition and still make a profit<br>
+    <%= f.radio_button :product_substitutes, 'Many, but quality is what customers are looking for and our quality is the highest' %> Many, but quality is what customers are looking for and our quality is the highest<br>
+    <%= f.radio_button :product_substitutes, 'Few—others have tried and failed' %> Few—others have tried and failed<br>
+    <%= f.radio_button :product_substitutes, 'Many, but brand is important and ours is strong' %> Many, but brand is important and ours is strong
+  </div><br>
+
+  <div class="form-check">
+    <label>How would you best describe the barriers to entry for your target market?*</label>
+    <%= f.radio_button :market_barrier, 'It’s difficult to break in—we operate in a technical field where expertise is limited, especially in our area of operations' %> It’s difficult to break in—we operate in a technical field where expertise is limited, especially in our area of operations<br>
+    <%= f.radio_button :market_barrier, 'It’s easy to start, but there aren’t any businesses doing it in our target market' %> It’s easy to start, but there aren’t any businesses doing it in our target market<br>
+    <%= f.radio_button :market_barrier, 'It’s difficult to break in—brand is important, and if you aren’t well known already, you are starting out way behind' %> It’s difficult to break in—brand is important, and if you aren’t well known already, you are starting out way behind<br>
+    <%= f.radio_button :market_barrier, 'It’s difficult to break in—there are high capital costs and few are willing to take the risk' %> It’s difficult to break in—there are high capital costs and few are willing to take the risk<br>
+    <%= f.radio_button :market_barrier, 'It’s difficult to break in—it’s an economy of scale business, and the incumbent firms are large' %> It’s difficult to break in—it’s an economy of scale business, and the incumbent firms are large 
+  </div><br>
+
+  <div class="form-check">
+    <label>How well do you know who your customers are?*</label>
+    <%= f.radio_button :customer_identification,'We`ve identified a target market'%> We've identified a target market<br>
+    <%= f.radio_button :customer_identification,'We track our sales data as best we can'%> We track our sales data as best we can<br>
+    <%= f.radio_button :customer_identification,'We know their shoe size and what they eat for breakfast'%> We know their shoe size and what they eat for breakfast
+  </div><br>
+  
+  <div class="form-group">
+    <label>IMPACT & ALIGNMENT WITH OUR PORTFOLIO
+    <hr>Have you already raised a previous round of funding? If so, please describe the round*
+    <br>For example: friends and family, institutional (who?), amount raised, how funds are being used, etc.</label>
+    <%= f.text_area :fund_description, class: "form-control", row: "10"%>
+  </div><br>
+
+  <div class="form-check">
+   <label>Are you looking for VestedWorld to lead a round of funding, or participate in a current round lead by another fund?*</label>
+    <%= f.radio_button :participate, 'VestedWorld to lead'%> VestedWorld to lead<br>
+    <%= f.radio_button :participate, 'VestedWorld to participate'%> VestedWorld to participate  
+  </div><br>
+
+  <div class="form-checkbox">    
+    <label>What type(s) of financing are you looking for?*</label>
+    <%= check_box_tag "questionnaire[finance_type][]", 'Preferred Equity', checked("finance_type", "Preferred Equity")%> Preferred Equity<br>
+    <%= check_box_tag "questionnaire[finance_type][]", 'Common Equity', checked("finance_type", "Common Equity")%> Common Equity<br>
+    <%= check_box_tag "questionnaire[finance_type][]", 'We’re open to different types', checked("finance_type", "We’re open to different types")%> We’re open to different types<br>
+    <%= check_box_tag "questionnaire[finance_type][]", 'Revenue or other quasi-equity', checked("finance_type", "Revenue or other quasi-equity")%> Revenue or other quasi-equity<br>
+    <%= check_box_tag "questionnaire[finance_type][]", 'Straight Debt', checked("finance_type", "Straight Debt")%> Straight Debt
+  </div><br>
+
+  <div class="form-check">
+    <label>Are you currently working with other investors on a round of funding?*</label>
+    <%= f.radio_button :alternative_interest, 'Yes' %> Yes<br>
+    <%= f.radio_button :alternative_interest,'No' %> No  
+  </div><br>
+
+  <div class="form-group">
+    <label> What is your best estimate of your funding needs for this round?*<br>
+      Please list in U.S. $ equivalent</label>
+    <%= f.text_field :fund_estimate, class: "form-control"%>
+  </div><br>
+
+  <div class="form-group">
+    <label> Realistically, when do expect to close this funding round?*</label>
+    <%= f.date_field :fund_close_estimate, class: 'form-control'%><br>
+  </div><br>
+
+  <div class="form-group">    
+    <label>What will you be using the funding for?*</label>    
+    <%= check_box_tag "questionnaire[fund_plan][]", 'To help pay for key additions to the team', checked("fund_plan", "To help pay for key additions to the team")%> To help pay for key additions to the team<br>
+    <%= check_box_tag "questionnaire[fund_plan][]", 'For productive assets', checked("fund_plan", "For productive assets")%> For productive assets<br>
+    <%= check_box_tag "questionnaire[fund_plan][]", 'For working capital', checked("fund_plan", "For working capital")%> For working capital<br>
+    <%= check_box_tag "questionnaire[fund_plan][]", 'To prove our concept', checked("fund_plan", "To prove our concept")%> To prove our concept<br>
+    <%= check_box_tag "questionnaire[fund_plan][]", 'To build a prototype', checked("fund_plan", "To build a prototype")%> To build a prototype<br>
+    <%= check_box_tag "questionnaire[fund_plan][]", 'To accelerate the growth of our current business model', checked("fund_plan", "To accelerate the growth of our current business model")%> To accelerate the growth of our current business model
+  </div><br>
+
+  <div class="form-group">
+    <label>How long of a "runway" do you expect this funding round to provide?*</label>
+    <%= f.radio_button :fund_time_period, '6 months (or less)' %> 6 months (or less)<br>
+    <%= f.radio_button :fund_time_period, '12 months' %> 12 months<br>
+    <%= f.radio_button :fund_time_period, '18 months' %> 18 months<br>
+    <%= f.radio_button :fund_time_period, '24 months' %> 24 months<br>
+    <%= f.radio_button :fund_time_period, '> 24 months' %> > 24 months 
+  </div><br>
+
+  <div class="form-group">
+    <label>If you could only raise half the amount you listed above, how would your plan change?*</label>
+    <%= f.text_area :fund_change_plan ,class: "form-control" ,rows: "10"%>
+  </div><br>
+
+  <div class="form-group">
+    <label>How will your company change Africa, or the world, for the better?*</label>
+    <%= f.text_area :location_relevancy ,class: "form-control" ,rows: "10"%>
+  </div><br>
+
+  <div class="form-group">
+    <label>FINAL QUESTIONS</label>
+    <hr>How did you hear about VestedWorld?*
+    <br><%= f.radio_button :hear_about_us_by, 'Facebook' %> Facebook<br>
+    <%= f.radio_button :hear_about_us_by, 'Twitter' %> Twitter<br>
+    <%= f.radio_button :hear_about_us_by, 'Blog post' %> Blog post<br>
+    <%= f.radio_button :hear_about_us_by, 'LinkedIn' %> LinkedIn<br>
+    <%= f.radio_button :hear_about_us_by, 'Website' %>  Website <br>
+    <%= f.radio_button :hear_about_us_by, 'Other' %>  Other
+  </div><br>
+
+  <div class="form-group">
+    <label> Will you please provide us the address to your personal LinkedIn account?</label>
+    <%= f.url_field :linkedin_url, class: "form-control", placeholder:"http://"%>
+  </div><br>
+
+  <div class="form-group">
+    <label> Will you please provide us the address to the LinkedIn accounts of your management team?</label>
+    <%= f.url_field :management_linkedin_url, class: "form-control", placeholder:"http://"%>
+  </div><br>
+
+  <div class="form-group">
+    <label> Will you please provide us the address to the LinkedIn accounts of your management team?</label>
+    <%= f.url_field :management_linkedin_url, class: "form-control", placeholder:"http://"%>
+  </div><br>
+
+  <div class="form-group">
+    <label> Will you please provide us the address to the LinkedIn accounts of your management team?</label>
+    <%= f.url_field :management_linkedin_url, class: "form-control", placeholder:"http://"%>
+  </div><br>
+
+  <div class="form-group">
+    <label>What would you change about this questionnaire?</label>
+    <%= f.select(:suggestion, [['Too long', 'Too long'],
+                          ['Too short', 'Too short'],
+                          ['Questions are confusing', 'Questions are confusing'],
+                          ['Don`t understand why you are asking these questions', 'Don`t understand why you are asking these questions'],
+                          ['Seems impersonal', 'Seems impersonal'],
+                          ['Nothing', 'Nothing']
+                         ],{},
+                           { :multiple => true, :size => 6 }
+                         ) %>
+  </div><br>
+
+  <%= f.submit "Save", class: "btn btn-primary" %>  
+<% end %>

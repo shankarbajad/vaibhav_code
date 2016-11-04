@@ -1,0 +1,28 @@
+<section class="text-left box-typical-dashboard">
+  <div class="box-typical-body">
+      <div class="contact-row-list">
+          <article class="contact-row">
+              <h5 class="tiny-header">FOUNDER</h5>
+              <div class="user-card-row">
+                <% if @investment.investor.present? %>
+                  <div class="tbl-row">
+                    <div class="tbl-cell tbl-cell-photo">
+                      <%= link_to user_path(@investment.investor) do %>
+                        <%= image_tag @investment.investor.avatar.url if @investment.investor.avatar.present? %>
+                      <% end %>
+                    </div>
+                    <div class="tbl-cell">
+                      <p class="user-card-row-name">
+                         <%= link_to @investment.investor.name, user_path(@investment.investor) %>
+                      </p>
+                      <p class="user-card-row-mail">
+                        <%= link_to @investment.investor.email, user_path(@investment.investor) %>
+                      </p>
+                    </div>
+                  </div>
+                <% end %>
+              </div>
+          </article>
+      </div>
+  </div><!--.box-typical-body-->
+</section><!--.box-typical-dashboard-->

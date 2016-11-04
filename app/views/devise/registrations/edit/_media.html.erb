@@ -1,0 +1,115 @@
+<section>
+  <h6>MEDIA</h6>
+
+  <h4>Media Uploads</h4>
+  <p>Upload any documents, photos, or videos relevant to your professional endeavors.</u></b></p>
+  <br/>
+
+  <!-- Sign DOCUMENTS -->
+  <section id="nav-documents">
+    <h2>Documents to Sign</h2>  
+    <br/>
+    <div id="user_sign_documents" class="bgcolor-light-grey p-a-lg brad-6">
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="user_sign_documents">
+             <table class="table">
+              <thead>
+                <th>Document</th>
+              </thead>
+              <tbody>
+                <%= f.fields_for :sign_documents do |sign_document_form| %>
+                  <%= render 'shared/sign_document_fields', f: sign_document_form %>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <hr>
+
+  <!-- DOCUMENTS -->
+  <section id="nav-documents1">
+    <h5 class="bold m-b-0">Documents</h5>
+    <p class="text-muted">Upload reports, presentations, etc.</p>
+    <div id="user_documents">
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="user_documents">
+             <table class="table">
+              <thead>
+                <th>Document</th>
+                <th>Actions</th>
+              </thead>
+              <tbody>
+                <%= f.fields_for :user_documents do |user_document_form| %>
+                  <%= render 'devise/registrations/user_document_fields', f: user_document_form %>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="links">
+        <%= link_to_add_association f, :user_documents, class: "btn btn-primary btn-sm" do %>
+          Add New
+        <% end %>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- PHOTOS -->
+  <section id="nav-media">
+    <h5 class="bold m-b-0">Photos</h5>
+    <p class="text-muted">Upload .png, .jpg, .jpeg. Please keep file size under 500MB</p>
+    <div id="user_photos">
+      <div class="row">
+        <div class="col-sm-12">
+           <table class="table">
+            <thead>
+              <th>Title</th>
+              <th>Caption</th>
+              <th>File</th>
+              <th>Actions</th>
+            </thead>
+            <tbody>
+              <%= f.fields_for :user_photos do |user_photo_form| %>
+                <%= render 'devise/registrations/user_photo_fields', f: user_photo_form %>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <hr/>
+      <div class="links">
+        <%= link_to_add_association 'Add Photo', f, :user_photos, class: "btn btn-sm" %>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- VIDEO -->
+  <section>
+    <h5 class="bold m-b-0">Videos</h5>
+    <p class="text-muted">Copy and paste embed links for vimeo or YouTube (i.e. ).</p>
+    <div id="user_video">
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="videos">
+            <%= f.fields_for :user_videos do |user_video_form| %>
+              <%= render 'devise/registrations/user_video_fields', f: video_form %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="links">
+        <%= link_to_add_association 'Add Video', f, :user_videos, class: "btn btn-sm" %>
+      </div>
+    </div>
+  </section>
+</section>

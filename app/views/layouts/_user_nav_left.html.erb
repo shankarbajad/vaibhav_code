@@ -1,0 +1,60 @@
+<div class="mobile-menu-left-overlay"></div>
+<nav class="side-menu">
+    <div class="side-menu-avatar text-center">
+        <div class="avatar-preview avatar-preview-100">
+            <%= image_tag("avatar-2-128.png")%>
+        </div>
+        <br/>
+        <h4 class="no-margin">Name </h4>
+        <p class="small no-margin">
+            Member Since [TimeStamp]</p>
+        City, State
+    </div>
+
+    <ul class="side-menu-list" >
+        <li class="nav-item">
+            <a class="nav-link" href="#home" role="tab" data-toggle="tab">
+                <i class="font-icon font-icon-home"></i>
+                <span class="lbl">Network</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <%= link_to investments_path, class: "nav-link" do %>
+                <i class="font-icon font-icon-users"></i>
+                <span class="lbl">Investments</span>
+            <% end %>
+        </li>
+        <li class="nav-item">
+            <%= link_to companies_path, class: "nav-link" do %>
+                <i class="font-icon font-icon-users"></i>
+                <span class="lbl">Companies</span>
+            <% end %>
+        </li>
+        <li class="divider"></li>
+        <li class="nav-item">
+            <a class="nav-link" href="#home" role="tab" data-toggle="tab">
+                <i class="font-icon font-icon-home"></i>
+                <span class="lbl">Home</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#investments" role="tab" data-toggle="tab">
+                <i class="font-icon font-icon-cart"></i>
+                <span class="lbl">Investment Watchlist</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#settings" role="tab" data-toggle="tab">
+                <i class="font-icon font-icon-speed"></i>
+                <span class="lbl">Settings</span>
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#profile" role="tab" data-toggle="tab">
+                <i class="font-icon font-icon-users"></i>
+                <span class="lbl">Profile</span>
+            </a>
+        </li>
+    </ul>
+</nav><!--.side-menu-->
+

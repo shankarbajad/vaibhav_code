@@ -1,0 +1,7 @@
+<button type="button" class="avatar-preview">
+  <% if @investment.logo.present? %>
+    <%= image_tag @investment.logo.url %>
+  <% else %>
+    <%= image_tag("bg.jpeg")%>
+  <% end %>
+</button>

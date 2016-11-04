@@ -1,0 +1,1046 @@
+  <span class="text-warning">
+    <%= f.number_field :size , class: "form-control", placeholder: "Amount" %>
+  </span>
+  <small>
+    <%= f.select(:type, Investment.types.keys.map {|type| [type.titleize,type]}) %>
+  </small>
+  <small><%= f.text_field :stage , class: "form-control" , placeholder: "Product Stage" %></small>
+  <%= f.text_field :industry ,class: "form-control" , placeholder: "Industry" %>
+</h4>
+
+
+
+<%= @company.description %>
+<%= @company.readiness %>
+<%= @company.growth_projections %>
+
+
+
+
+
+
+
+<p>
+  <strong>Founder name 1:</strong>
+  <%= @investment.founder_name_1 %>
+</p>
+
+<p>
+  <strong>Founder role 1:</strong>
+  <%= @investment.founder_role_1 %>
+</p>
+
+<p>
+  <strong>Founder bio 1:</strong>
+  <%= @investment.founder_bio_1 %>
+</p>
+
+<p>
+  <strong>Founder name 2:</strong>
+  <%= @investment.founder_name_2 %>
+</p>
+
+<p>
+  <strong>Founder role 2:</strong>
+  <%= @investment.founder_role_2 %>
+</p>
+
+<p>
+  <strong>Founder bio 2:</strong>
+  <%= @investment.founder_bio_2 %>
+</p>
+
+<p>
+  <strong>Founder name 3:</strong>
+  <%= @investment.founder_name_3 %>
+</p>
+
+<p>
+  <strong>Founder role 3:</strong>
+  <%= @investment.founder_role_3 %>
+</p>
+
+<p>
+  <strong>Founder bio 3:</strong>
+  <%= @investment.founder_bio_3 %>
+</p>
+
+<p>
+  <strong>Founder name 4:</strong>
+  <%= @investment.founder_name_4 %>
+</p>
+
+<p>
+  <strong>Founder role 4:</strong>
+  <%= @investment.founder_role_4 %>
+</p>
+
+<p>
+  <strong>Founder bio 4:</strong>
+  <%= @investment.founder_bio_4 %>
+</p>
+
+<p>
+  <strong>Advisor name 1:</strong>
+  <%= @investment.advisor_name_1 %>
+</p>
+
+<p>
+  <strong>Advisor role 1:</strong>
+  <%= @investment.advisor_role_1 %>
+</p>
+
+<p>
+  <strong>Advisor bio 1:</strong>
+  <%= @investment.advisor_bio_1 %>
+</p>
+
+<p>
+  <strong>Advisor name 2:</strong>
+  <%= @investment.advisor_name_2 %>
+</p>
+
+<p>
+  <strong>Advisor role 2:</strong>
+  <%= @investment.advisor_role_2 %>
+</p>
+
+<p>
+  <strong>Advisor bio 2:</strong>
+  <%= @investment.advisor_bio_2 %>
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <p>
+            <%= @user.skills.join(", ") %>
+          </p>
+
+
+
+
+<div class="tbl-cell">
+                  <div class="info-block">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-xl-9 col-xl-offset-3 col-lg-8 col-lg-offset-4 col-md-offset-0">
+                          <div class="tbl info-tbl">
+                            <div class="tbl-row">
+                              <div class="tbl-cell">
+                                <h1 class="title capitalize h1"><%= @user.name %></h1>
+                                <p>Investor</p>
+                              </div>
+                              <div class="tbl-cell tbl-cell-stat">
+                                <div class="inline-block">
+                                  <p class="title">0</p>
+                                  <p>Location</p>
+                                </div>
+                              </div>
+                              <div class="tbl-cell tbl-cell-stat">
+                                <div class="inline-block">
+                                  <p class="title">0</p>
+                                  <p>Focus</p>
+                                </div>
+                              </div>
+                              <div class="tbl-cell tbl-cell-stat">
+                                <div class="inline-block">
+                                  <p class="title">0</p>
+                                  <p>Videos</p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+               
+
+
+                 <div class="col-lg-8">
+          <h3><%= @user.company %></h3>
+          <p class="lead"><%= @user.title  %></p>
+
+          <p>
+          <strong>Brief description:</strong>
+          <%= @user.brief_description %>
+        </p>
+
+        <p>
+          <strong>Bio:</strong>
+          <%= @user.bio %>
+        </p>
+
+        <p>
+          <strong>Keyword tags:</strong>
+          <%= @user.keyword_tags %>
+        </p>
+
+        <p>
+          <strong>Phone number:</strong>
+          <%= @user.phone_number %>
+        </p>
+
+        <p>
+          <strong>City:</strong>
+          <%= @user.city %>
+        </p>
+
+        <p>
+          <strong>Country:</strong>
+          <%= @user.country %>
+        </p>
+
+        <p>
+          <strong>Skype:</strong>
+          <%= @user.skype_id %>
+        </p>
+
+        <p>
+          <strong>Website:</strong>
+          <%= @user.website %>
+        </p>
+
+        <p>
+          <strong>Undergrad school:</strong>
+          <%= @user.undergrad_school %>
+        </p>
+
+        <p>
+          <strong>Undergrad major:</strong>
+          <%= @user.undergrad_major %>
+        </p>
+
+        <p>
+          <strong>Undergrad graduation year:</strong>
+          <%= @user.undergrad_graduation_year %>
+        </p>
+
+        <p>
+          <strong>Graduate school:</strong>
+          <%= @user.graduate_school %>
+        </p>
+
+        <p>
+          <strong>Graduate major:</strong>
+          <%= @user.graduate_major %>
+        </p>
+
+        <p>
+          <strong>Graduate graduation year:</strong>
+          <%= @user.graduate_graduation_year %>
+        </p>
+
+        <p>
+          <strong>Experience highlights 1:</strong>
+          <%= @user.experience_highlights_1 %>
+        </p>
+
+        <p>
+          <strong>Experience highlights 2:</strong>
+          <%= @user.experience_highlights_2 %>
+        </p>
+
+        <p>
+          <strong>Experience highlights 3:</strong>
+          <%= @user.experience_highlights_3 %>
+        </p>
+
+        <p>
+          <strong>Experience highlights 4:</strong>
+          <%= @user.experience_highlights_4 %>
+        </p>
+
+        <p>
+          <strong>Experience highlights 5:</strong>
+          <%= @user.experience_highlights_5 %>
+        </p>
+
+        <p>
+          <strong>Experience highlights 6:</strong>
+          <%= @user.experience_highlights_6 %>
+        </p>
+
+        <p>
+          <strong>Experience highlights 7:</strong>
+          <%= @user.experience_highlights_7 %>
+        </p>
+
+        <p>
+          <strong>Experience highlights 8:</strong>
+          <%= @user.experience_highlights_8 %>
+        </p>
+
+        <p>
+          <strong>Experience highlights 9:</strong>
+          <%= @user.experience_highlights_9 %>
+        </p>
+
+        <p>
+          <strong>Experience highlights 10:</strong>
+          <%= @user.experience_highlights_10 %>
+        </p>
+
+        <p>
+          <strong>Interest 1:</strong>
+          <%= @user.interest_1 %>
+        </p>
+
+        <p>
+          <strong>Interest 2:</strong>
+          <%= @user.interest_2 %>
+        </p>
+
+        <p>
+          <strong>Interest 3:</strong>
+          <%= @user.interest_3 %>
+        </p>
+
+        <p>
+          <strong>Investment company 1:</strong>
+          <%= @user.investment_company_1 %>
+        </p>
+
+        <p>
+          <strong>Investment type 1:</strong>
+          <%= @user.investment_type_1 %>
+        </p>
+
+        <p>
+          <strong>Investment year 1:</strong>
+          <%= @user.investment_year_1 %>
+        </p>
+
+        <p>
+          <strong>Investment stage 1:</strong>
+          <%= @user.investment_stage_1 %>
+        </p>
+
+        <p>
+          <strong>Investment company 2:</strong>
+          <%= @user.investment_company_2 %>
+        </p>
+
+        <p>
+          <strong>Investment type 2:</strong>
+          <%= @user.investment_type_2 %>
+        </p>
+
+        <p>
+          <strong>Investment year 2:</strong>
+          <%= @user.investment_year_2 %>
+        </p>
+
+        <p>
+          <strong>Investment stage 2:</strong>
+          <%= @user.investment_stage_2 %>
+        </p>
+
+        <p>
+          <strong>Investment company 3:</strong>
+          <%= @user.investment_company_3 %>
+        </p>
+
+        <p>
+          <strong>Investment type 3:</strong>
+          <%= @user.investment_type_3 %>
+        </p>
+
+        <p>
+          <strong>Investment year 3:</strong>
+          <%= @user.investment_year_3 %>
+        </p>
+
+        <p>
+          <strong>Investment stage 3:</strong>
+          <%= @user.investment_stage_3 %>
+        </p>
+
+        <p>
+          <strong>Angelist url:</strong>
+          <%= @user.angelist_url %>
+        </p>
+
+        <p>
+          <strong>Twitter url:</strong>
+          <%= @user.twitter_url %>
+        </p>
+
+        <p>
+          <strong>Facebook url:</strong>
+          <%= @user.facebook_url %>
+        </p>
+
+        <p>
+          <strong>Linkedin url:</strong>
+          <%= @user.linkedin_url %>
+        </p>
+
+        <p>
+          <strong>Investment size:</strong>
+          <%= @user.investment_size %>
+        </p>
+
+        <p>
+          <strong>Company stage:</strong>
+          <%= @user.company_stage %>
+        </p>
+
+        <p>
+          <strong>Industries:</strong>
+          <%= @user.industries %>
+        </p>
+
+        <p>
+          <strong>Sectors:</strong>
+          <%= @user.sectors %>
+        </p>
+
+        <p>
+          <strong>Preferences:</strong>
+          <%= @user.preferences %>
+        </p>
+
+        <p>
+          <strong>Experience level:</strong>
+          <%= @user.experience_level %>
+        </p>
+
+          <p>
+            <strong>Skills:</strong>
+            <%= @user.skills.join(", ") %>
+          </p>
+
+          <p>
+            <strong>Location:</strong>
+            <%= @user.location %>
+          </p>
+
+          <p>
+            <strong>Profile:</strong>
+            <%= @user.profile %>
+          </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="bgcolor-white">
+  <div class="profile-header-photo gradient" style="background: url(http://vestedworld.com/app/uploads/2016/03/3-1024x529.jpg);">
+    <div class="profile-header-photo-in">
+      <div class="tbl-cell">
+        <div class="info-block">
+          <div class="container">
+            <div class="row">
+              <div class="col-xl-8 col-xl-offset-4 col-lg-8 col-lg-offset-4 col-md-offset-0">
+                <h1><%= @company.name %></h1>
+                <p><%= truncate(@company.description, length: 300) %></p>
+                <h5 class="text-warning"><%= @company.geography %></h5>
+
+                <div class="tbl info-tbl">
+                  <div class="tbl-row">
+                    <div class="tbl-cell tbl-cell-stat">
+                      <div class="inline-block">
+                        <p class="title"><%= @company.industry %></p>
+                        <p>Industry</p>
+                      </div>
+                    </div>                
+                    <div class="tbl-cell tbl-cell-stat">
+                      <div class="inline-block">
+                        <p class="title"><%= @company.no_of_founders %></p>
+                        <p>Founders</p>
+                      </div>
+                    </div>
+                    <div class="tbl-cell tbl-cell-stat">
+                      <div class="inline-block">
+                        <p class="title"><%= @company.product_stage %></p>
+                        <p>Stage</p>
+                      </div>
+                    </div>
+                    <div class="tbl-cell tbl-cell-stat">
+                      <div class="inline-block">
+                        <p class="title"><%= @company.no_of_employees %></p>
+                        <p>Employees</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <%= link_to edit_company_path, type: "button", class: "change-cover" do %>
+      <i class="font-icon font-icon-settings"></i>
+      Edit Profile
+    <% end %>
+  </div><!--.profile-header-photo-->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3">
+        <aside class="profile-side">
+          <section class="box-typical box-transparent profile-side-user bgcolor-light-grey">
+            <button type="button" class="avatar-preview avatar-preview-128">
+              <%= image_tag("vw-logos/symbol_blue.png")%>
+              <span class="update">
+                <i class="font-icon font-icon-picture-double"></i>
+                Update photo
+              </span>
+              <input type="file"/>
+            </button>
+
+
+            <br/><br/>
+            
+            <br/><br/>
+
+            <h4>Founders</h4>
+            <section class="text-left box-typical-dashboard">
+              <div class="box-typical-body">
+                  <div class="contact-row-list">
+                      <article class="contact-row">
+                          <div class="user-card-row">
+                              <div class="tbl-row">
+                                  <div class="tbl-cell tbl-cell-photo">
+                                      <a href="#">
+                                          <img src="http://marnusbroodryk.com/wp-content/uploads/2013/02/Vinny_Lingham.jpg" alt="">
+                                      </a>
+                                  </div>
+                                  <div class="tbl-cell">
+                                      <p class="user-card-row-name"><a href="#">Tim Collins</a></p>
+                                      <p class="user-card-row-mail"><a href="#">timcolins@mail.com</a></p>
+                                  </div>
+                              </div>
+                          </div>
+                      </article>
+                      <article class="contact-row">
+                          <div class="user-card-row">
+                              <div class="tbl-row">
+                                  <div class="tbl-cell tbl-cell-photo">
+                                      <a href="#">
+                                          <img src="http://marnusbroodryk.com/wp-content/uploads/2013/02/Ludwick_Marishane.jpg" alt="">
+                                      </a>
+                                  </div>
+                                  <div class="tbl-cell">
+                                      <p class="user-card-row-name"><a href="#">Maggy Smith</a></p>
+                                      <p class="user-card-row-mail"><a href="#">maggysmith@mail.com</a></p>
+                                  </div>
+                              </div>
+                          </div>
+                      </article>
+                      <article class="contact-row">
+                          <div class="user-card-row">
+                              <div class="tbl-row">
+                                  <div class="tbl-cell tbl-cell-photo">
+                                      <a href="#">
+                                          <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Masaba_Yunus_at_the_Entrepreneurs_meet_and_greet_2014.jpg" alt="">
+                                      </a>
+                                  </div>
+                                  <div class="tbl-cell">
+                                      <p class="user-card-row-name"><a href="#">Molly Bridjet</a></p>
+                                      <p class="user-card-row-mail"><a href="#">mollybr@mail.com</a></p>
+                                  </div>
+                              </div>
+                          </div>
+                      </article>
+                  </div>
+              </div><!--.box-typical-body-->
+            </section><!--.box-typical-dashboard-->
+
+            <div class="bgcolor-light-grey">
+              <ul class="text-left">
+                <li>Introduction</li>
+                <ul class="sub-menu">
+                  <li><a href="#pitch">The Pitch</li>
+                  <li><a href="#highlights">Highlights</a></li>
+                </ul>
+                <li>Overview</li>
+                <ul class="sub-menu">
+                  <li><a href="#overview">Company Overview</a></li>
+                  <li><a href="#problem">Problem</li>
+                  <li><a href="#soludtion">Solution</a></li>
+                </ul>
+                <li>The Opportunity</li>
+                <ul class="sub-menu">
+                  <li><a href="#welike">Company Overview</a></li>
+                  <li><a href="#impact">Social and Environmental Impact</a></li>
+                </ul>
+                <li>Market Overview</li>
+                <li>The Team</li>
+              </ul>
+            </div>
+          </section>
+        </aside><!--.profile-side-->
+      </div>
+
+      <div class="col-lg-8 col-lg-offset-1">
+         <!-- <p id="notice"><%= notice %></p> -->
+            <p class="text-muted">
+              iWABOO Inc. is accepting investments for an Offering under Regulation D. This profile and accompanying offering materials may contain forward-looking statements and information relating to, among other things, the company, its business plan and strategy, and its industry. These statements reflect management’s current views with respect to future events based on information currently available and are subject to risks and uncertainties that could cause the company’s actual results to differ materially. Investors are cautioned not to place undue reliance on these forward-looking statements as they are meant for illustrative purposes and they do not represent guarantees of future results, levels of activity, performance, or achievements, all of which cannot be made. Moreover, no person nor any other person or entity assumes responsibility for the accuracy and completeness of forward-looking statements, and is under no duty to update any such statements to conform them to actual results.
+            </p>
+
+            <br/><br/><br/>
+            <h6 style="font-weight: 500; letter-spacing: 2px; color: #08c">INTRODUCTION</h6>
+            <hr class="m-a-0"/>
+
+            
+
+              
+
+            <br/><br/>
+            <h3 id="pitch"><%= @company.name %></h3>
+            <p class="lead" style="font-size: 24px; line-height: 32px; color: #666">
+              Company A takes emerging hardware startups to stores and shelves they might never get to on their own, facilitating the monetization of products that large scale retailers may still ignore
+            </p>
+
+            <br/><br/><br/><br/>
+
+
+            <div class="form-group row">
+              <div class="col-md-4">
+                <label class="form-label">No. of Founders</label>
+                <h4><%= @company.no_of_founders %></h4>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">No. of Employees</label>
+                <h4><%= @company.no_of_employees %></h4>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">Geographic Area</label>
+                 <h4><%= @company.geography %></h4>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-md-4">
+                <label class="form-label">Industry</label>
+                <h4><%= @company.industry %></h4>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">Product Stage</label>
+                <h4><%= @company.product_stage %></h4>
+              </div>
+              <div class="col-md-4">
+                <label class="form-label">Technical Co-founder</label>
+                
+              </div>
+            </div>
+
+            <br/>
+
+
+
+
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+
+
+
+
+            <h6 id="highlights" style="font-weight: 500; letter-spacing: 2px; color: #08c; text-transform: uppercase;">company overview</h6>
+            <hr class="m-t-0"/>
+
+            <h5>Our Vision</h5>
+
+            <p><%= @company.vision %></p>
+
+            <br/>
+            <h5>The Problem</h4>
+
+            <p><%= @company.problem %></p>
+
+            <br/>
+            <h5>Our Solution</h4>
+
+            <p><%= @company.solution %></p>
+
+            
+            <br/><br/><br/><br/>
+            <h6 id="welike" style="font-weight: 500; letter-spacing: 2px; color: #08c; text-transform: uppercase;">the impact opportunity</h6>
+            <hr class="m-t-0"/>
+
+             <div class="row text-center">
+              <div class="col-md-4">
+                <h6>What we Like the Opportunity</h6>
+                <%= image_tag("screenshots/screen-1.png", style: "width: 80%;") %>
+              </div>
+              <div class="col-md-4">
+                <h6>Social and Environmental Impact</h6>
+                <%= image_tag("screenshots/screen-2.png", style: "width: 80%;") %>
+              </div>
+              <div class="col-md-4">
+                <h6>Market Overview</h6>
+                <%= image_tag("screenshots/screen-3.png", style: "width: 80%;") %>
+              </div>
+            </div>
+
+            <br/><br/><br/><br/>
+            <br/><br/>
+            <h6 style="font-weight: 500; letter-spacing: 2px; color: #08c; text-transform: uppercase;">THE FOUNDING TEAM</h6>
+            <hr class="m-t-0"/>
+
+            <div class="row">
+              <div class="col-md-2">
+                <img src="http://marnusbroodryk.com/wp-content/uploads/2013/02/Ludwick_Marishane.jpg" class="img-responsive img-circle" style="width: 100%;">
+              </div>
+              <div class="col-md-10">
+                <h5 class="name-title">Kwami Williams</h5>
+                <h6 class="m-a-0">Chief technology officer</h5>
+                <br/>
+
+                <p>Kwami was born and raised in Ghana and immigrated to the United States when he was eight
+                years old. During his sophomore year at MIT, Kwami returned to Ghana for a service trip that
+                opened his eyes to the level of poverty in his native country and spurred him to start
+                thinking about things he could do to address it. After graduating from MIT in 2012 with a
+                degree in Aerospace Engineering and a concentration in Global Development, Kwami turned
+                down an offer to join NASA and instead founded MoringaConnect</p>
+              </div>
+            </div>
+
+            <hr/>
+
+            <div class="row">
+              <div class="col-md-2">
+                <img src="http://marnusbroodryk.com/wp-content/uploads/2013/02/Vinny_Lingham.jpg" class="img-responsive img-circle" style="width: 100%;">
+              </div>
+              <div class="col-md-10">
+                <h4 class="name-title">Kwami Williams</h4>
+                <h6 class="m-a-0">Chief technology officer</h5>
+                <br/>
+                <p>
+                  Emily was born and raised in Massachusetts and has over ten years of experience bridging
+                  the gap between public, private, and social sectors through creative partnerships, advocacy, fundraising, and startup marketing and development. Emily first discovered the vast potential of agriculture and the lack of capital available to farmers while working in microfinance and enterprise development at SEWA Bank in rural India. Emily met Kwami at MIT when they co-designed the Gates Foundation Award-winning multi-crop thresher and the moringa oil processing technologies that spawned the idea for MoringaConnect.
+                </p>
+                <p>
+                  Today, Emily splits her time between the U.S. and Ghana and focuses on demand-side initiatives including branding, marketing, sales, distribution, business development and building and formulating the award-winning True Moringa brand. 
+                </p>
+              </div>
+            </div>
+
+            <hr/>
+
+            <div class="row">
+              <div class="col-md-2">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/60/Masaba_Yunus_at_the_Entrepreneurs_meet_and_greet_2014.jpg" class="img-responsive img-circle" style="width: 100%;">
+              </div>
+              <div class="col-md-10">
+                <h5 class="name-title">Kwami Williams</h5>
+                <h6 class="m-a-0">Chief technology officer</h5>
+                <br/>
+                <p>
+                  Emily was born and raised in Massachusetts and has over ten years of experience bridging
+                  the gap between public, private, and social sectors through creative partnerships, advocacy, fundraising, and startup marketing and development. Emily first discovered the vast potential of agriculture and the lack of capital available to farmers while working in microfinance and enterprise development at SEWA Bank in rural India. Emily met Kwami at MIT when they co-designed the Gates Foundation Award-winning multi-crop thresher and the moringa oil processing technologies that spawned the idea for MoringaConnect.
+                </p>
+                <p>
+                  Today, Emily splits her time between the U.S. and Ghana and focuses on demand-side initiatives including branding, marketing, sales, distribution, business development and building and formulating the award-winning True Moringa brand. 
+                </p>
+              </div>
+            </div>
+
+
+
+            <br/><br/><br/><br/><br/><br/>
+            <h6 style="font-weight: 500; letter-spacing: 2px; color: #08c; text-transform: uppercase;">
+              Notable Advisors & Investors
+            </h6>
+            <hr class="m-t-0"/>
+            <div class="row">
+              <div class="col-md-4">
+                <div class="row">
+                  <div class="col-md-5">
+                    <img src="http://www.novare.com/advisors/wp-content/authors/yonela-5.jpg" class="img-responsive img-rounded" style="width: 100%;">
+                  </div>
+                  <div class="col-md-7">
+                    <h6 class="m-a-0">Scott Sudsfdmmit</h6>
+                    <p class="text-muted">Advisor, CDO of 3DSystems</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="row">
+                  <div class="col-md-5">
+                    <img src="http://2016conference.eavca.org/wp-content/uploads/2015/10/16.jpg" class="img-responsive img-rounded" style="width: 100%;">
+                  </div>
+                  <div class="col-md-7">
+                    <h6>Scott Summit</h6>
+                    <p class="text-muted">Advisor, CDO of 3DSystems</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="row">
+                  <div class="col-md-5">
+                    <img src="http://2016conference.eavca.org/wp-content/uploads/2015/10/16.jpg" class="img-responsive img-rounded" style="width: 100%;">
+                  </div>
+                  <div class="col-md-7">
+                    <h6>Scott Summit</h6>
+                    <p class="text-muted">Advisor, CDO of 3DSystems</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <br/>
+
+            <div class="row">
+              <div class="col-md-4">
+                <div class="row">
+                  <div class="col-md-5">
+                    <img src="http://www.novare.com/advisors/wp-content/authors/yonela-5.jpg" class="img-responsive img-rounded" style="width: 100%;">
+                  </div>
+                  <div class="col-md-7">
+                    <h6 class="m-a-0">Scott Sudsfdmmit</h6>
+                    <p class="text-muted">Advisor, CDO of 3DSystems</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="row">
+                  <div class="col-md-5">
+                    <img src="http://2016conference.eavca.org/wp-content/uploads/2015/10/16.jpg" class="img-responsive img-rounded" style="width: 100%;">
+                  </div>
+                  <div class="col-md-7">
+                    <h6>Scott Summit</h6>
+                    <p class="text-muted">Advisor, CDO of 3DSystems</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="row">
+                  <div class="col-md-5">
+                    <img src="http://2016conference.eavca.org/wp-content/uploads/2015/10/16.jpg" class="img-responsive img-rounded" style="width: 100%;">
+                  </div>
+                  <div class="col-md-7">
+                    <h6>Scott Summit</h6>
+                    <p class="text-muted">Advisor, CDO of 3DSystems</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+            <br/><br/><br/><br/><br/><br/>
+            <h6 style="font-weight: 500; letter-spacing: 2px; color: #08c; text-transform: uppercase;">
+              overview</h6>
+            <hr class="m-t-0"/>
+
+            
+            <div class="form-group row">
+              <div class="col-md-3">
+                <h5>Brief Description<br/>
+                <small class="text-muted">Elevator Pitch</small>
+              </h5>
+              </div>
+              <div class="col-md-9">
+                <p><%= @company.description %></p>
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="col-md-3">
+                <h5>Stage of Growth
+                  <small class="text-muted">Investment Readiness</small>
+                </h5>
+              </div>
+              <div class="col-md-9">
+                <p><%= @company.readiness %></p>
+              </div>
+            </div>
+
+
+            <div class="form-group row">
+              <div class="col-md-3">
+                <h5>
+                  Retun Projections<br/>
+                  <small class="text-muted">Return Expectations</small>
+                </h5>
+              </div>
+              <div class="col-md-9">
+                <p><%= @company.growth_projections %></p>
+              </div>
+            </div>
+
+            <hr/>
+
+           <!--  <h4 class="bold">Pitch Deck & Financials</h4>
+
+            <div class="form-group row">
+              <div class="col-md-9">
+                Upload Powerpoint Deck and Financials
+              </div>
+              <input>
+            </div> -->
+
+            <!-- <hr> -->
+
+            <h4 class="bold">Social Profiles & Media</h4>
+            <div class="form-group row">
+              <div class="col-md-4">
+                <a href="<%= @company.linkedin %>" class="btn btn-primary btn-block">LinkedIn</a>
+              </div>
+              <div class="col-md-4">
+                <a href="<%= @company.twitter %>" class="btn btn-warning btn-block">Twitter</a>
+              </div>
+              <div class="col-md-4">
+                <a href="<%= @company.facebook %>" class="btn btn-info btn-block">Facebook</a>
+              </div>
+            </div>
+
+
+        <%#= render 'about' %>
+        <hr/>
+        
+      </div>
+    </div><!--.row-->
+  </div><!--.container-fluid-->
+</div><!--.page-content-->
+
+<%#= link_to 'Edit', edit_company_path(@company) %> |
+<%#= link_to 'Back', companies_path %>
+
+
+
+
+
+
+<section class="box-typical box-typical-padding p-b">
+                <br/>
+                <div class="authform">
+                    <%= devise_error_messages! %>
+                    <div class="form-group">
+                      <%= f.label :name %>
+                      <%= f.text_field :name, :autofocus => true, class: 'form-control' %>
+                    </div>
+                    <div class="form-group">
+                      <%= f.label :title %>
+                      <%= f.text_field :profile, :autofocus => true, class: 'form-control' %>
+                    </div>
+                    
+
+                      <%= f.text_field :company, :autofocus => true, class: 'form-control' %> 
+                    <div class="form-group">
+                      <%= f.select(:profile,[  ['Advisor', 'Advisor'], ['Entreprenuer', 'Entreprenuer'], ['Investor', 'Investor'] ])%>
+                    </div>
+                    <div class="form-group">
+                      <%= f.label :email %>
+                      <%= f.email_field :email, class: 'form-control' %>
+                      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+                      <% end %>
+                    </div>
+                    <fieldset>
+                      <p>You must enter your current password to make changes.</p>
+                      <div class="form-group">
+                        <%= f.label :current_password %>
+                        <%= f.password_field :current_password, class: 'form-control' %>
+                      </div>
+                    </fieldset>
+                    <p class="text-right">
+                      <%= f.submit 'Update', :class => 'btn btn-primary' %>
+                    </p>
+                  <% end %>
+                </div>
+                <hr/>
+                <h4>Cancel Account</h4>
+                <p>Unhappy? We'll be sad to see you go.</p>
+                <p class="text-left">
+                  <%= button_to "Cancel my Account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'btn btn-default' %>
+                </p>
+              </section>
+
+
+
+                
+<div class="form-group">
+  <%= f.text_field :title, class: "form-control", placeholder: "Investment Title" %>
+</div>
+<div class="form-group">
+  <%= f.text_area :description , class: "form-control" , placeholder: "Description" %>
+</div>
+
+<div class="form-group row">
+  <div class="col-md-3">
+    <%= f.number_field :company_id , class: "form-control", placeholder: "Company ID" %>
+  </div>
+  <div class="col-md-5">
+    <%= f.text_field :industry ,class: "form-control" , placeholder: "Industry" %>
+  </div>
+   <div class="col-md-4">
+    <%= f.text_field :stage , class: "form-control" , placeholder: "Product Stage" %>
+  </div>
+</div>
+
+<hr/>
+<h4>Investment Product</h4>
+<div class="form-group">
+  <%= f.select(:type, Investment.types.keys.map {|type| [type.titleize,type]}) %>
+</div>
+<div class="form-group row">
+  <div class="col-md-4">
+    <%= f.number_field :size , class: "form-control", placeholder: "Amount" %>
+  </div>
+</div>
+<div class="form-group row">
+  <div class="col-md-4">
+    <%= f.number_field :type , class: "form-control", placeholder: "Type" %>
+  </div>
+  <div class="col-md-4">
+    <%= f.number_field :revenue_share , class: "form-control", placeholder: "Revenue Share" %>
+  </div>
+  <div class="col-md-4">
+    <%= f.number_field :expected_return , class: "form-control", placeholder: "Expected Return" %>
+  </div>
+</div>
+<hr/>
+<h4>Timing</h4>
+<div class="form-group row">
+  <div class="col-md-6">
+    <%= f.date_select :start_date , class: "form-control" %>
+  </div>
+  <div class="col-md-6">
+    <%= f.date_select :end_date , class: "form-control" %>
+  </div>
+</div>
+<br/>
+
+
+
+
+
+
+
+<h6><%= @investment.industry %></h6>
+              <h3><%= @investment.size %>, <%= @investment.type %></h3>
+
+              <hr/>
+              <%= @investment.start_date %> - <%= @investment.end_date %>

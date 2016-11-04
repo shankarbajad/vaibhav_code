@@ -1,0 +1,63 @@
+<%=render 'devise/registrations/user_image_cropper'%>
+<section id="nav-photos">
+	<h6>profile photos</h6>
+
+  <h4>Header and Profile Pictures</h4>
+  <p>Upload a profile picture as well as a custom header to enhance your user profile.</u></b></p>
+  <br/>       
+
+  <br/>  
+	<div class="row">
+	  <div class="col-md-6">
+	    <h6 class="bold">Header Background</h6>
+	    <% if user_signed_in? %>
+	      <a href="#" type: "button", class: "change-cover">
+	      	<%= image_tag (current_user.background_image.present? ? current_user.background_image : "bg.jpeg"), :width=>"100%", style: "height:150px;" %>
+	        <%= f.file_field :background_image, class: 'form-control background_image_validation'%>
+	        <div id="message-validation1"></div>
+	      </a>
+	    <% end %>
+	  </div>
+	  <div class="col-md-6">
+	    <h6 class="bold">Profile Picture</h6>	    
+	     <button type="button" class="avatar-preview avatar-preview-128 profile-image" style="background: url(<%= @image%>) !important;overflow: hidden;    border-radius: 100% !important;    background-size: cover !important;    background-repeat: no-repeat !important;    background-position: center top !important;">
+	    </button>
+	    <br/><br/>
+	    <%= f.file_field :avatar, :class => "form-control image-extension", :onchange=>"loadFile(event)" %>
+	    <div id="message-validation"></div>
+	  </div>
+	</div>
+</section>
+
+
+<script type="text/javascript">
+	$('.image-extension ').on('change', function() {
+		var ext = $('#user_avatar')[0].value.split('.').pop().toLowerCase();	
+		image_validator(ext,'img')	
+	});
+
+	$('.background_image_validation').on('change', function() {
+		var ext = $('#user_background_image')[0].value.split('.').pop().toLowerCase();	
+		image_validator(ext,'bg_img')
+	});
+
+	function image_validator(ext,btn){
+
+		if (btn == 'img') {
+				img_id = 'message-validation'	
+				}
+				else {
+				img_id = 'message-validation1'
+				}
+		
+		if($.inArray(ext, ["gif","png","jpg","jpeg"]) == -1) {
+			$('#validate-image').prop('disabled', true);
+    		$("#"+img_id).html("<b>Upload Only Image</b>").css({ 'color': "red" });
+		}
+		else {
+			$('#validate-image').prop('disabled', false);
+			$("#"+img_id).remove().html("<b>Upload Only Image</b>").css({ 'color': "red" });
+		}
+	}
+</script>
+

@@ -1,0 +1,20 @@
+<section id="nav-overview">
+  <h6>the opportunity</h6>
+
+  <h4 class="">Tell us about your company.</h4>
+
+	<p id="nav-problem"> </p>
+	<div class="form-group">
+		<label class="form-label">Investment Readiness <small>Is your company ready for investment? Please explain why.</small></label>
+		<%= f.text_area :readiness, class: 'form-control', placeholder: "", rows: "10" %>
+	</div>
+
+	<br/>
+    <p id="nav-solution"> </p>
+	<div class="form-group">
+		<label class="form-label">Growth Projections <small>How do you envision your company growing over the next 3-24 months.</small></label>
+		<%= f.text_area :growth_projections, class: 'form-control', placeholder: "", rows: "10" %>
+	</div>
+</section>
+
+

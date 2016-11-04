@@ -1,0 +1,49 @@
+<% if user_signed_in? %>
+<%= link_to edit_user_registration_path, class: "dropdown-item" do %>
+	<span class="font-icon glyphicon glyphicon-cog"></span>Edit Account
+<% end %>
+<%= link_to destroy_user_session_path, :method=>'delete', class: "dropdown-item" do %>
+	<span class="font-icon glyphicon glyphicon-user"></span>Logout
+<% end %>
+<% if current_user.profile == "Entreprenuer" || current_user.admin? %>
+  <%= link_to new_company_path, class: "dropdown-item" do %>
+    <span class="font-icon glyphicon glyphicon-plus"></span>Create a Company
+  <% end %>
+  <%= link_to new_investment_path, class: "dropdown-item" do %>
+    <span class="font-icon glyphicon glyphicon-plus"></span>Create a Investment
+  <% end %>
+<% end %>
+
+
+ <div class="dropdown-divider"></div>
+
+<%= link_to companies_path, class: "dropdown-item" do %>
+	<span class="font-icon glyphicon glyphicon-th"></span>Companies
+<% end %>
+
+<%= link_to investments_path, class: "dropdown-item" do %>
+	<span class="font-icon glyphicon glyphicon-signal"></span>Investments
+<% end %>
+
+<%= link_to users_path, class: "dropdown-item" do %>
+	<span class="font-icon glyphicon glyphicon-comment"></span>Community
+<% end %>
+
+
+<% else %>
+
+
+
+<%= link_to new_user_session_path, class: "dropdown-item" do %>
+	<span class="font-icon glyphicon glyphicon-user"></span>Login
+<% end %>
+
+<%= link_to new_user_registration_path, class: "dropdown-item" do %>
+	<span class="font-icon glyphicon glyphicon-plus"></span>Create an Account
+<% end %>
+
+<%# if user_signed_in? %>
+  <%# if current_user.try(:admin?) %>
+    <!-- <li><%#= link_to 'Users', users_path %></li> -->
+  <%# end %>
+<% end %>

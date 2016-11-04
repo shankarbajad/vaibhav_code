@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>VestedWorld</title>
+    <link rel='shortcut icon' href='../assets/favicon.ico' type='image/x-icon'/ >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Invest in your World" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "VestedWorld is, in many ways, a traditional venture capital fund. But we are 100% focused on emerging markets." %>">
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans|Dosis:400,800" rel="stylesheet" type="text/css" />
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css'%>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+
+    <style type="text/css">
+      body  {background: #fff;}
+    </style>
+    <script src="https://select2.github.io/dist/js/select2.full.js"></script>
+  </head>
+
+
+  <body class="minimal" style="background: url(<%= image_url("bg-hero.jpg")%>); background-size: contain;background-size:cover;">
+    <div class="page-content m-a-0 p-a-0">
+      <div class="container-row">
+        <%= render 'layouts/messages' %>
+        <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,45 @@
+class AddColumnsToInvestment < ActiveRecord::Migration
+  def change
+    add_column :investments, :highlights_1, :string
+    add_column :investments, :highlights_2, :string
+    add_column :investments, :highlights_3, :string
+    add_column :investments, :highlights_4, :string
+    add_column :investments, :highlights_5, :string
+    add_column :investments, :highlights_6, :string
+    add_column :investments, :highlights_7, :string
+    add_column :investments, :highlights_8, :string
+    add_column :investments, :highlights_9, :string
+    add_column :investments, :highlights_10, :string
+    add_column :investments, :overview_1, :text
+    add_column :investments, :overview_2, :text
+    add_column :investments, :overview_3, :text
+    add_column :investments, :problem_bullet_1, :string
+    add_column :investments, :problem_bullet_2, :string
+    add_column :investments, :problem_bullet_3, :string
+    add_column :investments, :problem_bullet_4, :string
+    add_column :investments, :problem_bullet_5, :string
+    add_column :investments, :solution_bullet_1, :string
+    add_column :investments, :solution_bullet_2, :string
+    add_column :investments, :solution_bullet_3, :string
+    add_column :investments, :solution_bullet_4, :string
+    add_column :investments, :solution_bullet_5, :string
+    add_column :investments, :founder_name_1, :string
+    add_column :investments, :founder_role_1, :string
+    add_column :investments, :founder_bio_1, :text
+    add_column :investments, :founder_name_2, :string
+    add_column :investments, :founder_role_2, :string
+    add_column :investments, :founder_bio_2, :text
+    add_column :investments, :founder_name_3, :string
+    add_column :investments, :founder_role_3, :string
+    add_column :investments, :founder_bio_3, :text
+    add_column :investments, :founder_name_4, :string
+    add_column :investments, :founder_role_4, :string
+    add_column :investments, :founder_bio_4, :text
+    add_column :investments, :advisor_name_1, :string
+    add_column :investments, :advisor_role_1, :string
+    add_column :investments, :advisor_bio_1, :text
+    add_column :investments, :advisor_name_2, :string
+    add_column :investments, :advisor_role_2, :string
+    add_column :investments, :advisor_bio_2, :text
+  end
+end

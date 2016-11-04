@@ -1,0 +1,114 @@
+<!-- Sign DOCUMENTS -->
+<section id="nav-documents">
+  <h2>Documents to Sign</h2>  
+  <br/>
+  <div id="company_sign_documents" class="bgcolor-light-grey p-a-lg brad-6">
+    <div class="row">
+      <div class="col-sm-12">
+        <div id="company_sign_documents">
+           <table class="table">
+            <thead>
+              <th>Document</th>
+            </thead>
+            <tbody>
+              <%= f.fields_for :sign_documents do |sign_document_form| %>
+                <%= render 'shared/sign_document_fields', f: sign_document_form %>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr>
+<!-- DOCUMENTS -->
+<section id="nav-documents1">
+  <h2>Documents</h2>
+  <p>Please upload any corporate documents for your company below using the form. Any file format is allowable. Please keep files under 25MB in size to avoid issues with uploading. <b><u>Do not upload sensitive corporate documents.</u></b></p>
+  <br/>
+  <div id="company_documents" class="bgcolor-light-grey p-a-lg brad-6">
+    <div class="row">
+      <div class="col-sm-12">
+        <div id="company_documents">
+           <table class="table">
+            <thead>
+              <th>Title</th>
+              <th>Documents</th>
+              <th>File</th>
+              <th>Actions</th>
+            </thead>
+            <tbody>
+              <%= f.fields_for :company_documents do |company_document_form| %>
+                <%= render 'companies/company_document_fields', f: company_document_form %>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <hr/>
+    <div class="links">
+      <%= link_to_add_association f, :company_documents, class: "btn btn-primary btn-sm" do %>
+        Add New
+      <% end %>
+    </div>
+  </div>
+</section>
+
+<section id="nav-media">
+  <h6><b>corporate media:</b> photos, documents, and videos</h6>
+
+  <!-- PHOTOS -->
+  <section class="p-a-0" id="photos">
+    <h2>Photos</h2>
+    <p>Please upload any corporate photos for your company below using the form. Any photo file format is allowable (.png, .jpg, .jpeg). Please keep files under 1GB in size to avoid issues with uploading. <b><u>Do not upload sensitive or innapropriate photos.</u></b></p>
+    <br/>
+    <div id="company_photos" class="bgcolor-light-grey p-a-lg brad-6">
+      <div class="row">
+        <div class="col-sm-12">
+           <table class="table">
+            <thead>
+              <th>Title</th>
+              <th>Documents</th>
+              <th>File</th>
+              <th>Actions</th>
+            </thead>
+            <tbody>
+              <%= f.fields_for :company_photos do |company_photo_form| %>
+                <%= render 'companies/company_photo_fields', f: company_photo_form %>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <hr/>
+      <div class="links">
+        <%= link_to_add_association 'Add Photo', f, :company_photos, class: "btn btn-sm" %>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEO -->
+  <section class="p-a-0" id="videos">
+    <h2>Videos</h2>
+    <p>Please add any videos for your company below using the form. YouTube and Vimeo video are encouraged. Simply copy and paste the video link</p>
+    <br/>
+    <div id="company_video" class="">
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="videos">
+            <%= f.fields_for :videos do |video_form| %>
+              <%= render 'companies/video_fields', f: video_form %>
+              <hr/>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="links">
+        <%= link_to_add_association 'Add Video', f, :videos, class: "btn btn-sm" %>
+      </div>
+    </div>
+  </section>
+</section>

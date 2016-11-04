@@ -1,0 +1,14 @@
+<button type="button" class="avatar-preview">
+  <% if f.object.logo.present? %>
+    <%= image_tag f.object.logo.url,:id=>"output" %>
+  <% else %>
+    <%= image_tag("bg.jpeg",:id=>"output")%>
+  <% end %>  
+</button>
+<script>
+  var loadFile = function(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+  };
+</script>
+

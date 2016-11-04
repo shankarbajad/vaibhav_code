@@ -1,0 +1,19 @@
+<section id="">
+  <h6>corporate team</h6>
+  <h5>The Corporate Team</h5>
+  <p>
+    Please add all entrepreneurs, management, investors, and advisors associated with your company. Please ensure the individual is a user ahead of searching for them in the fields below.
+  </p>
+  <div id="all_staffs">
+    <% User.roles.keys.reject{|k| k == 'admin' || k == 'user' }.each do |role| %>
+      <div class="form-group row m-y-lg" id="nav-<%=role.downcase.pluralize%>">
+        <div class="col-md-12">
+          <label class="form-label"><%= role.humanize %> <small>Please select all <%= role.humanize %> associated with your company (registered users only).</label>
+          <div id="<%= role %>_staffs">
+            <%= f.collection_select :user_ids, User.all, :id, :email, {:selected => @company.staffs.send(role).map(&:user_id) }, {:name => "staff_users[#{role}][]", :multiple => true, class: "select2"} %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</section>

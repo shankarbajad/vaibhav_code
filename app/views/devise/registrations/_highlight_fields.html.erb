@@ -1,0 +1,18 @@
+<div class="nested-fields">
+  <div class="clearfix row">
+    <div class="col-md-10">
+      <div class="form-group">
+        <label class="form-label">Type<span class="text-muted">What kind of accomplishement is this?</span></label>
+        <%= f.collection_select :hightlight_type, Highlight::TYPE.collect{|pt| [pt.flatten.first,pt.flatten.last] }, :first, :last %>
+      </div>      
+      <div class="form-group">
+        <label class="form-label">Highlight<span class="text-muted">What accomplishement would you like to share?</span></label>
+          <%= f.text_field :highlight_title, class: 'form-control', autocomplete: "off", placeholder: "Bullet..." %>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <%= link_to_remove_association "Remove", f, class: "btn btn-sm btn-danger" %>
+    </div>
+  </div>
+  <hr/>
+</div>

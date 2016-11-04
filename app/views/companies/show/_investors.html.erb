@@ -1,0 +1,27 @@
+<section id="nav-investors">
+  <h6>VestedAngels and Select Investors</h6>
+  <div class="row">
+    <% if company.present?%>
+      <% company.staffs.each do |company_user| %>
+        <% user = company_user.user %>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-3">
+            <% if user.present? %>
+              <%= link_to user_path(user) do %>
+                <%= image_tag user.avatar.url, :class => "img-responsive img-rounded" if user.avatar.present? %>
+                <%= image_tag("avatar-1-128.png", :class => "img-responsive img-rounded")%>
+              <% end %>
+            <% end %>
+            </div>
+            <div class="col-md-9">
+              <h5 class="m-a-0"><%= user.name if user.present? %></h5>
+              <p class="text-muted"><%= user.company if user.present?  %>, <%= user.title if user.present? %></p>
+              <p class="text-muted"><%= truncate(user.bio, length: 120) if user.present?  %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</section>

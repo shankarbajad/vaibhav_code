@@ -1,0 +1,9 @@
+<section id="nav-investors">
+  <h6>VestedAngels and Select Investors</h6>
+
+  <h5 class="bold m-b-0">Add Investors</h5>
+  <p class="text-muted">Please select investors that should be associated with this investment.</u></b></p>
+  <%= f.collection_select :user_ids, User.all, :id, :email, {:selected => @investment.staffs.send("Investor").map(&:user_id) }, {:name => "staff_users[#{"Investor"}][]", :multiple => true, class: "select2"} %>
+  <br/>
+  
+  </section>

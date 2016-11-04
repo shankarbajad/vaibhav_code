@@ -1,0 +1,15 @@
+<tr class="nested-fields">
+	<td></td>
+	<td></td>
+	<td>
+  	<%= f.file_field :user_image if f.object.new_record? %> 
+	  <% if f.object.user_image.present? %>
+	    <%= link_to f.object.user_image.url, :target => "_blank" do %>
+	      <%= image_tag f.object.user_image.url, :class => "thumbnail", :style => "width: 100px; height: 90px;" %>
+	    <% end %>
+	  <% end %>
+	</td>
+	<td>
+	  <%= link_to_remove_association "Remove", f, class: "btn btn-sm btn-danger" %>
+	</td>
+<tr/>

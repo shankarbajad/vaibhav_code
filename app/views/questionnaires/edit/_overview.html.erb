@@ -1,0 +1,61 @@
+<section class="overview">
+  <h6>Company Overview</h6>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label class="form-label">Industry</label>
+        <%= f.text_field :industry, class: 'form-control', placeholder: "Company Name" %> 
+      </div>                
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label class="form-label">Geography <small>Where is your company based?</small></label>
+        <%= f.select(:geography,[  ['Sub-Saharan Africa', 'Sub-Saharan Africa'], ['East Asia & Pacific', 'East Asia & Pacific'], ['Europe, Middle East, & North Africa', 'Europe, Middle East, & North Africa'], ['Latin America & the Caribbean', 'Latin America & the Caribbean'], ['South Asia', 'South Asia'], ['Global','Global']])%>
+      </div>                
+    </div>
+  </div>
+
+  <br/>
+
+  <div class="row">
+    <div class="col-md-5">
+      <div class="form-group">
+        <label class="form-label">Stage </label>
+        <%= f.text_field :product_stage, class: 'form-control', placeholder: "Company Name" %> 
+      </div>
+    </div>
+    <div class="col-md-7">
+      <div class="form-group">
+        <label class="form-label">Website <small>Copy and Paste Link</small></label>
+        <%= f.text_field :company_website, class: 'form-control', placeholder: "http://ourcompany.com" %>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="form-group">
+      <div class="col-md-3">
+        <label class="form-label">No. of Employees</label>
+        <%= f.text_field :no_of_employees, class: 'form-control', placeholder: "Company Name" %> 
+      </div>
+      <div class="col-md-3">
+        <label class="form-label">No. of Founders</label>
+        <%= f.text_field :no_of_founders, class: 'form-control', placeholder: "Company Name" %> 
+      </div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="form-group">
+      <div class="col-md-5">
+        <label class="form-label">Country</label>
+        <input class="form-control" placeholder="" /> 
+      </div>
+      <div class="col-md-4">
+        <label class="form-label">City</label>
+        <input class="form-control" placeholder="" /> 
+      </div>
+    </div>
+  </div>
+
+</section>

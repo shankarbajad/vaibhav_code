@@ -1,0 +1,45 @@
+<% header_background_image_url = f.object.background_image.present? ? f.object.background_image : "http://vestedworld.com/app/uploads/2016/03/3-1024x529.jpg"  %>
+
+
+<div class="profile-header-photo gradient reduced-height" style="background: url(<%= header_background_image_url %>);">
+    <div class="profile-header-photo-in">
+      <div class="tbl-cell">
+        <div class="info-block">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 col-lg-offset-4">
+                <div class="tbl info-tbl">
+                  <div class="tbl-row">
+                    <div class="tbl-cell">
+                      <h2><%= @investment.title %></h2>
+                      <h4>
+                        <span class="text-warning">
+                          <%= number_to_currency(@investment.size) %>
+                        </span>
+                        <span class="text-muted m-l m-r">|</span>
+                        <small><%= @investment.type %></small>
+                        <span class="text-muted m-l m-r">|</span>
+                        <small><%= @investment.stage %></small>
+                      </h4>
+                      
+                    </div>
+                    <div class="tbl-cell tbl-cell-stat">
+                      <div class="inline-block">
+                        <!-- <p class="title">2</p>
+                        <p>Videos</p> -->
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <% if current_user && (@investment.investor_id.eql?(current_user.id) || current_user.admin?) %>
+      <%= link_to investment_path(@investment), class: "change-cover m-a-lg" do %>
+        View Profile
+      <% end %>
+    <% end %>
+  </div>

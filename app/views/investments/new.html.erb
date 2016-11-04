@@ -1,0 +1,60 @@
+<div class="bgcolor-white">
+
+  <%= form_for(@investment) do |f| %>
+    
+    <%= render 'investments/new/header', f:f %>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4">
+          <aside class="profile-side">
+            <section class="box-typical box-transparent profile-side-user no-padding m-b-0">
+              <div class="">
+                <%= render 'investments/edit/nav/logo', f: f %>
+              </div>
+              <hr class="m-a-0"/>
+              <div class="p-a" id="sticker">
+                <%= render 'investments/edit/nav/links' %>
+              </div>
+            </section>
+          </aside><!--.profile-side-->
+        </div>
+
+        <div class="col-lg-8 show">
+          <%= render 'form', f: f %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+
+<style type="text/css">
+.stick {
+  position:fixed;
+  top:70px !important;
+  border: 1px solid #d8e2e7;
+}
+.profile-side {
+  margin: -245px 0 21px 20px;
+}
+</style>
+<script type="text/javascript">
+  $(document).ready(function() {
+    var s = $("#sticker");
+    var pos = s.position();                    
+    $(window).scroll(function() {
+        var windowpos = $(window).scrollTop();
+        if (windowpos >= pos.top) {
+            s.addClass("stick");
+        } else {
+            s.removeClass("stick"); 
+        }
+    });
+});
+</script>
+
+
+
+

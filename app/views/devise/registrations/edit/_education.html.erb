@@ -1,0 +1,15 @@
+<section id="nav-education">
+	<h6>EDUCATION</h6>
+
+	<h4>College and Degrees</h4>
+  <p>Share colleges attened so that we can connect you with alumni and keep you in mind for job and advisor opportunities.</u></b></p>
+  <br/>       
+
+
+	<div class="clearfix">
+	    <%= f.fields_for :educations do |education| %>
+	      <%= render 'devise/registrations/education_fields', f: education %>    
+	    <% end %>
+	    <%= link_to_add_association 'Add Education', f, :educations, :class=>"btn btn-small btn-primary" %>
+  </div>
+</section>

@@ -1,0 +1,5 @@
+<div class="nested-fields">
+  <%= f.file_field :document %> <%= link_to f.object.document.file.filename, f.object.document.url  if f.object.document.present? %>
+  |
+  <%= link_to_remove_association "Remove", f %>
+</div>

@@ -1,0 +1,16 @@
+*.sqlite3
+tmp
+
+*.gz
+
+*.gz
+
+public/assets/active_admin-1d974917b842494d743905f91da0bacd01ca4b2a22e41c08c8c7288804de1fd4.css.gz
+
+*.gz
+
+*.json
+=======
+/tmp
+/public/uploads
+/public/system

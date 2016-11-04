@@ -1,0 +1,20 @@
+<div class="nested-fields m-y-lg bgcolor-light-grey p-a-lg">
+  
+  <div class="form-group">
+    <label class="form-label">Tile<small>What the update about?</small></label>
+    <%= f.text_field :title, :class => 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">Brief description<small>Keep this short and sweet.</small></label>
+    <%= f.text_area :brief_description, :class => 'form-control' %>
+  </div>
+
+  <div class="form-group">
+    <label class="form-label">Detailed Description<small>Tell us all about it.</small></label>
+    <%= f.text_area :detailed_description, :class => 'form-control' %>
+  </div>
+
+  <%= link_to_remove_association "Remove", f, class: "btn btn-sm btn-danger" %>
+
+</div>

@@ -1,0 +1,229 @@
+<!-- TASK #1 -->
+	Database Fields
+
+	1. ADD NEW "USER" DATABASE FIELDS:
+
+	<!-- schools -->
+	brief_description			string
+	bio                         text
+	keyword_tags				("", "", "", "") enum?	
+	phone_number				string
+	city						string
+	country						("", "", "", "")
+	skype_id					string
+	website						string
+
+	<!-- schools -->
+	undergrad_school			string
+	undergrad_major				string
+	undergrad_graduation_year	string
+
+	graduate_school				string
+	graduate_major				string
+	graduate_graduation_year	string
+
+	<!-- experience -->
+	experience_highlights_1
+	experience_highlights_2		string
+	experience_highlights_3		string
+	experience_highlights_4		string
+	experience_highlights_5		string
+	experience_highlights_6		string
+	experience_highlights_7		string
+	experience_highlights_8		string
+	experience_highlights_8		string
+	experience_highlights_10	string
+
+	<!-- experience -->
+	interest_1					("", "", "", "") enum?
+	interest_2					("", "", "", "") enum?
+	interest_3					("", "", "", "") enum?
+
+	<!-- investments -->
+	investment_company_1 		Text
+	investment_type_1 			("", "", "", "")
+	investment_year_1			Integer
+	investment_stage_1			("", "", "", "")
+
+	investment_company_3 		Text
+	investment_type_2 			("", "", "", "")
+	investment_year_2			Integer
+	investment_stage_2			("", "", "", "")
+
+	investment_company_3 		Text
+	investment_type_3 			("", "", "", "")
+	investment_year_3 			Integer
+	investment_stage_3 			("", "", "", "")
+
+	<!-- investments -->
+	angelist_url				string
+	twitter_url					string
+	facebook_url				string
+	linkedin_url				string
+
+	<!-- investment preferences -->
+	investment_size 			("", "", "", "")
+	company_stage 				("", "", "", "")
+	industries 					("", "", "", "")
+	sectors 					("", "", "", "")
+	preferences 				text
+	experience level 			("New Investor", "Impact Investing Newbie", "Experienced", "Veteran")
+
+
+<!-- TASK #2 -->
+	*** Add these values on the user Show View (Display) -- anywhere is fine, i'll clean up later ***
+
+
+<!-- TASK #3 -->
+
+	Database Fields
+
+	1. ADD NEW "INVESTMENT" DATABASE FIELDS:
+
+	<!-- highlights -->
+	highlights_1        string
+	highlights_2		string
+	highlights_3		string
+	highlights_4		string
+	highlights_5		string
+	highlights_6		string
+	highlights_7		string
+	highlights_8		string
+	highlights_8		string
+	highlights_10		string
+
+	<!-- overview -->
+	overview_1			text
+	overview_2			text
+	overview_3			text
+
+	<!-- problem -->
+	problem_bullet_1    string
+	problem_bullet_2	string
+	problem_bullet_3	string
+	problem_bullet_4	string
+	problem_bullet_5	string
+
+	<!-- solution -->
+	solution_bullet_1	string
+	solution_bullet_2	string
+	solution_bullet_3	string
+	solution_bullet_4	string
+	solution_bullet_5	string
+
+	<!-- founders -->
+	founder_name_1		string
+	founder_role_1		string
+	founder_bio_1		text
+
+	founder_name_2		string
+	founder_role_2		string
+	founder_bio_2		text
+
+	founder_name_3		string
+	founder_role_3		string
+	founder_bio_3		text
+
+	founder_name_4		string
+	founder_role_4		string
+	founder_bio_4		text
+
+	<!-- advisors -->
+	advisor_name_1		string
+	advisor_role_1		string
+	advisor_bio_1		text
+
+	advisor_name_2		string
+	advisor_role_2		string
+	advisor_bio_2		text
+
+
+
+<!-- TASK #4 -->
+	*** Add these values on the user INVESTMENT Show View (Display) -- anywhere is fine, i'll clean up later ***
+
+<!-- TASK #5 -->
+	CREATE A "APPLICATIONS" CONTROLLERS
+
+	<!-- relationships -->
+		"USERS" HAVE MANY APPLICATIONS
+		APPLICATIONS HAVE MANY "USERS"
+
+		Database Values:
+		BASED ON THIS ... <!-- http://vestedworld.com/entrepreneur-questionnaire/ -->
+
+		
+
+		<!-- company overview -->
+		company_founder_1 		(drop down of all users)
+		company_founder_2		(drop down of all users)
+		company_founder_3		(drop down of all users)
+		company_founder_4		(drop down of all users)
+		company_name			string
+		company_website			string
+		year_founded			string
+		elevator_pitch			text
+		interesting_why			text
+		motivation				text
+		product_stage			("", "", "", "") enum?
+		financial_stage			("", "", "", "") enum?
+		burn_rate				string
+		revenue					string
+		current_month_revenue	string
+		ebitda_estimate			string
+		risks_overview			text
+		core_competency			text
+		greatest_challenge		text
+		opportunity				text
+		critical_cost			text
+		worst_case_scenario		text
+
+		<!-- company overview -->
+
+		customers				radio (string)
+		customers_overview		text
+		customer_location		text
+		customer_consumption	text
+		customer_motivation		text 
+		customer_drivers		checkbox (string)
+		distribution_power		radio (string)
+		supply_power			radio (string)
+		pricing_strategy		text
+		company_evolution		text
+
+
+		<!-- management overview -->
+
+		cofounder_story					text
+		skills_mix_1					text
+		skills_mix_2					text
+		management_team_status			radio (string)
+		management_team_filled_roles	checkbox (string)
+		management_city_location		string
+		past_experience_relevancy		radio (string)
+		time_investment					radio (string)
+		full_time_employees				radio (string)
+		early_stage_experience			radio (string)
+		location_relevancy				radio (string)
+		contributed_capital				radio (string)
+		management_earnings				string
+		alternative_interest			text
+
+		<!-- management overview -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

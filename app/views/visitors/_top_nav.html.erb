@@ -1,0 +1,30 @@
+<div class="container p-y-lg">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="pull-left">
+        <h3 class="m-t-0 font-logo">
+          <%= image_tag("white-mark.png", style: "width: 70px;") %>
+          <%= image_tag("white-type.png", style: "width: 150px; margin-left: -25px;") %>
+        </h3>
+      </div>
+      <div class="pull-right">
+        <nav>
+          <ul class="nav ul-inline bold m-y">
+            <li>
+              <%=link_to "Investments", investments_path %>
+            </li>
+            <li>
+              <%=link_to "Companies", companies_path %>
+            </li>
+            <li><%=link_to "VestedWorld Home", "http://vestedworld.com", target: "_blank", rel: "nofollow"%></li>
+            <li><%=link_to "FAQ", "http://vestedworld.com/resources/faqs/", target: "_blank", rel: "nofollow"%></li>
+            <li>
+              <%= link_to 'Account Login', new_user_session_path, class: "btn btn-rounded btn-block btn-default tb btn-sm p-x bold" %>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+

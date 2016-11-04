@@ -1,0 +1,16 @@
+<section id="nav-accomplishments">
+  <h6>ACCOMPLISHMENTS & HIGHLIGHTS</h6>
+
+  <h4>Share you Accomplishments</h4>
+  <p>We are building a thriving community of investors, entrepreneurs and advisors. Share you accomplishments and professional highlights.</u></b></p>
+  <br/>       
+
+
+  <div class="clearfix">
+	  <%= f.fields_for :highlights do |high_light| %>
+	    <%= render 'devise/registrations/highlight_fields', f: high_light %>
+	  <% end %>
+	  <%= link_to_add_association 'Add Hightlights', f, :highlights, :class=>"btn btn-small btn-primary" %>
+	</div>
+</section>
+

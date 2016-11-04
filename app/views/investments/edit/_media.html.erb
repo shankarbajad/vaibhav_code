@@ -1,0 +1,93 @@
+<section>
+  <h6>MEDIA</h6>
+
+  <!-- DOCUMENTS -->
+  <section id="nav-documents">
+    <div class="form-group">
+      <label class="form-label">Documents</label>
+      <div id="investment_documents">
+        <div class="row">
+          <div class="col-sm-12">
+            <div id="company_documents">
+               <table class="table">
+                <thead>
+                  <th>Title</th>
+                  <th>Documents</th>
+                  <th>File</th>
+                  <th>Actions</th>
+                </thead>
+                <tbody>
+                  <%= f.fields_for :investment_documents do |investment_document_form| %>
+                    <%= render 'investments/investment_document_fields', f: investment_document_form %>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <hr/>
+        <div class="links">
+          <%= link_to_add_association f, :investment_documents, class: "btn btn-primary btn-sm" do %>
+            Add New
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br/><br/>
+
+
+  <!-- PHOTOS -->
+  <section id="nav-media">
+    <div class="form-group">
+      <label class="form-label">Photos</label>
+      <div id="investment_photos">
+        <div class="row">
+          <div class="col-sm-12">
+             <table class="table">
+              <thead>
+                <th>Title</th>
+                <th>Documents</th>
+                <th>File</th>
+                <th>Actions</th>
+              </thead>
+              <tbody>
+                <%= f.fields_for :investment_photos do |investment_photo_form| %>
+                  <%= render 'investments/investment_photo_fields', f: investment_photo_form %>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <hr/>
+        <div class="links">
+          <%= link_to_add_association 'Add Photo', f, :investment_photos, class: "btn btn-sm" %>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <br/><br/>
+
+  <!-- VIDEO -->
+  <div class="form-group">
+    <label class="form-label">Videos</label>
+    <div id="investment_video">
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="videos">
+            <%= f.fields_for :investment_videos do |video_form| %>
+              <%= render 'investments/investment_video_fields', f: video_form %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <hr/>
+      <div class="links">
+        <%= link_to_add_association 'Add Video', f, :investment_videos, class: "btn btn-sm" %>
+      </div>
+    </div>
+  </div>
+</section>
+

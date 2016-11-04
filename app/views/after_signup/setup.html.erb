@@ -1,0 +1,64 @@
+<style type="text/css">
+
+ body {background: url(http://vestedworld.com/app/uploads/2016/03/3-1024x529.jpg); background-size: cover;}
+ 
+</style>
+
+<div style="position: relative; z-index: 9999;">
+  <%= render 'after_signup/top_nav' %>
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 col-centered">
+      <section class="box-typical no-border">
+        <%= form_for(@user, url: wizard_path, method: :put, :html => { :role => 'form',  class: ""}) do |f| %>
+
+        <div class="bgcolor-primary  p-y-lg">
+          <h3 class="text-center m-t">Your VestedWorld Profile.</h3>
+          <h6 class="text-center text-white">Create a quick professional profile.</h6>
+        </div>
+
+        <hr class="m-a-0"/>
+        <br/>
+        <br/>
+
+        <div class="m-x-lg">
+          <div class="form-group">
+            <label class="form-label">Company<span class="text-muted">Who do you work for?</span></label>
+            <%= f.text_field :company, :autofocus => true, class: 'form-control' %>                
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Title<span class="text-muted">What title best describes what you do?</span></label>
+            <%= f.text_field :title, :autofocus => true, class: 'form-control' %>                
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label">
+              Skills<span class="text-muted">Accounting, Taxes, International Law</span>
+            </label>
+            <select name="user[skills][]" class="select2" style="position: absolute; z-index: 99999999;" multiple="multiple">
+              <% User::SKILLS.each do |skill| %>
+                <option style="position: relative; z-index: 9999999999;"><%= skill %></option>
+              <% end %>
+            </select>
+          </div>
+        </div>
+        <br/>
+        <hr class="m-a-0"/>
+        <div class="bgcolor-light-grey p-a-lg">
+          <div class="row">
+            <div class="col-md-6">
+              <%= link_to previous_wizard_path, class: "btn btn-rounded btn-transparent btn-block" do %>
+                <i class="fa fa-long-arrow-left m-r-sm" aria-hidden="true"></i> Welcome
+              <% end %>
+            </div>
+            <div class="col-md-6">
+              <%= f.submit "Finish", class: "btn btn-rounded btn-primary btn-block" %>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      </section>
+    </div>
+  </div>
+</div>
+  

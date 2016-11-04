@@ -1,0 +1,10 @@
+<div class="nested-fields">
+  <%= f.file_field :investment_image if f.object.new_record? %> 
+  <%#= link_to f.object.investment_image.filename, f.investment_image.url  if f.object.investment_image.present? %>
+  <%= link_to f.object.investment_image.url, :target => "_blank" do %>
+  
+  <%= image_tag f.object.investment_image.exists? ? f.object.investment_image.url : "file-img.png" , :style => "width: 100px; height: 90px;" %>
+  <% end %>
+  |
+  <%= link_to_remove_association "Remove", f %>
+</div>

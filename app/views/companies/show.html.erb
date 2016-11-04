@@ -1,0 +1,63 @@
+<div class="bgcolor-white">
+  <%= render 'companies/show/header' %>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <aside class="profile-side">
+          <section class="box-typical box-transparent profile-side-user no-padding m-b-0">
+            <div class="p-a-lg">
+              <%= render 'companies/show/nav/logo' %>
+            </div>
+            <hr class="m-a-0"/>
+            <div class="p-a" id ="sticker">
+              <%= render 'companies/show/nav/links' %>
+            </div>
+          </section>
+        </aside><!--.profile-side-->
+      </div>
+
+      <div class="col-lg-8 show">
+        <%=link_to "Questionnaire", company_questionnaires_path(@company)%>
+        <%= render 'companies/show/legal_notices' %>
+        <%= render 'companies/show/overview' %>
+        <%= render 'companies/show/opportunity' %>
+        <%#= render 'companies/show/impact' %>
+        <%= render :partial => 'companies/show/team', :locals => {:company => @company} %>
+        <%= render :partial => 'companies/show/advisors', :locals => {:company => @company} %>
+        <%= render :partial => 'companies/show/investors', :locals => {:company => @company} %>
+        <%= render 'companies/show/media' %>
+        <% if company_updates_showable?(current_user,@company) %>
+          <%= render 'companies/show/updates' %>
+        <% end %>
+      </div>
+    </div><!--.row-->
+  </div><!--.container-fluid-->
+</div><!--.page-content-->
+<%=render 'shared/investment_terms'%>
+<%#= link_to 'Edit', edit_company_path(@company) %> |
+<%#= link_to 'Back', companies_path %>
+<style type="text/css">
+
+.stick {
+  position:fixed;
+  top:70px !important;
+  border: 1px solid #d8e2e7;
+}
+.profile-side {
+  margin: -245px 0 21px 20px;
+}
+</style>
+<script type="text/javascript">
+  $(document).ready(function() {
+    var s = $("#sticker");
+    var pos = s.position();                    
+    $(window).scroll(function() {
+        var windowpos = $(window).scrollTop();
+        if (windowpos >= pos.top) {
+            s.addClass("stick");
+        } else {
+            s.removeClass("stick"); 
+        }
+    });
+});
+</script>

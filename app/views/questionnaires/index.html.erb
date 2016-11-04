@@ -1,0 +1,120 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'New Questionnaire', new_company_questionnaire_path(@company) %>
+<br>
+<h1>Listing Questionnaires</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Company founder 1</th>
+      <th>Company founder 2</th>
+      <th>Company founder 3</th>
+      <th>Company founder 4</th>
+      <th>Company name</th>
+      <th>Company website</th>
+      <th>Year founded</th>
+      <th>Elevator pitch</th>
+      <th>Interesting why</th>
+      <th>Motivation</th>
+      <th>Product stage</th>
+      <th>Financial stage</th>
+      <th>Burn rate</th>
+      <th>Revenue</th>
+      <th>Current month revenue</th>
+      <th>Ebitda estimate</th>
+      <th>Risks overview</th>
+      <th>Core competency</th>
+      <th>Greatest challenge</th>
+      <th>Opportunity</th>
+      <th>Critical cost</th>
+      <th>Worst case scenario</th>
+      <th>Customers</th>
+      <th>Customers overview</th>
+      <th>Customer location</th>
+      <th>Customer consumption</th>
+      <th>Customer motivation</th>
+      <th>Customer drivers</th>
+      <th>Distribution power</th>
+      <th>Supply power</th>
+      <th>Pricing strategy</th>
+      <th>Company evolution</th>
+      <th>Cofounder story</th>
+      <th>Skills mix 1</th>
+      <th>Skills mix 2</th>
+      <th>Management team status</th>
+      <th>Management team filled roles</th>
+      <th>Management city location</th>
+      <th>Past experience relevancy</th>
+      <th>Time investment</th>
+      <th>Full time employees</th>
+      <th>Early stage experience</th>
+      <th>Location relevancy</th>
+      <th>Contributed capital</th>
+      <th>Management earnings</th>
+      <th>Alternative interest</th>
+      
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody> 
+    <% @company.questionnaires.each do |questionnaire| %>
+      <%if questionnaire.status.eql?(1)%>
+        <tr>
+          <td><%= questionnaire.company_founder_1 %></td>
+          <td><%= questionnaire.company_founder_2 %></td>
+          <td><%= questionnaire.company_founder_3 %></td>
+          <td><%= questionnaire.company_founder_4 %></td>
+          <td><%= questionnaire.company_name %></td>
+          <td><%= questionnaire.company_website %></td>
+          <td><%= questionnaire.year_founded %></td>
+          <td><%= questionnaire.elevator_pitch %></td>
+          <td><%= questionnaire.interesting_why %></td>
+          <td><%= questionnaire.motivation %></td>
+          <td><%= questionnaire.product_stage %></td>
+          <td><%= questionnaire.financial_stage %></td>
+          <td><%= questionnaire.burn_rate %></td>
+          <td><%= questionnaire.revenue %></td>
+          <td><%= questionnaire.current_month_revenue %></td>
+          <td><%= questionnaire.ebitda_estimate %></td>
+          <td><%= questionnaire.risks_overview %></td>
+          <td><%= questionnaire.core_competency %></td>
+          <td><%= questionnaire.greatest_challenge %></td>
+          <td><%= questionnaire.opportunity %></td>
+          <td><%= questionnaire.critical_cost %></td>
+          <td><%= questionnaire.worst_case_scenario %></td>
+          <td><%= questionnaire.customers %></td>
+          <td><%= questionnaire.customers_overview %></td>
+          <td><%= questionnaire.customer_location %></td>
+          <td><%= questionnaire.customer_consumption %></td>
+          <td><%= questionnaire.customer_motivation %></td>
+          <td><%= questionnaire.customer_drivers %></td>
+          <td><%= questionnaire.distribution_power %></td>
+          <td><%= questionnaire.supply_power %></td>
+          <td><%= questionnaire.pricing_strategy %></td>
+          <td><%= questionnaire.company_evolution %></td>
+          <td><%= questionnaire.cofounder_story %></td>
+          <td><%= questionnaire.skills_mix_1 %></td>
+          <td><%= questionnaire.skills_mix_2 %></td>
+          <td><%= questionnaire.management_team_status %></td>
+          <td><%= questionnaire.management_team_filled_roles %></td>
+          <td><%= questionnaire.management_city_location %></td>
+          <td><%= questionnaire.past_experience_relevancy %></td>
+          <td><%= questionnaire.time_investment %></td>
+          <td><%= questionnaire.full_time_employees %></td>
+          <td><%= questionnaire.early_stage_experience %></td>
+          <td><%= questionnaire.location_relevancy %></td>
+          <td><%= questionnaire.contributed_capital %></td>
+          <td><%= questionnaire.management_earnings %></td>
+          <td><%= questionnaire.alternative_interest %></td>
+          
+
+          <td><%= link_to 'Show', company_questionnaire_path(questionnaire.company, questionnaire) if questionnaire.company%></td>
+          <td><%= link_to 'Edit', edit_company_questionnaire_path(questionnaire.company, questionnaire) if questionnaire.company%></td>
+          <td><%= link_to 'Destroy', company_questionnaire_path(questionnaire.company, questionnaire), method: :delete, data: { confirm: 'Are you sure?' } if questionnaire.company%></td>
+        </tr>
+      <% end %>       
+    <% end %>    
+  </tbody>
+</table>

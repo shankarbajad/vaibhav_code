@@ -1,0 +1,47 @@
+<body style="background: url(https://davidderrick.files.wordpress.com/2009/07/african-farm.jpg); background-size: cover;">
+
+<div class="page-center">
+  <div class="page-center-in">
+    <div class="container-fluid authform">
+      <form class="sign-box">
+
+        <header class="sign-title">
+          <h2 class="no-margin">Investor Account</h2>
+          <h5 class="text-muted">Create a Free Account</h5>
+        </header>
+        <div class="form-group">
+          <input class="form-control" placeholder="Full Name">
+        </div>
+        <div class="form-group">
+          <input class="form-control" placeholder="email">
+        </div>
+        <div class="form-group">
+            <input class="form-control" placeholder="password">
+        </div>
+        <div class="form-group">
+            <input class="form-control" placeholder="password confirmation">
+        </div>
+
+        <br/>
+
+        <div class="form-group">
+            <div class="checkbox float-left">
+              <input type="checkbox" id="signed-in"/>
+
+              <label for="signed-in">
+                I agree to the <a href="#"><u>Terms of Use</u></a>
+                and confirm that I am and accredited Investor.
+              </label>
+            </div>
+        </div>
+
+        <button class="btn btn-rounded">Create Investor Account</button>
+        <%#= link_to 'View Companies', page_path('companies'), class: "btn btn-rounded btn-default" %>
+        <p class="sign-note">
+            Already have an account? <%= link_to 'Sign in', new_user_session_path %>
+        </p>
+      </div>
+    </div>
+  </div>
+</div><!--.page-center-->
+

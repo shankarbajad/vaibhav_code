@@ -1,0 +1,90 @@
+<style type="text/css">
+
+ body {background: url(http://vestedworld.com/app/uploads/2016/03/3-1024x529.jpg); background-size: cover;}
+
+</style>
+
+<div style="position: relative; z-index: 9999;">
+  <%= render 'after_signup/top_nav' %>
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 col-centered">
+      <section class="box-typical no-border">
+        <%@user = current_user if @user.nil? %>
+        <%= form_for(@user, url: wizard_path("welcome"), method: :put, :html => { :style => ""}) do |f| %>
+
+          <div class="bgcolor-primary  p-y-lg">
+            <h3 class="text-center m-t">What is your focus?</h3>
+            <h6 class="text-center text-white">We'd like to customize your experience.</h6>
+          </div>
+
+          <hr class="m-a-0"/>
+          <br/>
+          <br/>
+          <div class="row">
+            <div class="col-md-8 col-sm-offset-2">
+              <div class="form-group">
+                <div class="checkbox-detailed block no-margin">
+                  <%= f.radio_button :profile, "Investor", :id => "check-det-4", :checked => true %>
+                  <label for="check-det-4" class="width-100">
+                  <span class="checkbox-detailed-tbl">
+                    <span class="checkbox-detailed-cell">
+                      <span class="checkbox-detailed-title">
+                        <h4 class="no-margin semi-bold">Investor</h4>
+                      </span>
+                      I invest in companies.
+                    </span>
+                  </span>
+                  </label>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="checkbox-detailed block margin-right-0">
+                  <%= f.radio_button :profile, "Advisor", :id => "check-det-2" %>
+                  <label for="check-det-2" class="width-100">
+                  <span class="checkbox-detailed-tbl">
+                    <span class="checkbox-detailed-cell">
+                      <span class="checkbox-detailed-title">
+                        <h4 class="no-margin bold">Advisor</h4>
+                      </span>
+                      I advise companies.
+                    </span>
+                  </span>
+                  </label>
+                </div>
+                <div class="checkbox-detailed block no-margin">
+                  <%= f.radio_button :profile,  "Entreprenuer", :id => "check-det-3" %>
+                  <label for="check-det-3" class="width-100">
+                  <span class="checkbox-detailed-tbl">
+                    <span class="checkbox-detailed-cell">
+                      <span class="checkbox-detailed-title">
+                        <h4 class="no-margin bold">Entreprenuer</h4>
+                      </span>
+                      I am running a company.
+                    </span>
+                  </span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br/>
+          <hr class="m-a-0"/>
+          <div class="bgcolor-light-grey p-a-lg">
+            <div class="row">
+              <div class="col-md-6">
+                <%= link_to previous_wizard_path(:id=>"welcome"), class: "btn btn-rounded btn-transparent btn-block" do %>
+                  <i class="fa fa-long-arrow-left m-r-sm" aria-hidden="true"></i> Location
+                <% end %>
+              </div>
+              <div class="col-md-6 p-l-0">
+                <%= f.submit "Save and Next", class: "btn btn-rounded btn-primary btn-block" %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </section>
+      </div>
+    </div>
+  </div>
+</div>
+

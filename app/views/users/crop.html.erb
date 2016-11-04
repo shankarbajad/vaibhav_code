@@ -1,0 +1,7 @@
+<%= form_for current_user do |f| %>
+
+  <%= f.cropbox :background_image %>
+  <%= f.previewbox :background_image %>
+
+  <%= f.submit 'Crop', :style => "width: 300px;" %>
+<% end %>

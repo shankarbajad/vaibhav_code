@@ -1,0 +1,61 @@
+<div class="clearfix nested-fields">
+  <div class="clearfix row">
+    <div class="col-md-10">
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-12">
+            <label class="form-label">College or University Attended<span class="text-muted">What is the name of the college or university you attended?</span></label>
+            <%= f.select :school, EducationSchool.all.map { |sc| [sc.school] }.flatten.compact,:disabled => ["Select One"]%>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-12">
+            <label class="form-label">Area of Study<span class="text-muted">What was your area of study (i.e. degree or major)?</span></label>
+            <%= f.select :area_of_study, EducationSchool.all.map { |l| [l.area_of_study] }.uniq, {}, :id => "area_study" %>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="row">  
+          <div class="col-md-6">
+            <label class="form-label">Degree Level<span class="text-muted">What was the level of the degree earned?</span></label>
+            <div id="education_degree">
+              <%= select_tag "level", options_for_select(EducationSchool.all.collect{|pt| [pt.degree]}), class: "form-control col-sm-12" %>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label class="form-label">Graduation Year<span class="text-muted">What year did you finish?</span></label>
+            <%= f.select :passing_year, (Time.zone.now.year - 116)..(Time.zone.now.year ) ,:prompt=> "#{Time.zone.now.year}"%>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-md-2">
+      <p><%= link_to_remove_association "Remove", f, class: "btn btn-sm btn-danger" %></p>
+    </div>
+  </div>
+  <hr/>
+</div>
+
+<script>
+$('body').on('change', '#area_study', function() {
+  var consider_type;
+  study_type = $('#area_study').val();
+    $.ajax({
+      url: '/users/filter_courses',
+      method: 'get',
+      data: {
+        study_type: study_type
+      }
+    });
+});
+</script>
+  
+
+  

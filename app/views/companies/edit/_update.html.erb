@@ -1,0 +1,25 @@
+<section id="files">
+  <h6>UPDATES</h6>
+
+  <div class="form-group">
+    <div id="company_updates" class="brad-6 m-y-lg">
+      <div class="links m-y-lg">
+        <%= link_to_add_association 'New Update', f, :updates, class: "btn btn-lg" %>
+      </div>
+      <hr/>
+
+          
+      <div class="row">
+        <div class="col-sm-12">
+          <div id="company_photos">
+            <%= f.fields_for :updates do |update_form| %>
+              <%= render 'companies/update_fields', f: update_form %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+

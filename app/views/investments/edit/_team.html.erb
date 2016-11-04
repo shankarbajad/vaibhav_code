@@ -1,0 +1,8 @@
+<section id="nav-founders">
+  <h6>THE FOUNDING TEAM</h6>
+
+  <h5 class="bold m-b-0">Add Corporate Team</h5>  
+   <p class="text-muted">Please add corporate team members that should be associated with this investment.</u></b></p>
+   <%= f.collection_select :user_ids, User.all, :id, :email, {:selected => @investment.staffs.send("Founders").map(&:user_id) }, {:name => "staff_users[#{"Founders"}][]", :multiple => true, class: "select2"} %>
+
+</section>

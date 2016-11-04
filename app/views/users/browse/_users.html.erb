@@ -1,0 +1,48 @@
+
+<script>
+
+  var data = {
+    <% @grouped_users.delete_if { |key, value| key.nil? }.each do |geography,_| %>
+    "<%= geography.to_s.parameterize.underscore %>": <%= User.where(:location => geography).map{|u| [u.name, u.company, u.title, u.brief_description].join(', ')}.to_s.html_safe %>,
+    <% end %>
+  };
+
+  typeof $.typeahead === 'function' && $.typeahead({
+    input: ".js-typeahead-input",
+    minLength: 1,
+    maxItem: 15,
+    order: "asc",
+    hint: true,
+    group: {
+      template: "{{group}} beers!"
+    },
+    maxItemPerGroup: 5,
+    backdrop: {
+      "background-color": "#fff"
+    },
+    href: "/users?q={{display}}&region=",
+    dropdownFilter: "All Regions",
+    emptyTemplate: 'No result for "{{query}}"',
+    source: {
+      <% @grouped_users.delete_if { |key, value| key.nil? }.each do |geography,_| %>
+      "<%= geography %>": {
+        data: data.<%= geography.to_s.parameterize.underscore %>
+      },
+      <% end %>
+    },
+    callback: {
+      onClickAfter: function (node, a, item, event) {
+
+        // href key gets added inside item from options.href configuration
+        //alert(item.href);
+
+      }
+    },
+    debug: false
+  });
+
+</script>
+
+<div class="row" id="location_data">
+  <%= render 'user' %>
+</div>

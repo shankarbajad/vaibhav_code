@@ -1,0 +1,26 @@
+<h1>Published Reports</h1>
+
+<table class="table">
+  <tr>
+    <th>Title</th>
+    <th>Published AT</th>
+    <th>Document</th>
+  </tr>
+  <% @reports.each do |report|%>
+    <%if (report.try(:investment).try(:users).to_a + report.try(:company).try(:users).to_a).uniq.include?(current_user)%>
+      <tr>
+        <td>
+          <%= report.title %>
+        </td>
+        <td>
+          <%= report.published_at %>
+        </td>
+        <td>
+          <%= link_to report.document.file.filename, report.document.url if report.document.present?  %>
+        </td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
+
+<%= paginate @reports %>

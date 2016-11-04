@@ -1,0 +1,31 @@
+<section class="overview" id="nav-pitch">
+  <h6>Company Overview</h6>
+  <h3><%= @company.name %></h3>
+  <p class="lead" style="font-size: 24px; line-height: 32px; color: #666">
+    <%= @company.description %>
+  </p>
+
+  <article class="">
+    <div class="row">
+      <div class="col-md-3">
+        <h4><%= @company.industry %></h4>
+        Industry
+      </div>
+      <div class="col-md-3">
+        <h4><%= @company.product_stage %></h4>
+        Product Stage
+      </div>
+      <div class="col-md-3">
+        <h4><%= @company.no_of_founders %></h4>
+        No. of Founders
+      </div>
+      <div class="col-md-3">
+        <h4><%= @company.no_of_employees %></h4>
+        No. of Employees
+      </div>
+      
+    </div>
+  </article>
+</section>
+
+

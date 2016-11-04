@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>VestedWorld</title>    
+    <link rel='shortcut icon' href='../assets/favicon.ico' type='image/x-icon'/ >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "Rails Devise Roles" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Rails Devise Roles" %>">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+      
+    <%= favicon_link_tag 'favicon.ico', rel: 'apple-touch-icon', type: 'image/png' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => false %>
+    <%= stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css'%>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+    <%= javascript_include_tag 'https://www.gstatic.com/charts/loader.js' %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body class="">
+    <%= render 'layouts/header' %>
+</div>
+
+    <div class="page-content bgcolor-white p-x-0">  
+        <div class="container-row">
+            <%= yield %>
+        </div>
+    </div>
+  </body>
+</html>
+
+

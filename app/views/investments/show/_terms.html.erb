@@ -1,0 +1,99 @@
+<section id="nav-terms">
+  <h6>Investment Terms</h6>
+
+  <h5>Investment Term Sheet</h5>
+  <p class="text-muted">
+    [term sheet notice]
+  </p>
+
+
+  <h3></h3>
+  <table class="table table-striped">
+    <thead>
+      <th width="35%">Term</th>
+      <th>Description</th>
+      </thead>
+    <tbody>
+      <tr>
+        <td>Security:</td>
+        <td><%= term_sheet.try(:security) %></td>
+      </tr>
+      <tr>
+        <td>Automatic Conversion:</td>
+        <td> <%= term_sheet.try(:automatic_conversion) %></td>
+      </tr>
+      <tr>
+        <td>Interest Rate:</td>
+        <td><%= term_sheet.try(:interest_rate) %></td>
+      </tr>
+      <tr>
+        <td>Interest Payments:</td>
+        <td><%= term_sheet.try(:interest_payments) %></td>
+      </tr>
+      <tr>
+        <td>Maturity Date:</td>
+        <td><%= term_sheet.try(:maturity_date) %></td>
+      </tr>
+      <tr>
+        <td>Conversion Discount:</td>
+        <td<%= term_sheet.try(:conversion_discount) %></td>
+      </tr>
+
+      <tr>
+        <td>Conversion Cap:</td>
+        <td><%= term_sheet.try(:conversion_cap) %></td>
+      </tr>
+      <tr>
+        <td>Optional Conversion:</td>
+        <td><%= term_sheet.try(:optional_conversion) %></td>
+      </tr>
+      <tr>
+        <td>Redemption Option:</td>
+        <td><%= term_sheet.try(:redemption_option) %></td>
+      </tr>
+      <tr>
+        <td>Other:</td>
+        <td><%= term_sheet.try(:other) %>
+        </td>
+      </tr>
+      <tr>
+        <td>Min. Investment for VestedAngels:</td>
+        <td><%= term_sheet.try(:min_investment_for_vestedAngels) %>
+        </td>
+      </tr>
+      <tr>
+        <td>Min. Raise through VestedAngels:</td>
+        <td><%= term_sheet.try(:min_Raise_through_vestedAngels) %>
+        </td>
+      </tr>
+      <tr>
+        <td>Max Raise through VestedAngels:</td>
+        <td><%= term_sheet.try(:max_raise_through_vestedAngels) %>
+        </td>
+      </tr>
+      <tr>
+        <td>Maximum Fund Investors:</td>
+        <td><%= term_sheet.try(:maximum_fund_investors) %>
+        </td>
+      </tr>
+      <tr>
+        <td>Management Fee:</td>
+        <td><%= term_sheet.try(:management_fee) %>
+        </td>
+      </tr>
+      <tr>
+        <td>Carried Interest:</td>
+        <td><%= term_sheet.try(:carried_interest) %></td>
+      </tr>
+      <tr>
+        <td>Administrative Cost:</td>
+        <td><%= term_sheet.try(:administrative_cost) %></td>
+      </tr>
+      <tr>
+        <td>Target Closing Date:</td>
+        <td><%= term_sheet.try(:target_closing_date) %></td>
+      </tr>
+    </tbody>
+    <tfooter></tfooter> 
+  </table>
+</section>

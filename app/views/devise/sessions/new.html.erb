@@ -1,0 +1,88 @@
+<style type="text/css">
+
+  body {
+        background: url(<%=image_url("bg-hero-sessions.jpg")%>) !important; 
+        background-size: cover;
+      }
+
+</style>
+
+
+
+
+<div class="container-row">
+  <div class="col-sm-3 col-centered no-padding bgcolor-primary" style="border-radius: 0 0 6px 6px;">
+    <p class="text-center">
+      <%= image_tag("white-mark.png", style: "width: 60px;") %>
+      <%= image_tag("white-type.png", style: "width: 140px; margin-left: -20px;") %>
+    </p>
+
+    <section class="p-a-0 m-b-0"> 
+    <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :html => { :role => 'form'}) do |f| %>
+      <h3 class="text-center m-b text-white">Join our Community</h3>
+      <p class="text-white text-center">Sign-up for a new account</p>
+
+      <hr class="m-a-0"/>
+
+      <section class="p-a m-b-0 full-height-col">
+        <div class="m-x m-y authform">
+          <%= devise_error_messages! %>
+          <p>
+            <%= link_to "Login With Linkedin", user_linkedin_omniauth_authorize_path, class: "btn btn-block btn-rounded btn-primary" %>
+          </p>
+
+          <p class="text-white text-center">Or, login using your email address</p>
+        
+
+
+          
+          <div class="form-group">
+            <%= f.email_field :email, :autofocus => true, class: 'form-control',  placeholder: "Email"  %>
+          </div>
+          <div class="form-group">
+            <%= f.password_field :password, class: 'form-control',  placeholder: "Password"  %>
+          </div>
+          
+          <!-- <div class="checkbox pull-left">
+            <% if devise_mapping.rememberable? -%>
+              <%= f.check_box :remember_me %>
+               <label for="signed-in" class="text-muted">Keep me logged in.</label>
+            <% end -%>
+          </div> -->
+
+          <%= f.submit 'Account Login', class: "btn btn-block btn-rounded  btn-white btn-transparent" %>
+
+
+          
+
+         
+          <div class="form-group">
+            <div class="reset">
+              <%- if devise_mapping.recoverable? %>
+               <p class="text-center text-white m-y">
+                  <%= link_to "Forgot password?", new_password_path(resource_name)%>
+                </p>
+              <% end -%>
+            </div>
+          </div>
+          <p class="text-center text-white m-y">
+            Don't have an account?
+            <%- if devise_mapping.registerable? %>
+              <u>
+                <%= link_to 'Sign up', new_registration_path(resource_name), class: 'text-warning bold right'  %>
+              </u>
+            <% end -%>
+          </p>
+
+
+          
+        </div>
+      </div>
+      </section>
+    <% end %>
+  </div>
+  <div class="col-lg-9 col-md-7" style="height: 1100px;">
+    
+  </div>
+</div>
+

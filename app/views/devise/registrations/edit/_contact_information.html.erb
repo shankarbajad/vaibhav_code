@@ -1,0 +1,53 @@
+<section id="nav-contact">
+  <h6>CONTACT INFORMATION</h6>
+
+  <h4>Getting in touch.</h4>
+  <p>Don't worry. We won't make any of your more sensitive contact information publicly available and we will only contact you upon request. </u></b></p>
+  <br/>       
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label class="form-label">Phone Number<span class="text-muted">Not made public, for our records only.</span></label>
+        <%= f.number_field :phone_number, class: 'form-control', placeholder: "" %>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label class="form-label">Skype ID<span class="text-muted">Not made public, for our records only.</span></label>
+        <%= f.text_field :skype_id, class: 'form-control', placeholder: "" %>
+      </div>
+    </div>
+  </div>
+  <%=text_field_tag :user_id, params[:format]%>
+  <br/>
+
+
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label class="form-label">City<span class="text-muted">What city do you most often work in?</span></label>
+        <div class="country_cities">
+          <%= f.select(:city, cities(f), class: "select2 form-control",:prompt => 'Choose a City')%>
+        </div>          
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="form-group">
+        <label class="form-label">Country<span class="text-muted">What country do you most often work in?</span></label>
+        <%= f.select(:country, countries(f), class: "select2 form-control",:prompt => 'Choose a Country')%>
+      </div>
+    </div>
+  </div>
+
+  <br/>
+
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="form-group">
+        <label class="form-label">Website<span class="text-muted">Will be made publicly available.</span></label>
+        <%= f.text_field :website, class: 'form-control', placeholder: "" %>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,7 @@
+<h1>Editing Questionnaire</h1>  
+<%= render 'form' %>
+<% if !@questionnaire.status.eql?(1) %>
+    <%= link_to 'Submit & send', change_status_company_questionnaire_path(@questionnaire.company, @questionnaire), class: "btn btn-primary" if @questionnaire.company%>
+  <%end%>  
+<%= link_to 'Show', company_questionnaires_path(@company, @questionnaire) %> |
+<%= link_to 'Back', company_questionnaires_path(@company) %>

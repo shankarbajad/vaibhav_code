@@ -1,0 +1,59 @@
+<section id="social">
+  <h6>SOCIAL PROFILES</h6>
+  <h5>Social Profiles</h5>
+  <p>Please include your corporate social profiles below. Only copy and paste the unique portion of the link.</p>
+  <br/>
+  <div class="form-group row">
+    <div class="col-md-12">
+      <label class="form-label">LinkedIn <small>Copy and Paste Link</small></label>
+      <%= f.text_field :linkedin, class: 'form-control', placeholder: "",:id=>"linkdin" %>
+      <span class="linkdin_url"></span>
+    </div>
+  </div>
+  <br/>
+  <div class="form-group row">
+    <div class="col-md-12">
+      <label class="form-label">Twitter <small>Copy and Paste Link</small></label>
+      <%= f.text_field :twitter, class: 'form-control', placeholder: "", :id=>"twitter" %>
+        <span class="twitter_url"></span>
+    </div>
+  </div>
+  <br/>
+  <div class="form-group row">
+    <div class="col-md-12">
+      <label class="form-label">Facebook <small>Copy and Paste Link</small></label>
+      <%= f.text_field :facebook, class: 'form-control', placeholder: "", :id=>"facebook" %>
+        <span class="facebook_url"></span>
+    </div>
+  </div>
+</section>
+
+<script type="text/javascript">
+  $("#linkdin").keyup(function(e){
+    if(( /(ftp|http|https):\/\/?(?:www\.)?linkedin.com(\w+:{0,1}\w*@)?(\S+)(:([0-9])+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/.test(this.value) ) || this.value == "")  {
+      $(".linkdin_url").hide().html("<b>Invalid URL</b>").css({ 'color': "red" });   
+    }
+    else{
+      $(".linkdin_url").show().html("<b>Invalid URL</b>").css({ 'color': "red" });
+    }
+  });
+
+  $("#twitter").keyup(function(e){
+    if((/^(https?:\/\/)?((w{3}\.)?)twitter\.com\/(#!\/)?[a-z0-9_]+$/i.test(this.value)) || this.value == ""){
+
+      $(".twitter_url").hide().html("<b>Invalid URL</b>").css({ 'color': "red" });   
+    }
+    else{
+      $(".twitter_url").show().html("<b>Invalid URL</b>").css({ 'color': "red" });
+    }
+  });
+
+  $("#facebook").keyup(function(e){
+    if((/^(https?:\/\/)?((w{3}\.)?)facebook.com\/.*/i.test(this.value)) || this.value == "")  {
+      $(".facebook_url").hide().html("<b>Invalid URL</b>").css({ 'color': "red" });   
+    }
+    else{
+      $(".facebook_url").show().html("<b>Invalid URL</b>").css({ 'color': "red" });
+    }
+  });
+</script>

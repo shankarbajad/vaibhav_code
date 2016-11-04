@@ -1,0 +1,24 @@
+
+##1.0 Beta MVP Release Schedule:
+
+Clear project milestones and development sprints outlined in the Github Repository within 24 hour of contract execution
+All milestones will be populated with development and design “issues” that represent all task that need to be completed respective to that particular design or development focus.
+
+##10-day Release Sprint
+
+0.0: User Authentication (email, password)
+0.1: Social Authentication (LinkedIn)
+0.2: User models (users, advisors, investors, founders, management, admins)
+0.3: Object models (companies, investments*)
+0.4: User Profiles (public view and edit)
+0.5: Company Profiles (public view and edit)
+0.6: Company Review Dashboard
+0.7: User and Company Photos (upload, edit)
+0.8: Browse pages (view all advisors, investors, founders)
+0.9: Status updates, notification
+0.10: Emails
+
+##Monitoring and Collaboration:
+
+Github will be used for version control, code hosting, and team collaboration.
+Github accounts will be created for relevant of Vested World management or leadership to facilitate an inclusive, transparent, and open working relationship:

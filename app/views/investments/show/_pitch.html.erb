@@ -1,0 +1,11 @@
+<p id="nav-intro"></p>
+<section class="pitch" id="nav-pitch">
+  <h6>ELEVATOR PITCH</h6>
+  <% if @investment.company.present? %>
+	  <h3><%= @investment.company.name %></h3>
+	  <p class="lead" style="font-size: 24px; line-height: 32px; color: #666">
+	    <%= @investment.description %>
+	  </p>
+	<% end %>
+
+</section>

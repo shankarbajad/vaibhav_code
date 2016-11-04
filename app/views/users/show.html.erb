@@ -1,0 +1,145 @@
+<div class="">
+  <div class="profile-header-photo reduced-height gradient" style="background-image: url(http://vestedworld.com/app/uploads/2016/03/3-1600x870.jpg)">
+    <div class="profile-header-photo-in">
+      <div class="tbl-cell">
+        <div class="info-block">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 col-lg-offset-4">
+                <h2><%= @user.name %></h2>
+                <p class=""><%= @user.brief_description %></p>
+                <h5 class="text-warning"><%= @user.company %>, 
+                  <span class="text-white"><%= @user.title %></span>
+                </h5>
+                
+                <!-- <h5 class="text-warning"><%= @user.location %></h5> -->
+                <br/>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <% if (current_user && @user.eql?(current_user)) || (current_user && current_user.admin?) %>
+      <%= link_to edit_user_registration_path(@user), type: "button", class: "change-cover m-a-lg" do %>
+      <i class="font-icon font-icon"></i>Edit Account
+      <% end %>
+    <% end %>
+  </div><!--.profile-header-photo-->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 scrollspy">
+        <aside class="profile-side">
+          <section class="box-typical box-transparent profile-side-user no-padding m-b-0">
+            <div class="p-a-lg">
+              <% @image = if @user.avatar.present?
+                @user.avatar.url
+              else 
+                "http://www.sheffield.com/wp-content/uploads/2013/06/placeholder.png"
+              end %>
+              <img src="<%= @image %>" class="img-responsive">
+            </div>
+            <hr class="m-a-0"/>
+
+            <div class="p-a" id="sticker">
+              <%= render 'devise/registrations/edit/nav/links' %>
+            </div>
+          
+          </section>
+        </aside>
+      </div>
+      <div class="col-lg-8">
+        <div class="row">
+          <div class="col-sm-3">
+            <h4><%= @user.industry %></h4>
+            <h6>Industry</h6>
+          </div>
+          <div class="col-sm-3">
+            <h4><%= @user.location %></h4>
+            <h6>Location</h6>
+          </div>
+          <div class="col-sm-3">
+          </div>
+           <div class="col-sm-3">
+          </div>
+        </div>
+
+        <hr/>
+        
+        <section id="overview">
+          <article>
+            <h6>Professional Background</h6>
+            <br/>
+            <label class="form-label">Keywords Skills<span class="text-muted">Core professional competencies.</label>
+            <% if @user.skills.present? %>
+              <div>
+                <% @user.skills.each do |skill| %>
+                  <span class="btn btn-default user_skill"><%= skill %></span>
+                <% end %>
+              </div>
+            <% end %>
+            <br/><br/><br/>
+            <h6>Bio + Background</h6>
+            <br/>
+            <p class=""  style="white-space: pre-wrap;"><%= @user.bio %></p>
+          </article>
+        </section/>
+
+        <hr/>
+
+        <section id="social">
+          <article>
+            <h6>Social Profiles</h6>
+            <br/>
+            <div class="row">
+              <div class="col-md-6">
+                <a href="<%= @user.linkedin_url%>" class="btn btn-rounded btn-linkedin btn-block">
+                  LinkedIn
+                </a>
+              </div>
+              <div class="col-md-6">
+              </div>
+            </div>
+          </article>
+        </section>
+      </div><!--.row-->
+    </div><!--.container-fluid-->
+  </div>
+
+
+</div>
+
+
+
+<!-- 
+<div class="page-content">
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade in active" id="home"> 
+      <%#= render "users/home" %> 
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="investments">
+      <%#= render "users/investments" %>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="profile">
+      <%#= render "users/profile" %>
+    </div>
+    <div role="tabpanel" class="tab-pane fade" id="settings">
+      <%#= render "users/settings" %>
+    </div>
+  </div>
+</div> -->
+
+<%#= @user.phone_number %>
+
+<style type="text/css">
+.stick {
+  position:fixed;
+  top:70px !important;
+  border: 1px solid #d8e2e7;
+}
+.profile-side {
+  margin: -245px 0 21px 20px;
+}
+</style>

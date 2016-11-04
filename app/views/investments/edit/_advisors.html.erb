@@ -1,0 +1,10 @@
+<section id="nav-advisors">
+  <h6>Notable Advisors</h6>
+
+  <h5 class="bold m-b-0">Add Advisors</h5>
+  <p class="text-muted">Please select advisors that should be associated with this investment.</u></b></p>
+  <%= f.collection_select :user_ids, User.all, :id, :email, {:selected => @investment.staffs.send("Advisor").map(&:user_id) }, {:name => "staff_users[#{"Advisor"}][]", :multiple => true, class: "select2"} %>
+  <br/>
+  
+
+</section>

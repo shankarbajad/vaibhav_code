@@ -1,0 +1,50 @@
+<body style="background: url(https://davidderrick.files.wordpress.com/2009/07/african-farm.jpg); background-size: cover;">
+
+<div class="page-center">
+  <div class="page-center-in">
+    <div class="container-fluid authform">
+      <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :role => 'form', :class => "sign-box "}) do |f| %>
+
+        <%= devise_error_messages! %>
+
+        <div class="sign-avatar no-photo">&plus;</div>
+        <header class="sign-title">Sign In</header>
+        <div class="form-group">
+          <input class="form-control" placeholder="Full Name">
+        </div>
+        <div class="form-group">
+          <input class="form-control" placeholder="Full Name">
+        </div>
+        <div class="form-group">
+            <%= f.password_field :password, class: 'form-control', placeholder: "Password" %>
+        </div>
+        <div class="form-group">
+            <%= f.password_field :password_confirmation, class: 'form-control', placeholder: "Password Confirmation" %>
+        </div>
+
+        <div class="form-group">
+            <div class="checkbox float-left">
+              <input type="checkbox" id="signed-in"/>
+
+              <label for="signed-in">
+                I agree to the <a href="#"><u>Terms of Use</u></a>
+                and confirm that I am and accredited Investor.
+              </label>
+            </div>
+        </div>
+
+        <%= f.submit 'Sign up', :class => 'btn btn-rounded' %>
+        <%= link_to 'View Companies', page_path('companies'), class: "btn btn-rounded btn-default" %>
+        <p class="sign-note">
+            Already have an account? <%= link_to 'Sign in', new_user_session_path %>
+        </p>
+        <!--<button type="button" class="close">
+            <span aria-hidden="true">&times;</span>
+        </button>-->
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div><!--.page-center-->
+

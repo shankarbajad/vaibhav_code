@@ -1,0 +1,52 @@
+<div class="modal fade" id="img-cropp" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="exampleModalLabel">Image Cropper</h4>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <!-- <h3 class="page-header">Demo:</h3> -->
+              <div class="img-container">
+                <div style="display:none">
+                  <input id="company_background_image_crop_x" type="hidden" name="company[background_image_crop_x]" value="0">
+                  <input id="company_background_image_crop_y" type="hidden" name="company[background_image_crop_y]" value="0">
+                  <input id="company_background_image_crop_w" type="hidden" name="company[background_image_crop_w]" value="200">
+                  <input id="company_background_image_crop_h" type="hidden" name="company[background_image_crop_h]" value="200">
+                </div>
+                <img id="image" src="data:image/jpeg;base64,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" alt="Picture" alt="Picture">
+              </div>
+            </div>
+            <div class="col-md-12">
+              <!-- <h3 class="page-header">Preview:</h3> -->
+              <div class="docs-preview clearfix">
+                <div class="img-preview preview-lg"></div>
+              </div>
+            </div>
+          </div>          
+        </div>
+      </div>
+      <div class="modal-footer">
+        <div class="row">
+          <div class="col-md-12 docs-buttons">
+            <!-- Show the cropped image in modal -->
+            <a class="hide" id="download" href="javascript:void(0);" download="cropped.jpg" ></a>
+            <div class="btn-group btn-group-crop">
+            <button type="button" class="btn btn-primary crop-button" data-method="getCropBoxData" data-option data-target="#putData">
+              <span class="docs-tooltip" data-toggle="tooltip" title="$().cropper(&quot;getCropBoxData&quot;)">
+                Crop
+              </span>
+            </button>        
+            <input type="hidden" class="form-control" id="putData" name="crop" id="crop" placeholder="Get data to here or set data with this value">
+            </div>
+          </div>
+        </div>         
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<section id="updates">
+  <h6>UPDATE</h6>
+
+  <h5>Company Updates</h5>
+  <div class="row  bgcolor-light-grey">
+    <% @company.updates.each do |update| %>
+      <div class="col-sm-3">
+        Title: <%= update.title %> <br />
+        Brief Description: <%= update.brief_description %> <br />
+        Detailed Description: <%= update.detailed_description %> <br />
+      </div>
+    <% end %>
+  </div>
+</section>

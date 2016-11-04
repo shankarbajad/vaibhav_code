@@ -1,0 +1,62 @@
+
+<div class="bgcolor-white">
+
+  <%= form_for [@company, @questionnaire] do |f| %>
+
+    <div class="profile-header-photo gradient" style="background: url(http://vestedworld.com/app/uploads/2016/03/3-1024x529.jpg);">
+	  <div class="profile-header-photo-in">
+	    <div class="tbl-cell">
+	      <div class="info-block">
+	        <div class="container">
+	          <div class="row p-y-lg">
+	            <div class="col-xl-8 col-xl-offset-4 col-lg-8 col-lg-offset-4 col-md-offset-0">
+	              <div class="form-group">
+	                <!-- <label class="form-label">Company Name<small> Use legal name, if available.</small></label> -->
+	                <%#= f.text_field :elevator_pitch, class: 'form-control', placeholder: "Company Name" %> 
+	              </div>
+	              <br/>
+	              <div class="form-group">
+	                <!-- <label class="form-label">Brief Description <small>Quick description of what your copmany does.</small></label> -->
+	                <%#= f.text_area :elevator_pitch, class: 'form-control', placeholder: "Company Name" %> 
+	              </div>
+	            </div>
+	          </div>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	</div><!--.profile-header-photo-->
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-3 col-lg-4">
+          <aside class="profile-side">
+            <section class="box-typical box-transparent profile-side-user no-padding m-b-0">
+              <div class="p-a-lg">
+                <br/>
+                <%= render 'questionnaires/edit/nav/logo', f: f %>
+                <button type="button" class="btn btn-rounded" data-toggle="modal" data-target="#investModal">Invest</button>
+                <br/><br/>
+
+                <h3 class="text-muted bold ls1">FOLLOW US</h3>
+                <%= render 'questionnaires/edit/nav/social_links' %>
+                <%= render 'questionnaires/edit/nav/founders' %>
+              </div>
+              <hr class="m-a-0"/>
+              <div class="p-a">
+                <%= render 'questionnaires/edit/nav/links' %>
+              </div>
+            </section>
+          </aside><!--.profile-side-->
+        </div>
+
+        <div class="col-lg-offset-1 col-lg-8 col-md-offset-1 col-md-8 col-sm-6 col-xs-12 show">          
+          <%= render 'form', f: f %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<%=render 'shared/investment_terms'%>

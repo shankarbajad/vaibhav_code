@@ -1,0 +1,16 @@
+<section id="nav-investments">
+  <h6>Investments</h6>
+
+  <h4>Past Investments</h4>
+  <p>Tell us about your previous investment experience.</u></b></p>
+  <br/>       
+
+
+
+  <div class="clearfix">
+    <%= f.fields_for :past_investments do |past_invest| %>
+      <%= render 'devise/registrations/past_investment_fields', f: past_invest %>    
+    <% end %>
+    <%= link_to_add_association 'Add Investment', f, :past_investments, :class=>"btn btn-small btn-primary" %>
+  </div>
+</section>

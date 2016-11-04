@@ -1,0 +1,30 @@
+<% @users.each do |user| %>
+  <div class="col-lg-2 col-md-4 col-sm-6 col-xs-12">
+    <section class="widget widget-user">
+      <div class="widget-user-bg" style="background-image: url('http://vestedworld.com/app/uploads/2016/03/3-1600x870.jpg')"></div>
+      <div class="widget-user-photo">
+         <% if user.avatar.url.present? %>
+            <%= image_tag(user.avatar.url)%>
+          <% else %>
+            <%= image_tag("avatar-1-128.png")%>
+          <% end %>
+      </div>
+      <div class="widget-user-name capitalize p-b-lg">
+        <h6 class="bold	no-margin"><%= link_to user.name, user %></h6>
+        <span class="company"><%= user.company %></span>
+        <span class="role"><%= user.title %></span>
+      </div>
+      <!-- <ul class="profile-links-list">
+        <li class="divider"></li>
+        <li>
+          <%= link_to("", user_path(user), :data => { :confirm => "Are you sure?" }, :method => :delete, :class => 'button-xs') unless user == current_user %>
+          <i class="font-icon font-icon-trash text-warning"></i>
+          <%= form_for(user) do |f| %>
+  			    <%= f.select(:role, User.roles.keys.map {|role| [role.titleize,role]}) %>
+  			    <%= f.submit 'Change Role', :class => 'button-xs' %>
+  			  <% end %>
+        </li>
+      </ul> -->
+    </section><!--.box-typical-->
+  </div>
+<% end %>

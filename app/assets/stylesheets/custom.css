@@ -1,0 +1,23 @@
+
+@media (min-width: 768px) {
+  .img-container {
+    min-height: 516px;
+  }
+}
+
+
+.img-preview {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.preview-lg {
+  width: 263px;
+  height: 148px;
+}
+
+.hide {
+	display: none;
+}

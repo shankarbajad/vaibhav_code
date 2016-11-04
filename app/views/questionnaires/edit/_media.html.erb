@@ -1,0 +1,68 @@
+<section id="files">
+  <h6>MEDIA</h6>
+
+  <div class="form-group">
+    <label class="form-label">Photos</label>
+    <div id="company_photos" class="bgcolor-light-grey p-a-lg brad-6">
+      <div class="row">
+        <div class="col-sm-9">
+          <div id="company_photos">
+            <%= f.fields_for :company_photos do |company_photo_form| %>
+              <%= render 'companies/company_photo_fields', f: company_photo_form %>
+            <% end %>
+          </div>
+          <div class="col-sm-3">
+            <div class="links">
+              <%= link_to_add_association 'Add Photo', f, :company_photos %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br/><br/>
+
+  <div class="form-group">
+    <label class="form-label">Documents</label>
+    <div id="company_documents" class="bgcolor-light-grey p-a-lg brad-6">
+      <div class="row">
+        <div class="col-sm-9">
+          <div id="company_documents">
+            <%= f.fields_for :company_documents do |company_document_form| %>
+              <%= render 'companies/company_document_fields', f: company_document_form %>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="links">
+          <%= link_to_add_association 'Add document', f, :company_documents, class: "btn btn-small btn-primary"%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <br/><br/>
+
+  <div class="form-group">
+    <label class="form-label">Videos</label>
+    <div id="company_video" class="bgcolor-light-grey p-a-lg brad-6">\
+      <div class="row">
+        <div class="col-sm-9">
+          <div id="videos">
+            <%= f.fields_for :videos do |video_form| %>
+              <%= render 'companies/video_fields', f: video_form %>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="links">
+            <%= link_to_add_association 'Add Video', f, :videos %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+

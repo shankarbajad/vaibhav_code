@@ -1,0 +1,41 @@
+<style type="text/css">
+.whatever{ 
+background: url(<%= image_url("public-bg.jpg")%>) no-repeat center center fixed; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+}
+</style>
+
+<div class="container p-y-lg mobile-center" style="padding: 50px 0 100px 0; height: 800px;">
+  <h1 class="cover-heading hero m-n">Invest in your world.</h1>
+
+  <div class="row">
+    <div class="col-md-7 col-sm-12">
+      <p class="lead" style="font-size: 30px; line-height: 1.2;">
+      	Earn competitive returns while driving meaningful impact in the last economic frontiers.
+      </p>
+      <br/>
+      <p class="lead bold" style="font-size: 20px; line-height: 1.2;">
+        VestedWorld is an emerging market venture capital platform.
+      </p>
+    </div>
+  </div>
+  <br/>
+  <div class="row">
+    <div class="col-lg-6 col-md-8 col-sm-12">
+      <div class="row">
+        <div class="col-sm-6">
+          <%= link_to "Join our Community", new_user_registration_path, class: "btn btn-rounded btn-lg btn-block pull-right text-white" %>
+        </div>
+        <div class="col-sm-6">
+          <%= link_to "Apply for Funding", new_user_session_path, class: "btn btn-rounded btn-block btn-default btn-lg pull-right", target: "_blank", style: "background: transparent; " %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<%#= link_to "What is Impact Investing ?", "http://vestedworld.com/about-us/", class: "btn btn-rounded btn-block btn-default pull-right", target: "_blank", style: "background: transparent; " %>

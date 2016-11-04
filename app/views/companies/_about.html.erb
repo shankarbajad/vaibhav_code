@@ -1,0 +1,107 @@
+<br/>
+  
+<div class="form-group row">
+  <div class="col-md-4">
+    <label class="form-label">No. of Founders</label>
+    <h4><%= @company.no_of_founders %></h4>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">No. of Employees</label>
+    <h4><%= @company.no_of_employees %></h4>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Geographic Area</label>
+     <h4><%= @company.geography %></h4>
+  </div>
+</div>
+<div class="form-group row">
+  <div class="col-md-4">
+    <label class="form-label">Website</label>
+    <h5><a href="<%= @company.company_website %>">Company Website</a></h5>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Country of Incorporation</label>
+  </div>
+</div>
+
+<hr/>  
+
+
+<h4 class="bold">Company Overview</h4>
+
+<div class="form-group row">
+  <div class="col-md-4">
+    <label class="form-label">Industry</label>
+    <h4><%= @company.industry %></h4>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Product Stage</label>
+    <h4><%= @company.product_stage %></h4>
+  </div>
+  <div class="col-md-4">
+    <label class="form-label">Technical Co-founder</label>
+    
+  </div>
+</div>
+
+<br/>
+
+<div class="form-group row">
+  <div class="col-md-3">
+    <h5 class="text-primary">Brief Description<br/>
+    <small class="text-muted">Elevator Pitch</small>
+  </h5>
+  </div>
+  <div class="col-md-9">
+    <p><%= @company.description %></p>
+  </div>
+</div>
+
+<div class="form-group row">
+  <div class="col-md-3">
+    <h5 class="text-primary">Stage of Growth
+      <small class="text-muted">Investment Readiness</small>
+    </h5>
+  </div>
+  <div class="col-md-9">
+    <p><%= @company.readiness %></p>
+  </div>
+</div>
+
+<div class="form-group row">
+  <div class="col-md-3">
+    <h5 class="text-primary">
+      Retun Projections<br/>
+      <small class="text-muted">Return Expectations</small>
+    </h5>
+  </div>
+  <div class="col-md-9">
+    <p><%= @company.growth_projections %></p>
+  </div>
+</div>
+
+<hr/>
+
+<!--  <h4 class="bold">Pitch Deck & Financials</h4>
+
+<div class="form-group row">
+  <div class="col-md-9">
+    Upload Powerpoint Deck and Financials
+  </div>
+  <input>
+</div> -->
+
+<!-- <hr> -->
+
+<h4 class="bold">Social Profiles & Media</h4>
+<div class="form-group row">
+  <div class="col-md-4">
+    <a href="<%= @company.linkedin %>" class="btn btn-primary btn-block">LinkedIn</a>
+  </div>
+  <div class="col-md-4">
+    <a href="<%= @company.twitter %>" class="btn btn-warning btn-block">Twitter</a>
+  </div>
+  <div class="col-md-4">
+    <a href="<%= @company.facebook %>" class="btn btn-info btn-block">Facebook</a>
+  </div>
+</div>

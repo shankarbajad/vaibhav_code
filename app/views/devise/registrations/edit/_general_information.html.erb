@@ -1,0 +1,65 @@
+<section id="nav-intro">
+  <h6>Introduction</h6>   
+
+  <h4>Professional Introduction</h4>
+  <p>Completing the information below quick will allow other members within our community to know more about your professional background and experience.</u></b></p>
+  <br/>       
+
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <label class="form-label">Company<span class="text-muted">Who do you currently work for?</span></label>
+        <%= f.text_field :company, class: 'form-control', placeholder: "" %>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label class="form-label">Title<span class="text-muted">What is your current role with your Company?</span></label>
+        <%= f.text_field :title, class: 'form-control', placeholder: "" %>
+      </div>
+    </div>
+  </div>
+
+    <br/>
+
+    <div class="form-group">
+      <label class="form-label">Quick Professional Description<span class="text-muted">In a nutshell what do you do?</span></label>
+      <%= f.text_field :brief_description, class: 'form-control', placeholder: "" %>
+    </div>
+    <br/>
+    <div class="form-group">
+      <label class="form-label">Current Skills<span class="text-muted">the following have been applied to your profile.</label>
+      
+      <% if @user.skills.present? %>
+        <div>
+          <% @user.skills.each do |skill| %>
+            <span class="user_skill"><%= skill %></span>
+          <% end %>
+        </div>
+      <% end %>
+      <br/>
+      <label class="form-label">Add New Keywords<span class="text-muted">e.g., Accounting, Taxes, International Law</label>
+      <div class="clearfix"></div>
+      <select name="user[skills][]" class="select2" style="position: relative; z-index: 99999999;" multiple="multiple">
+        <% User::SKILLS.each do |skill| %>
+          <option data-icon="font-icon-home"><%= skill %></option>
+        <% end %>
+      </select>
+    </div>
+
+    <br/>
+
+    <div class="form-group">
+      <label class="form-label">Full Professional Bio<span class="text-muted">Ok, now hit us with the full bio.</span></label>
+      <%= f.text_area :bio, rows: "6", class: 'form-control', placeholder: "" %>
+    </div>
+</section>
+
+<style type="text/css">
+  .user_skill{
+    background: #919fa9;
+    border-radius: 5px;
+    color: #fff;
+    padding: 5px 15px;
+  }
+</style>

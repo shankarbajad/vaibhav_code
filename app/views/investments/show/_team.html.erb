@@ -1,0 +1,22 @@
+ <section id="nav-founders">
+  <h6>THE FOUNDING TEAM</h6>
+  <% @investment.staffs.send("Founders").map(&:user).each do |founder|%>
+    <% @image = if founder.avatar.present?
+      founder.avatar.url
+    else 
+      "http://www.sheffield.com/wp-content/uploads/2013/06/placeholder.png"
+    end %>
+    <div class="row">
+      <div class="col-md-2">
+        <img src="<%=@image%>" class="img-responsive img-circle" style="width: 100%;">
+      </div>
+      <div class="col-md-10">
+        <h5 class="name-title"><%= founder.name%></h5>
+        <h6 class="m-a-0"><%= founder.role%></h5>
+        <br/>
+        <p><%= founder.brief_description%></p>        
+      </div>
+    </div>
+    <br>
+  <%end%>
+</section>

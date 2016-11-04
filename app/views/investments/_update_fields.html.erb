@@ -1,0 +1,18 @@
+<div class="nested-fields">
+  <div>
+    <%= f.label :title %>
+    <%= f.text_field :title, :class => 'form-control' %>
+  </div>
+
+  <div>
+    <%= f.label :brief_description %>
+    <%= f.text_area :brief_description, :class => 'form-control' %>
+  </div>
+
+  <div>
+    <%= f.label :detailed_description %>
+    <%= f.text_area :detailed_description, :class => 'form-control' %>
+  </div>
+
+  <%= link_to_remove_association "Remove", f %>
+</div>

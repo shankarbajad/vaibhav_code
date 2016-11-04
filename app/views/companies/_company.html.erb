@@ -1,0 +1,96 @@
+<% @companies.each do |company| %>
+  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+    <section class="box-typical box-shadow task-card task p-t-0 relative">      
+      <div class="btn-group task-card-menu absolute p-r p-t">
+        <button type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <i class="text-warning font-icon-dots-vert-square"></i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-right">
+          <%= link_to 'View', company, class: "dropdown-item" %>
+          <% if current_user && (company.creator_id.eql?(current_user.id) || current_user.admin?) %>
+            <%= link_to 'Edit', edit_company_path(company), class: "dropdown-item" %>
+            <%= link_to 'Delete', company, method: :delete, data: { confirm: 'Are you sure?' }, class: "dropdown-item" %>            
+          <% end %>    
+        </div>
+      </div>
+      
+      <div class="task-card-photo m-a-0">
+        <%= link_to(company) do %>
+          <% if company.logo.present? %>
+            <%= image_tag company.logo.url %>
+          <% else %>
+            <%=image_tag("bg.jpeg")%>
+          <% end %>
+        <% end %>
+        <div class="ribbon left-top"><%= company.industry %></div>        
+      </div>
+      <div class="task-card-in m-t">
+        <h5 class="company"><%= link_to company.name, company %></h5>
+        <small><%= company.geography %></small>
+        <h6 class="tiny-header">SUMMARY</h6>
+        <p class="small-descrip"><%= truncate(company.description, length: 120) %></p>
+        <!-- 
+        <h6 class="tiny-header">KEYWORDS</h6>
+        <div class="task-card-tags">
+          <a href="#" class="label label-default">
+            <span class="text-white bold"><%= company.industry %></span>
+          </a>
+        </div> -->
+      </div>
+      <div class="task-card-footer">
+        <div class="task-card-meta-item p-b">
+          <% company.users.uniq[0..5].each do |user| %>
+            <div class="avatar-preview avatar-preview-32">
+              <%= image_tag(user.avatar.present? ? user.avatar.url : "avatar-1-128.png")%>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </section>
+  </div>
+<% end %>
+
+
+<script>
+
+  var data = {
+    <% @grouped_companies.delete_if { |key, value| key.nil? }.each do |geography,_| %>
+      "<%= geography.to_s.parameterize.underscore %>": <%= Company.where(:geography => geography).map(&:name).to_s.html_safe %>,
+    <% end %>
+  };
+
+  typeof $.typeahead === 'function' && $.typeahead({
+    input: ".js-typeahead-input",
+    minLength: 1,
+    maxItem: 15,
+    order: "asc",
+    hint: true,
+    group: {
+      template: "{{group}} beers!"
+    },
+    maxItemPerGroup: 5,
+    backdrop: {
+      "background-color": "#fff"
+    },
+    href: "/companies?q={{display}}&region="+$('input.select-region').val(),
+    dropdownFilter: "All Regions",
+    emptyTemplate: 'No result for "{{query}}"',
+    source: {
+      <% @grouped_companies.delete_if { |key, value| key.nil? }.each do |geography,_| %>
+      "<%= geography %>": {
+        data: data.<%= geography.to_s.parameterize.underscore %>
+      },
+      <% end %>
+    },
+    callback: {
+      onClickAfter: function (node, a, item, event) {
+
+        // href key gets added inside item from options.href configuration
+        //alert(item.href);
+
+      }
+    },
+    debug: false
+  });
+
+</script>

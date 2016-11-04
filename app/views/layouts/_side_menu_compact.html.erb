@@ -1,0 +1,88 @@
+<div class="mobile-menu-left-overlay"></div>
+<nav class="side-menu side-menu-compact">
+ <!--  <div class="side-menu-avatar">
+    <div class="avatar-preview avatar-preview-64">
+      <% if user_signed_in? && current_user.avatar.url.present? %>
+        <%= image_tag(current_user.avatar.url)%>
+      <% else %>
+        <%= image_tag("avatar-1-128.png")%>
+      <% end %>
+    </div>
+  </div> -->
+  <ul class="side-menu-list">
+    <% if user_signed_in? %>
+
+      <!-- user settings -->
+      <!-- <li class="">
+        <%= link_to edit_user_registration_path do %>
+          <i class="fa fa-cogs"></i>
+          <span class="lbl">Settings</span>
+        <% end %>
+      </li>
+ -->
+      <!-- browse view pages -->
+      
+      <li class="">
+        <%= link_to users_path do %>
+          <i class="fa fa-globe"></i>
+          <span class="lbl">Community</span>
+        <% end %>
+      </li>
+
+      <li class="">
+        <%= link_to investments_path do %>
+          <i class="fa fa-bank"></i>
+          <span class="lbl">Investments</span>
+        <% end %>
+      </li>
+
+      <li class="">
+        <%= link_to companies_path do %>
+          <i class="fa fa-building"></i>
+          <span class="lbl">Companies</span>
+        <% end %>
+      </li>
+
+      <!-- LOG OUT -->
+
+      <li class="coral">
+        <%= link_to destroy_user_session_path, :method=>'delete' do %>
+          <i class="fa fa-circle-o-notch"></i>
+          <span class="lbl">Logout</span>
+        <% end %>
+      </li>
+
+
+    <!-- IF NOT SIGNED IN -->
+    <% else %>
+    <!-- IF NOT SIGNED IN -->
+
+
+      <li class="">
+        <%= link_to new_user_session_path do %>
+          <i class="fa fa-bars"></i>
+          <span class="lbl">Login</span>
+        <% end %>
+      </li>
+
+      <li class="">
+        <%= link_to new_user_registration_path do %>
+            <i class="fa fa-plus-circle"></i>
+            <span class="lbl">Signup</span>
+        <% end %>
+      </li>
+    <% end %>
+
+  </ul>
+    
+</nav>
+<!--.side-menu-->
+
+
+
+
+<%# if user_signed_in? %>
+  <%# if current_user.try(:admin?) %>
+    <!-- <li><%#= link_to 'Users', users_path %></li> -->
+  <%# end %>
+

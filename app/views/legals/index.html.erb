@@ -1,0 +1,67 @@
+
+<div class="page-content">
+  <div class="container-fluid">
+    <section class="box-typical legal-page">
+      <form method="get" action="" class="legal-page-header-search">
+        <div class="search">
+          <input type="text" name="q" value="<%= params[:q] %>" class="form-control form-control-rounded" placeholder="Find answers (design, help, password. billing)"/>
+          <button type="submit" class="find">
+            <i class="font-icon font-icon-search"></i>
+          </button>
+        </div>
+      </form><!--.legal-page-header-search-->
+
+      <section class="legal-page-cats">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="legal-page-cat">
+              <div class="legal-page-cat-icon"><img src="img/legal-1.png" alt=""></div>
+              <div class="legal-page-cat-title">
+                <a href="#">Getting Started</a>
+              </div>
+              <div class="legal-page-cat-txt">New to Canva? Learn the basic to get the most out of Canva</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="legal-page-cat">
+              <div class="legal-page-cat-icon"><img src="img/legal-2.png" alt=""></div>
+              <div class="legal-page-cat-title">
+                <a href="#">Have a problem</a>
+              </div>
+              <div class="legal-page-cat-txt">New to Canva? Learn the basic to get the most out of Canva</div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="legal-page-cat">
+              <div class="legal-page-cat-icon"><img src="img/legal-3.png" alt=""></div>
+              <div class="legal-page-cat-title">
+                <a href="#">Suggest a feature</a>
+              </div>
+              <div class="legal-page-cat-txt">New to Canva? Learn the basic to get the most out of Canva</div>
+            </div>
+          </div>
+        </div><!--.row-->
+      </section><!--.legal-page-cats-->
+
+      <section class="legal-page-questions">
+        <h2>Common questions</h2>
+        <% @legals.in_groups_of(2).each do |group| %>
+          <div class="row">
+            <% group.compact.each do |legal| %>
+              <div class="col-md-6">
+                <article class="legal-page-quest">
+                  <header class="legal-page-quest-title">
+                    <%= link_to legal.title, legal_url(legal) %>
+                  </header>
+                  <p>
+                    <%= legal.content %>
+                  </p>
+                </article>
+              </div>
+            <% end %>
+          </div>
+        <% end %>
+      </section><!--.legal-page-questions-->
+    </section><!--.legal-page-->
+  </div><!--.container-fluid-->
+</div><!--.page-content-->

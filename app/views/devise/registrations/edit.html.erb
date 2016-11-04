@@ -1,0 +1,91 @@
+<div class="">
+  
+  <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :role => 'form'}) do |f| %>
+
+
+    <%= render "devise/registrations/edit/header", f: f %>
+    <div class="container">
+
+      <div class="row">
+        <div class="col-lg-4 scrollspy">
+          <aside class="profile-side">
+            <section class="box-typical box-transparent profile-side-user no-padding m-b-0">
+              <div class="p-a-lg">
+                <% @image = if @user.avatar.present?
+                  @user.avatar.url
+                else 
+                  "http://www.sheffield.com/wp-content/uploads/2013/06/placeholder.png"
+                end %>
+                <img src="<%= @image %>" class="img-responsive">
+              </div>
+              <hr class="m-a-0"/>
+
+              <div class="p-a" id="sticker">
+                <%= render 'devise/registrations/edit/nav/links' %>
+              </div>
+            
+            </section>
+          </aside>
+        </div>
+
+
+        <div class="col-lg-8 show"> 
+          <%= render "devise/registrations/edit/general_information", f: f %>
+          <%= render "devise/registrations/edit/photos", f: f %>
+          <%= render "devise/registrations/edit/contact_information", f: f %>
+          <%= render "devise/registrations/edit/accomplishments", f: f %>
+          <%= render "devise/registrations/edit/education", f: f %>
+          <%= render "devise/registrations/edit/investments", f:f %>
+          <%#= render "devise/registrations/edit/updates", f: f %>
+          <%= render 'devise/registrations/edit/media', f:f %>
+        </div>
+      </div>
+
+    </div>
+
+  <% end %>
+
+<script>
+  var loadFile = function(event) {
+    // var output = document.getElementById('output');
+    if (event.target.files[0]==undefined) {
+      return false;
+    }
+    $('.profile-image').css('background-image', 'url(' + URL.createObjectURL(event.target.files[0]) + ')');    
+    // output.src = URL.createObjectURL(event.target.files[0]);
+  };
+</script>
+  <script type="text/javascript">
+    $('#nav').affix({
+        offset: {
+          top: $('#nav').offset().top,
+          bottom: ($('footer').outerHeight(true) + $('.application').outerHeight(true)) + 40
+        }
+    });
+  </script>
+</div>
+
+<style type="text/css">
+.stick {
+  position:fixed;
+  top:70px !important;
+  border: 1px solid #d8e2e7;
+}
+.profile-side {
+  margin: -245px 0 21px 20px;
+}
+</style>
+<script type="text/javascript">
+  $(document).ready(function() {
+    var s = $("#sticker");
+    var pos = s.position();                    
+    $(window).scroll(function() {
+        var windowpos = $(window).scrollTop();
+        if (windowpos >= pos.top) {
+            s.addClass("stick");
+        } else {
+            s.removeClass("stick"); 
+        }
+    });
+});
+</script>

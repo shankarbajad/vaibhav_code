@@ -1,0 +1,20 @@
+<%= header_bg_image_url = @company.background_image.present? ? @company.background_image.url : 'http://vestedworld.com/app/uploads/2016/03/3-1024x529.jpg' %>
+<div class="profile-header-photo gradient reduced-height" style="background: url(<%= header_bg_image_url %>);">
+  <div class="profile-header-photo-in">
+    <div class="tbl-cell">
+      <div class="info-block">
+        <div class="container">
+          <div class="row p-y-lg">
+            <div class="col-lg-8 col-lg-offset-4">
+              <%= f.submit "Update Company", class: "btn btn-block btn-danger sign-up" %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= link_to company_path(@company), type: "button", class: "change-cover m-a-lg" do %>
+    <i class="font-icon font-icon-settings"></i>
+    View Company
+  <% end %>
+</div><!--.profile-header-photo-->

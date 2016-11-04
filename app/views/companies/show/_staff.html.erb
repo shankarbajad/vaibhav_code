@@ -1,0 +1,12 @@
+<section id="all_staff">
+  <h6>STAFF</h6>
+  <% @company.users.uniq.each do |u| %>
+  <p>
+    <%= u.email %>
+  </p>
+  <% end %>
+
+</section>
+            
+
+          

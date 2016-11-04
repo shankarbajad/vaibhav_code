@@ -1,0 +1,26 @@
+ <section id="nav-founders">
+  <h6>THE FOUNDING TEAM</h6>
+  <% if company.present?  %>
+    <% company.staffs.each do |company_user| %>
+       <% user = company_user.user %>
+       <div class="row">
+        <div class="col-md-2">
+          <div class="photo_wrapper_150">
+            <% if user.present? %>
+              <%= link_to user_path(user) do %>
+                <%= image_tag user.avatar.url, :class => "img-responsive img-rounded" if user.avatar.present? %>
+                <%= image_tag("avatar-1-128.png", class: "img-responsive img-rounded" )%>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-md-10">
+          <h5 class="name-title"><%= user.name if user.present?%></h5>
+          <h6 class="m-a-0"><%= user.title if user.present? %></h6>
+          <br/>
+          <p><%= user.bio if user.present?  %></p>
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</section>

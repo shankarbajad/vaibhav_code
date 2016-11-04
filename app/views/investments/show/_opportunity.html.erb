@@ -1,0 +1,53 @@
+<section id="nav-overview">
+  <h6>the opportunity</h6>
+
+
+
+  <h5>Overview</h5>
+  <p style="line-height: 26px; font-size: 18px; color: #888;">
+    <%= @investment.overview_1 %>
+  </p>
+
+  <p style="line-height: 26px; font-size: 18px; color: #888;">
+    <%= @investment.overview_2 %>
+  </p>
+
+  <p style="line-height: 26px; font-size: 18px; color: #888;">
+    <%= @investment.overview_3 %>
+  </p>
+
+  <br/><br/>
+
+  <div class="row" id="nav-problem">
+    <div class="col-md-12">
+      <h5 class="bold m-b-0">Problem Statement</h5>
+      <p class="text-muted">Please describe the market problem that you are solving</u></b></p>
+
+      <ul class="highlights">
+        <li><%= @investment.problem_bullet_1 %></li>
+        <li><%= @investment.problem_bullet_2 %></li>
+        <li><%= @investment.problem_bullet_3 %></li>
+        <li><%= @investment.problem_bullet_4 %></li>
+        <li><%= @investment.problem_bullet_5 %></li>
+      </ul>
+      <hr/>
+    </div>
+  </div>
+
+  
+
+<div class="row" id="nav-solution">
+    <div class="col-md-12">
+      <h5 class="bold m-b-0">Company Strategy</h5>
+      <p class="text-muted">Please describe the company's solution to the problem statement.</u></b></p>
+
+      <ul class="highlights">
+        <li><%= @investment.solution_bullet_1 %></li>
+        <li><%= @investment.solution_bullet_2 %></li>
+        <li><%= @investment.solution_bullet_3 %></li>
+        <li><%= @investment.solution_bullet_4 %></li>
+        <li><%= @investment.solution_bullet_5 %></li>
+      </ul>
+    </div>
+  </div>
+</section/>

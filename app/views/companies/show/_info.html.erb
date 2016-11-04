@@ -1,0 +1,57 @@
+<section id="info">
+  <p>Name: <%= @company.name %> </p>
+
+  <p><%= image_tag @company.logo.url if @company.logo.present? %> </p>
+
+  <p>Motto: <%= @company.motto %> </p>
+
+  <p>Founded: <%= @company.founded %> </p>
+
+  <p>Seeking: <%= @company.seeking %> </p>
+
+  <p>Raise: <%= @company.raised %> </p>
+
+  <p>Tag: <%= @company.tag %> </p>
+
+  <p>Industry: <%= @company.industry %> </p>
+
+  <p>Created: <%= @company.created_at %> </p>
+
+
+  <p>No Of Employee: <%= @company.no_of_employees %> </p>
+
+  <p>No of founders: <%= @company.no_of_founders %> </p>
+
+  <p> Fundraising Amount: <%= @company.fundraising_amount %> </p>
+
+  <p>Website: <%= @company.company_website %> </p>
+
+  <p>Description: <%= @company.description %> </p>
+
+  <p>Readiness: <%= @company.readiness %> </p>
+
+  <p>Projections: <%= @company.projections %> </p>
+
+  <p>Facebook: <%= @company.facebook %> </p>
+
+  <p>Twitter: <%= @company.twitter %> </p>
+
+  <p>Linkedin: <%= @company.linkedin %> </p>
+
+  <p>Angellist: <%= @company.angellist %> </p>
+
+  <p>Growth Projections: <%= @company.growth_projections %> </p>
+
+  <p>Location: <%= @company.geography %> </p>
+
+  <p>Product Stage: <%= @company.product_stage %> </p>
+
+  <p>Vision: <%= @company.vision %> </p>
+
+  <p>Problem: <%= @company.problem %> </p>
+
+  <p>Solution: <%= @company.solution %> </p>
+
+  <p>Impact: <%= @company.impact %> </p>
+
+</section>

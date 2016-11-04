@@ -1,0 +1,14 @@
+<tr class="nested-fields">
+	<td><%=f.object.document.model[:document]%></td>
+  <td><%= f.file_field :document %></td>
+  <td>
+    <%= link_to f.object.document.url do %>
+      <%= image_tag("https://cdn4.iconfinder.com/data/icons/file-extensions-1/64/docs-128.png", class: "img-responsive", style: "height: 50px; width: auto;")%>
+    <% end %>
+  </td>
+  <td>
+    <%= link_to_remove_association f, class: "btn btn-sm btn-danger" do %>
+      Delete
+    <% end %>
+  </td>
+</tr>

@@ -1,0 +1,36 @@
+<div class="profile-header-photo gradient" style="background: url(http://vestedworld.com/app/uploads/2016/03/3-1024x529.jpg);">
+  <div class="profile-header-photo-in">
+    <div class="tbl-cell">
+      <div class="info-block">
+        <div class="container">
+          <div class="row p-y-lg">
+            <div class="col-xl-8 col-xl-offset-4 col-lg-8 col-lg-offset-4 col-md-offset-0">
+              <div class="form-group">
+                <label class="form-label">Company Name<small> Use legal name, if available.</small></label>
+                <%= f.text_field :name, class: 'form-control', placeholder: "Company Name" %> 
+              </div>
+              <br/>
+              <div class="form-group">
+                <label class="form-label">Brief Description <small>Quick description of what your copmany does.</small></label>
+                <%= f.text_area :description, class: 'form-control', placeholder: "Company Name" %> 
+              </div>
+              <br/>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-6">
+                    <label class="form-label">Geography <small>Where is your company based?</small></label>
+                    <%= f.select(:geography,[  ['Sub-Saharan Africa', 'Sub-Saharan Africa'], ['East Asia & Pacific', 'East Asia & Pacific'], ['Europe, Middle East, & North Africa', 'Europe, Middle East, & North Africa'], ['Latin America & the Caribbean', 'Latin America & the Caribbean'], ['South Asia', 'South Asia'], ['Global','Global']])%>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= link_to company_path(@company), type: "button", class: "change-cover" do %>
+    <i class="font-icon font-icon-settings"></i>
+    View Profile
+  <% end %>
+</div><!--.profile-header-photo-->

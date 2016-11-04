@@ -1,0 +1,71 @@
+<div class="bgcolor-white">
+  <%= render 'investments/show/header' %>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-4">
+        <aside class="profile-side">
+
+          <section class="box-typical box-transparent profile-side-user no-padding m-b-0">
+            <div class="p-a-lg">
+
+              <%= render 'investments/show/nav/logo' %>
+            </div>
+            <hr class="m-a-0"/>
+            <div class="p-a" id="sticker">
+              <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#investModal">Interested in Investing?</button>
+              ,br/>
+              <%= render 'investments/show/nav/links' %>
+            </div>
+          </section>
+        </aside><!--.profile-side-->
+      </div>
+
+      <div class="col-lg-8 show">
+        
+        <%= render 'investments/show/legal_notices' %>
+        <%= render 'investments/show/pitch' %>
+        <%= render 'investments/show/highlights' %>
+        <%= render 'investments/show/opportunity' %>
+        <%#= render 'investments/show/impact' %>
+        
+        <%= render :partial => 'investments/show/team' %>
+        <%= render :partial => 'investments/show/advisors' %>
+        <%= render :partial => 'investments/show/investors' %>
+        <%= render 'investments/show/media' %>
+        <%= render 'investments/show/terms' %>
+
+      </div><!--.tab-pane-->
+    </div>
+  </div><!--.row-->
+</div><!--.container-fluid-->
+</div><!--.page-content-->
+
+<%#= link_to 'Edit', edit_company_path(@company) %> |
+<%#= link_to 'Back', companies_path %>
+<%=render 'shared/investment_terms'%>
+
+<style type="text/css">
+.stick {
+  position:fixed;
+  top:70px !important;
+  border: 1px solid #d8e2e7;
+}
+.profile-side {
+  margin: -245px 0 21px 20px;
+}
+</style>
+<script type="text/javascript">
+  $(document).ready(function() {
+    var s = $("#sticker");
+    var pos = s.position();                    
+    $(window).scroll(function() {
+        var windowpos = $(window).scrollTop();
+        if (windowpos >= pos.top) {
+            s.addClass("stick");
+        } else {
+            s.removeClass("stick"); 
+        }
+    });
+});
+</script>

@@ -1,0 +1,27 @@
+<div class="page-center">
+    <div class="page-center-in">
+        <div class="container-fluid">
+          <div class="authform">
+              <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :role => 'form', :class => "sign-box "}) do |f| %>
+
+                <!-- <div class="sign-avatar no-photo">&plus;</div> -->
+                <header class="sign-title">Forgot your password?</header>
+                <p>We'll send password reset instructions.</p>
+                <%#= devise_error_messages! %>
+
+                <div class="form-group">
+                  <%= f.email_field :email, :autofocus => true, class: 'form-control', placeholder: "E-Mail" %>
+                </div>
+                <%= f.submit 'Reset Password', :class => 'btn btn-rounded' %>
+                <p class="sign-note">Already have an account? <%= link_to 'Sign in', new_user_session_path %>
+                <!--<button type="button" class="close">
+                    <span aria-hidden="true">&times;</span>
+                </button>-->
+
+              <% end %>
+            </div>
+        </div>
+    </div>
+</div><!--.page-center-->
+
+

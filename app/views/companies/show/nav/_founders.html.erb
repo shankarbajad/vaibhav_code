@@ -1,0 +1,30 @@
+<section class="text-left box-typical-dashboard">
+  <div class="box-typical-body">
+    <div class="contact-row-list">
+      <article class="contact-row">
+        <h5 class="tiny-header">FOUNDERS</h5>
+        <% @company.staffs.each do |staff| %>
+          <% user = staff.user %>
+          <div class="user-card-row m-b">
+            <div class="tbl-row">
+              <div class="tbl-cell tbl-cell-photo">
+                <%= link_to user_path(user) do %>
+                  <%= image_tag user.avatar.url if user.avatar.present? %>
+                  <%= image_tag("avatar-1-128.png")%>
+                <% end %>
+              </div>
+              <div class="tbl-cell">
+                <p class="user-card-row-name">
+                  <%= link_to user.name, user_path(user) %>
+                </p>
+                <p class="user-card-row-mail">
+                  <%= link_to user.email, user_path(user) %>
+                </p>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </article>
+    </div>
+  </div><!--.box-typical-body-->
+</section><!--.box-typical-dashboard-->

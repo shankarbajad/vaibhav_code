@@ -1,0 +1,50 @@
+<section id="nav-documents">
+  <h5 class="bold">Documents</h5>
+  <% if !@company.company_documents.present? %>
+    <h1 class="muted"> No Documents</h1>
+  <% else %>
+    <div class="row">
+      <div class="col-md-3">
+        <% @company.company_documents.each do |company_document| %>
+          <%= link_to company_document.document.model[:document] , company_document.document.url if company_document.document.present? do %>
+            <%= image_tag("https://cdn4.iconfinder.com/data/icons/file-extensions-1/64/docs-128.png", class: "img-responsive", style: "height: 50px; width: auto;")%>
+            <p><small> company_document.document.file.filename</small></p>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</section>
+<hr/>
+<section id="nav-media">
+  <h6>MEDIA</h6>
+
+  <h5 class="bold">Company Photos</h5>
+  <% if  !@company.company_photos.present? %>
+  <h1 class="muted"> No Photos</h1>
+  <% end %>
+  <div class="row  bgcolor-light-grey">
+    <% @company.company_photos.each do |company_photo| %>
+      <div class="col-sm-3">
+        <%= link_to company_photo.company_image.url, :target => "_blank" do  %>
+          <%= image_tag company_photo.company_image.url, class: "img-rounded", width: "140px" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <hr/>
+  
+  <h5 class="bold">Videos</h5>
+  <h1 class="muted"> No Videos</h1>
+  <% @company.videos.each do |video| %>
+    <div class="bgcolor-light-grey p-a-lg">
+      <iframe src="<%=video_url(video.link)%>" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+      <!-- <br/><br/> -->
+      <!-- <p class="bold"><%= video.title %></p>
+      <p><%= video.description %></p>
+      <p><span class="label label-primary"><%= video.tags %></span></p> -->
+      <%#= video.link %>
+    </div>
+  <% end %>
+</section>

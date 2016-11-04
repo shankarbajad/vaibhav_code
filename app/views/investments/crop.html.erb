@@ -1,0 +1,7 @@
+<div style="margin-left: 200px;">
+  <%= form_for @investment do |f| %>
+    <%= f.cropbox :background_image %> <br />
+    <%= f.previewbox :background_image %>
+    <%= f.submit 'Crop', :style => "float: right;width: 300px;" %>
+  <% end %>
+</div>
